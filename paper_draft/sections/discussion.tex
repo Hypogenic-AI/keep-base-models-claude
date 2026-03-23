@@ -1,0 +1,91 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Reframing the Alignment Tax on Diversity}
+\label{sec:reframing}
+
+Our results challenge the common narrative that alignment diminishes stylistic
+capabilities. The base model has diverse latent distributions---this is
+well-established by the pretraining literature and confirmed by the smooth
+interpolation curves in our experiments. However, having a distribution and
+being able to \emph{access} it on demand are fundamentally different
+capabilities. The base model scores $3.74$ on style fidelity not because it
+lacks stylistic knowledge, but because it lacks the instruction-following
+mechanism needed to direct that knowledge toward a specific target.
+
+This reframing aligns with the Superficial Alignment Hypothesis~\cite{zhou2023lima}
+and the elasticity findings of \citet{ji2024resistance}. Alignment does not
+rewrite the model's distributional structure; it adds a thin control layer.
+The ``alignment tax'' on diversity documented by \citet{kirk2023rlhf} is real at
+the level of \emph{unsolicited} generation---aligned models default to a narrower
+range of outputs when not specifically instructed to diversify. But when
+\emph{instructed} to produce a specific style, the aligned model draws on the same
+distributional knowledge as the base model, and does so far more effectively.
+
+\subsection{Distribution Arithmetic as a Diagnostic Tool}
+\label{sec:diagnostic}
+
+The smooth, monotonic interpolation curve (\figref{fig:interpolation}) serves as
+evidence that alignment operates continuously on the base distribution. There is
+no phase transition or discontinuity between base and aligned behavior---the two
+are connected by a navigable path in logit space. This is consistent with the
+log-linear structure exploited by \citet{zhou2024emulated} and the
+continuous $\lambda$-interpolation of \citet{zhu2025adding}.
+
+The concave shape of the curve is informative: most style improvement occurs
+between $\interpcoeff = 0$ and $\interpcoeff = 0.5$, suggesting that the aligned
+model's primary contribution is the instruction-following ``address'' rather than
+new stylistic knowledge. The aligned model does not know more about Hemingway than
+the base model does; it simply knows how to use what it knows when asked.
+
+\subsection{Why Some Styles Are Harder}
+\label{sec:style_difficulty}
+
+The per-style analysis (\tabref{tab:perstyle}) reveals a pattern: ornate,
+additive styles (Poe, Shakespeare, noir) respond most to alignment, while the
+minimalist Hemingway style shows the smallest improvement. We hypothesize that
+this reflects an asymmetry in the generation process. Ornate styles require
+\emph{adding} distinctive features---gothic imagery, archaic vocabulary,
+hard-boiled metaphors---which the instruction-following mechanism can reliably
+trigger. Hemingway's style, by contrast, requires \emph{restraint}: shorter
+sentences, simpler vocabulary, the omission of elaboration. ``Doing less'' is a
+harder optimization target for autoregressive models, which are trained to predict
+the next token, not to suppress tokens.
+
+\subsection{Limitations}
+\label{sec:limitations}
+
+\para{Single model pair.}
+We tested only \qwenbase and \qweninst. Results may differ for larger models,
+different model families, or models aligned with different methods (PPO vs.\ DPO
+vs.\ RLHF). Larger models may show different patterns due to greater distributional
+capacity.
+
+\para{LLM-as-judge bias.}
+Style evaluation via \gptjudge is subjective and may carry systematic
+biases---for example, preferring fluent, well-structured text, which inherently
+advantages the aligned model. Human evaluation would provide a valuable complement,
+though it introduces its own biases regarding style recognition.
+
+\para{Benign styles only.}
+Our seven target styles are all benign literary and functional styles. The more
+consequential case for the alignment tax hypothesis involves styles that alignment
+actively suppresses---toxic content, impersonation of real living persons, or other
+safety-relevant registers. Distribution arithmetic may show qualitatively different
+behavior in those settings.
+
+\para{Sample size.}
+With 2--3 samples per condition--task pair, statistical power for per-style
+comparisons is limited. The aggregate results are robust ($N = 231$ total samples),
+but individual style estimates should be interpreted cautiously.
+
+\para{Prompt format confound.}
+The base model received completion-style prompts while the aligned model used chat
+templates. This is a necessary design choice---each model performs best with its
+native format---but it means the aligned model's advantage may partly reflect
+superior prompt formatting rather than alignment \emph{per se}.
+
+\para{Logit-space only.}
+We tested only logit-space distribution arithmetic, not weight-space model
+averaging~\cite{lin2023mitigating}. Weight-space interpolation may exhibit
+different properties, particularly for layer-specific blending strategies.

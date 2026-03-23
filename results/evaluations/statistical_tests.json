@@ -1,0 +1,71 @@
+{
+  "base_vs_aligned_style_fidelity_mean": {
+    "U_statistic": 5.5,
+    "p_value": 5.1514312502174416e-08,
+    "effect_size_r": 0.9750566893424036,
+    "n_base": 21,
+    "n_aligned": 21,
+    "base_mean": 3.738095238095238,
+    "aligned_mean": 7.261904761904762
+  },
+  "base_vs_aligned_distinct_2": {
+    "U_statistic": 65.0,
+    "p_value": 9.653505748101829e-05,
+    "effect_size_r": 0.7052154195011338,
+    "n_base": 21,
+    "n_aligned": 21,
+    "base_mean": 0.8818259709410192,
+    "aligned_mean": 0.9447870643535557
+  },
+  "base_vs_aligned_self_bleu_4": {
+    "U_statistic": 267.5,
+    "p_value": 0.21112771639270134,
+    "effect_size_r": -0.21315192743764166,
+    "n_base": 21,
+    "n_aligned": 21,
+    "base_mean": 0.007277351035518381,
+    "aligned_mean": 0.0025534964421170085
+  },
+  "interp0.25_vs_aligned_style_fidelity_mean": {
+    "U_statistic": 34.5,
+    "p_value": 2.1992081390242074e-06,
+    "n": 21,
+    "interp_mean": 5.142857142857143,
+    "aligned_mean": 7.261904761904762
+  },
+  "interp0.25_vs_aligned_distinct_2": {
+    "U_statistic": 142.0,
+    "p_value": 0.04974528689592373,
+    "n": 21,
+    "interp_mean": 0.9132282270885945,
+    "aligned_mean": 0.9447870643535557
+  },
+  "interp0.5_vs_aligned_style_fidelity_mean": {
+    "U_statistic": 104.0,
+    "p_value": 0.0026017174597887456,
+    "n": 21,
+    "interp_mean": 6.357142857142857,
+    "aligned_mean": 7.261904761904762
+  },
+  "interp0.5_vs_aligned_distinct_2": {
+    "U_statistic": 130.0,
+    "p_value": 0.02356745158979542,
+    "n": 21,
+    "interp_mean": 0.8842134214345501,
+    "aligned_mean": 0.9447870643535557
+  },
+  "interp0.75_vs_aligned_style_fidelity_mean": {
+    "U_statistic": 144.0,
+    "p_value": 0.05114994659949719,
+    "n": 21,
+    "interp_mean": 6.666666666666667,
+    "aligned_mean": 7.261904761904762
+  },
+  "interp0.75_vs_aligned_distinct_2": {
+    "U_statistic": 182.0,
+    "p_value": 0.33911360013116165,
+    "n": 21,
+    "interp_mean": 0.9145707732257232,
+    "aligned_mean": 0.9447870643535557
+  }
+}

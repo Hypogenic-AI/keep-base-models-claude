@@ -1,0 +1,90 @@
+\section{Methodology}
+\label{sec:method}
+
+We compare three paradigms for accessing stylistic distributions in language models:
+(1)~direct generation from the base model via completion-style prompting,
+(2)~instruction-based generation from the aligned model, and
+(3)~logit-space distribution arithmetic that interpolates between the two.
+
+\subsection{Models and Setup}
+\label{sec:models}
+
+We use \qwenbase as the base model and \qweninst as the aligned model, both with
+3 billion parameters. Each model is loaded in float16 on a separate NVIDIA RTX
+A6000 GPU (49\,GB), enabling simultaneous inference for distribution arithmetic
+with KV caching.
+
+\subsection{Style Tasks}
+\label{sec:styles}
+
+We select seven target styles spanning literary and functional registers:
+five authorial styles (Hemingway, Shakespeare, Poe, Austen, Tolkien) and two
+functional styles (academic writing, film noir narration). These styles were
+chosen to span a range of distinctiveness---from highly ornate and recognizable
+(Shakespeare, Poe) to understated and subtle (Hemingway)---allowing us to test
+whether some styles are easier to invoke than others.
+
+Each style is applied to three topics: (1)~``A person arriving at an old house
+for the first time,'' (2)~``The experience of watching a sunset over the ocean,''
+and (3)~``A conversation between two strangers on a train.'' This yields
+$7 \times 3 = 21$ style--topic tasks.
+
+\subsection{Generation Conditions}
+\label{sec:conditions}
+
+For each style--topic task, we generate text under five conditions:
+
+\para{Base model ($\interpcoeff = 0$).}
+The base model receives a completion-style prompt describing the target style and
+topic. We generate 3 samples per task.
+
+\para{Aligned model ($\interpcoeff = 1$).}
+The aligned model receives a chat-formatted instruction requesting text in the
+target style. We generate 3 samples per task.
+
+\para{Distribution arithmetic ($\interpcoeff \in \{0.25, 0.5, 0.75\}$).}
+At each decoding step, we compute logits from both models on the same prefix and
+combine them linearly:
+\begin{equation}
+    \ell_{\text{mix}} = (1 - \interpcoeff) \cdot \ell_{\text{base}} + \interpcoeff \cdot \ell_{\text{align}}
+    \label{eq:interp}
+\end{equation}
+where $\ell_{\text{base}}$ and $\ell_{\text{align}}$ are the raw logit vectors
+from the base and aligned models, respectively, and $\interpcoeff$ controls the
+mixture weight. Sampling then proceeds from $\text{softmax}(\ell_{\text{mix}})$.
+We generate 2 samples per task at each interpolation level.
+
+All conditions use temperature $\tau = 0.8$, top-$p = 0.95$, maximum length of
+128 tokens, and random seed 42. This yields $21 \times (3 + 3 + 2 \times 3) = 231$
+total text samples.
+
+\subsection{Evaluation}
+\label{sec:eval}
+
+\para{LLM-as-judge.}
+We use \gptjudge to evaluate each sample on two dimensions: \emph{style fidelity}
+(1--10 scale: how well the output captures the target style's distinctive voice,
+vocabulary, and sentence structure) and \emph{text quality} (1--10 scale: coherence
+and writing quality regardless of style). This required 210 API calls across all
+condition--task pairs.
+
+\para{Lexical diversity.}
+We compute Distinct-$N$ (type-token ratio for $N$-grams, $N \in \{1,2,3\}$) to
+measure vocabulary diversity within each sample. Higher values indicate more
+diverse word choices.
+
+\para{Intra-condition diversity.}
+We compute Self-BLEU-4 (4-gram overlap between samples within each condition--style
+pair). Lower values indicate that samples within the same condition are more
+diverse from each other.
+
+\para{Style differentiation.}
+We apply one-way ANOVA on style fidelity scores across the seven target styles
+within each condition. A significant $F$-statistic indicates that the model
+produces outputs that are distinguishable across styles---\ie it is not generating
+the same generic text regardless of the style instruction.
+
+\para{Statistical tests.}
+We use Mann-Whitney $U$ tests for pairwise comparisons between conditions and
+report $p$-values with standard significance thresholds ($^{*}p < 0.05$,
+$^{**}p < 0.01$, $^{***}p < 0.001$).

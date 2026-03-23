@@ -1,0 +1,11 @@
+PDF: papers/zhou2024_emulated_disalignment.pdf
+Total pages: 21
+Pages per chunk: 4
+
+Chunks:
+  zhou2024_emulated_disalignment_chunk_001.pdf: pages 1-4
+  zhou2024_emulated_disalignment_chunk_002.pdf: pages 5-8
+  zhou2024_emulated_disalignment_chunk_003.pdf: pages 9-12
+  zhou2024_emulated_disalignment_chunk_004.pdf: pages 13-16
+  zhou2024_emulated_disalignment_chunk_005.pdf: pages 17-20
+  zhou2024_emulated_disalignment_chunk_006.pdf: page 21

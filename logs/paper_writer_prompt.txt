@@ -1,0 +1,859 @@
+You are an academic paper writer. Generate a complete NEURIPS style paper
+based on the experiment results provided.
+
+════════════════════════════════════════════════════════════════════════════════
+                         IMPORTANT: BEFORE YOU START
+════════════════════════════════════════════════════════════════════════════════
+
+Before writing any content, you MUST complete these steps:
+
+1. READ THE SKILL: Review the paper-writer skill at .claude/skills/paper-writer/SKILL.md
+2. READ THE STYLE GUIDE: Study templates/paper_writing/lab_style_guide.md carefully
+3. REVIEW EXAMPLES: Browse paper_examples/ for formatting and language patterns:
+   - Look at sections/1.introduction.tex for language style
+   - Look at tables/*.tex for table formatting
+   - Look at commands/*.tex for macro usage
+4. VERIFY COMMAND TEMPLATES: Command templates (math.tex, general.tex, macros.tex) are pre-copied to paper_draft/commands/
+
+CRITICAL: Reference example papers for FORMATTING and LANGUAGE STYLE only.
+Do NOT copy content, phrasing, or narrative structure from the example papers.
+The examples are in a different research domain - focus only on presentation style.
+
+════════════════════════════════════════════════════════════════════════════════
+                            EXPERIMENT REPORT
+════════════════════════════════════════════════════════════════════════════════
+
+# Keeping Base Model Distributions: Can Distribution Interpolation Recover Stylistic Capabilities After Alignment?
+
+## 1. Executive Summary
+
+We investigated whether alignment (instruction tuning) diminishes a language model&#39;s ability to generate text in diverse styles, and whether logit-space distribution interpolation between base and aligned models can modulate this capability. Using Qwen2.5-3B (base) and Qwen2.5-3B-Instruct (aligned), we generated text in 7 distinct literary and functional styles across 3 topics, evaluating with both automated diversity metrics and GPT-4.1 as a style judge.
+
+**Key finding**: Contrary to the naive interpretation of the &#34;alignment tax&#34; hypothesis, the aligned model significantly *outperforms* the base model on stylistic impersonation (style fidelity: 7.26 vs 3.74, p &lt; 0.0001). The aligned model also shows significantly better style differentiation across styles (ANOVA F=6.32, p=0.002) while the base model produces undifferentiated outputs (F=0.87, p=0.54). However, logit-space distribution arithmetic does produce smooth interpolation between base and aligned behavior, confirming that these distributions are continuously navigable and not &#34;destroyed&#34; by alignment.
+
+**Practical implication**: The base model&#39;s stylistic distributions survive alignment intact (consistent with the Superficial Alignment Hypothesis), but they are *not diminished* — rather, alignment *unlocks* access to them via instruction following. The question of &#34;recovery&#34; is thus reframed: base models have diverse distributions but poor *controllability*; alignment trades some distributional freedom for controllability.
+
+## 2. Goal
+
+### Hypothesis
+Including a KL term on certain distributions during model alignment preserves the base model&#39;s ability to generate diverse outputs (e.g., stylistic impersonations), which are otherwise diminished by alignment; distribution interpolation can recover these capabilities post-alignment.
+
+### Why This Matters
+- Alignment is the standard process for making LLMs useful, but it&#39;s known to reduce output diversity (Kirk et al., 2023)
+- Creative applications require access to diverse stylistic registers
+- Understanding whether alignment destroys or merely redirects distributional diversity is important for designing better alignment procedures
+
+### What Gap This Fills
+- No prior work has specifically measured stylistic impersonation capabilities before and after alignment
+- No work has tested logit-space distribution arithmetic specifically for style recovery
+- The interaction between instruction-following ability and distributional diversity hasn&#39;t been directly quantified
+
+## 3. Data Construction
+
+### Models
+| Model | Role | Size | Source |
+|-------|------|------|--------|
+| Qwen2.5-3B | Base model | 3B params | HuggingFace |
+| Qwen2.5-3B-Instruct | Aligned model | 3B params | HuggingFace |
+
+### Style Tasks
+7 target styles spanning literary (Hemingway, Shakespeare, Poe, Austen, Tolkien) and functional (academic, noir) registers, each applied to 3 topics:
+1. &#34;A person arriving at an old house for the first time&#34;
+2. &#34;The experience of watching a sunset over the ocean&#34;
+3. &#34;A conversation between two strangers on a train&#34;
+
+### Generation Conditions
+| Condition | Description | Samples per task |
+|-----------|-------------|-----------------|
+| base | Base model with completion-style prompt | 3 |
+| aligned | Instruct model with chat-style prompt | 3 |
+| interp_0.25 | 75% base + 25% aligned logits | 2 |
+| interp_0.5 | 50% base + 50% aligned logits | 2 |
+| interp_0.75 | 25% base + 75% aligned logits | 2 |
+
+### Generation Parameters
+- Max tokens: 128
+- Temperature: 0.8
+- Top-p: 0.95
+- Random seed: 42
+
+### Total Generations
+21 style-topic tasks × 5 conditions × 2-3 samples = 231 text samples
+
+## 4. Experiment Description
+
+### Methodology
+
+#### High-Level Approach
+We compare three paradigms for accessing stylistic distributions:
+1. **Base model (completion-style)**: Prompt with style description, let model continue
+2. **Aligned model (instruction-style)**: Instruct the model to write in a specific style
+3. **Distribution arithmetic (logit interpolation)**: At each token, combine logits from both models: `mixed_logits = (1-α) × base_logits + α × aligned_logits`
+
+#### Why This Method?
+Distribution arithmetic (Zhou et al., 2024; Zhu et al., 2025) has been shown to enable continuous interpolation between base and aligned model behaviors. By applying it to style generation, we directly test whether the style-related &#34;modes&#34; of the base distribution remain accessible and navigable post-alignment.
+
+### Implementation Details
+
+#### Tools and Libraries
+| Library | Version | Purpose |
+|---------|---------|---------|
+| PyTorch | 2.4.1+cu124 | Model inference |
+| Transformers | 5.3.0 | Model loading |
+| OpenAI API | gpt-4.1 | Style evaluation |
+| NumPy | 2.4.3 | Numerical computation |
+| SciPy | 1.15.3 | Statistical tests |
+| Matplotlib/Seaborn | 3.10.8/0.13.2 | Visualization |
+
+#### Hardware
+- 2× NVIDIA RTX A6000 (49GB each)
+- Base model on GPU 0, aligned model on GPU 1
+- KV caching enabled for distribution arithmetic
+
+#### Evaluation Metrics
+1. **Style Fidelity** (GPT-4.1 judge, 1-10): How well the output captures the target style&#39;s distinctive voice, vocabulary, and sentence structure
+2. **Text Quality** (GPT-4.1 judge, 1-10): Coherence and writing quality regardless of style
+3. **Distinct-N** (N=1,2,3): Type-token ratio for n-grams, measuring lexical diversity
+4. **Self-BLEU-4**: N-gram overlap between samples within a condition (lower = more diverse)
+5. **Inter-style ANOVA**: Whether outputs for different styles are statistically distinguishable
+
+### Experimental Protocol
+- 210 GPT-4.1 API calls for evaluation (2 per condition-task pair)
+- Mann-Whitney U tests for pairwise condition comparisons
+- One-way ANOVA for inter-style discrimination
+- Total experiment runtime: 42.5 minutes
+
+## 5. Results
+
+### Main Results Table
+
+| Condition | Style Fidelity | Text Quality | Distinct-2 | Self-BLEU-4 | Avg Length |
+|-----------|---------------|-------------|-----------|------------|-----------|
+| Base (α=0) | 3.74 ± 0.93 | 5.95 ± 0.65 | 0.882 ± 0.049 | 0.007 ± 0.012 | 103.2 |
+| α=0.25 | 5.14 ± 1.11 | 6.60 ± 0.73 | 0.913 ± 0.070 | 0.007 ± 0.016 | 104.4 |
+| α=0.50 | 6.36 ± 1.03 | 6.55 ± 1.22 | 0.884 ± 0.113 | 0.006 ± 0.016 | 99.8 |
+| α=0.75 | 6.67 ± 0.99 | 6.62 ± 1.35 | 0.915 ± 0.106 | 0.008 ± 0.020 | 97.1 |
+| Aligned (α=1) | 7.26 ± 0.91 | 7.07 ± 1.16 | 0.945 ± 0.028 | 0.003 ± 0.004 | 91.4 |
+
+### Statistical Tests
+
+| Comparison | Metric | p-value | Significance |
+|-----------|--------|---------|-------------|
+| Base vs Aligned | Style Fidelity | &lt; 0.0001 | *** |
+| Base vs Aligned | Distinct-2 | 0.0001 | *** |
+| α=0.25 vs Aligned | Style Fidelity | &lt; 0.0001 | *** |
+| α=0.50 vs Aligned | Style Fidelity | 0.0026 | ** |
+| α=0.75 vs Aligned | Style Fidelity | 0.0511 | ns |
+
+### Style Differentiation (ANOVA)
+
+| Condition | F-statistic | p-value | Interpretation |
+|-----------|------------|---------|---------------|
+| Base | 0.87 | 0.540 | Styles NOT differentiated |
+| α=0.25 | 3.03 | 0.041 | Marginally differentiated |
+| α=0.50 | 1.06 | 0.429 | NOT differentiated |
+| α=0.75 | 2.12 | 0.116 | NOT differentiated |
+| Aligned | 6.32 | 0.002 | Styles WELL differentiated |
+
+### Style Fidelity by Individual Style
+
+| Style | Base | α=0.25 | α=0.50 | α=0.75 | Aligned | Drop (B→A) |
+|-------|------|--------|--------|--------|---------|------------|
+| Hemingway | 4.0 | 4.2 | 5.7 | 5.7 | 5.7 | -1.7 |
+| Shakespeare | 3.2 | 5.0 | 6.3 | 6.0 | 7.0 | -3.8 |
+| Poe | 4.5 | 6.5 | 7.0 | 7.7 | 8.0 | -3.5 |
+| Austen | 3.2 | 4.0 | 5.5 | 6.2 | 7.0 | -3.8 |
+| Tolkien | 4.2 | 5.5 | 7.2 | 7.3 | 7.3 | -3.2 |
+| Academic | 3.3 | 5.3 | 6.3 | 7.2 | 7.7 | -4.3 |
+| Noir | 3.8 | 5.5 | 6.5 | 6.5 | 8.2 | -4.3 |
+
+### Qualitative Examples
+
+**Hemingway style** (&#34;A person arriving at an old house&#34;):
+- **Base**: &#34;The person arrives at the old house, a large one with a porch in the front and a garden in the back. The porch is weathered and creaks with every step.&#34; — Generic description, not Hemingway
+- **Aligned**: &#34;Man walks up old cobbled stairs. Door unlocked. Pushes open. Inside dark. Candlestick near fireplace.&#34; — Captures terse, declarative Hemingway style
+- **α=0.5**: &#34;She stood at the threshold, eyes wide. Doors creaked behind her, echoing softly. The walls were thick, heavy.&#34; — Intermediate: some terseness, but more elaborate
+
+**Shakespeare style** (&#34;A person arriving at an old house&#34;):
+- **Base**: &#34;I stumbled upon an ancient mansion, / Where the creaks and groans of the wooden floors / Echoed through the halls&#34; — Modern poetry, not Shakespeare
+- **Aligned**: &#34;In twilight&#39;s hallowed arms did he arrive, / At door of yore, where shadows doth entwine&#34; — Archaic vocabulary, iambic meter
+- **α=0.5**: &#34;In hallowed halls, where echoes whisper past, / A stranger enters, stranger to the past&#34; — Hybrid: archaic vocabulary but modern rhythm
+
+### Visualizations
+
+All plots saved to `results/plots/`:
+- `interpolation_curve.png` — Style fidelity, diversity, and quality as a function of α
+- `style_heatmap.png` — Style fidelity matrix (style × condition)
+- `diversity_comparison.png` — Lexical diversity across conditions
+- `tradeoff_curve.png` — Style fidelity vs. text quality trade-off
+- `style_recovery_difficulty.png` — Recovery ratio per style at α=0.5
+- `style_differentiation.png` — Style discrimination across conditions
+- `per_style_recovery.png` — Per-style recovery curves across α
+
+## 5. Result Analysis
+
+### Key Findings
+
+**Finding 1: Alignment IMPROVES stylistic impersonation, not reduces it.**
+The aligned model (Qwen2.5-3B-Instruct) scores 7.26/10 on style fidelity vs 3.74/10 for the base model (p &lt; 0.0001). This contradicts the naive version of the hypothesis that alignment &#34;loses capabilities.&#34; The aligned model&#39;s instruction-following ability allows it to *access* stylistic distributions that the base model has but cannot controllably invoke.
+
+**Finding 2: Distribution arithmetic enables smooth interpolation.**
+Logit-space interpolation produces a monotonic curve from base (3.74) to aligned (7.26) style fidelity, confirming that:
+- Base model distributions survive alignment intact (they contribute positively when mixed in)
+- The interpolation is continuous, not abrupt
+- At α=0.75, style fidelity (6.67) is statistically indistinguishable from the aligned model (p=0.051)
+
+**Finding 3: The base model cannot differentiate between target styles.**
+ANOVA reveals that base model outputs are NOT significantly differentiated across the 7 target styles (F=0.87, p=0.54), while aligned model outputs ARE (F=6.32, p=0.002). The base model has the distributions but lacks the *addressing mechanism* (instruction following) to select among them.
+
+**Finding 4: Some styles are easier to invoke than others.**
+Poe (base: 4.5, aligned: 8.0) and noir (base: 3.8, aligned: 8.2) show the largest alignment benefit, while Hemingway shows the smallest (base: 4.0, aligned: 5.7). This suggests highly distinctive, ornate styles benefit more from alignment&#39;s controllability.
+
+**Finding 5: Interpolation primarily adds alignment capability, not base capability.**
+The interpolation curve is concave: most of the style improvement happens between α=0 and α=0.5, suggesting the aligned model&#39;s contribution is primarily the instruction-following &#34;addressing&#34; mechanism rather than new style knowledge.
+
+### Hypothesis Testing
+
+**H1 (Aligned models show reduced stylistic diversity)**: **REFUTED.** Aligned models show higher style fidelity (7.26 vs 3.74) AND better style differentiation (ANOVA p=0.002 vs p=0.54). Alignment improves, not reduces, controllable access to stylistic distributions.
+
+**H2 (Distribution arithmetic recovers stylistic capabilities)**: **PARTIALLY SUPPORTED.** Interpolation produces a smooth curve, confirming base distributions are intact. However, the base model&#39;s contribution is not &#34;recovery&#34; but rather dilution — higher base weight reduces style quality because the base model lacks the control mechanism to use its own distributions.
+
+**H3 (Some styles are harder to recover)**: **SUPPORTED.** The recovery curve varies by style. Hemingway (minimal, understated) is harder for both models, while ornate styles (Poe, noir, Shakespeare) respond more to the interpolation.
+
+### Reframing the Research Question
+
+Our results suggest the original framing — &#34;alignment loses distributions that KL terms could preserve&#34; — needs revision. A more accurate framing:
+
+&gt; **Base models have diverse latent distributions but poor controllability. Alignment doesn&#39;t destroy these distributions — it adds an addressing mechanism (instruction following) that enables controllable access. The &#34;alignment tax&#34; on diversity is real at the distributional level (Kirk et al., 2023) but manifests as mode collapse in UNSOLICITED generation, not as inability to produce diverse styles when instructed.**
+
+The relevant question becomes: **Can distribution interpolation help in cases where the aligned model genuinely refuses or fails to produce a style?** This would occur with styles suppressed by safety training (e.g., mimicking real living persons, offensive content), not with literary styles.
+
+### Surprises and Insights
+
+1. **The base model is surprisingly bad at style instruction.** Even with explicit prompts, it produced generic text. This highlights that &#34;having a distribution&#34; and &#34;being able to access it on demand&#34; are fundamentally different capabilities.
+
+2. **Interpolation at α=0.5 is qualitatively interesting.** The mixed outputs often have a distinctive character — somewhat stylistic but less formulaic than the aligned model&#39;s outputs. This suggests interpolation could be useful for generating text that is *inspired by* a style rather than imitating it.
+
+3. **Hemingway&#39;s style is the hardest for all conditions.** The minimalist, understated style is harder to produce than ornate styles. This may be because &#34;doing less&#34; (fewer words, simpler vocabulary) is a harder optimization target than &#34;doing more&#34; (adding archaic vocabulary, gothic imagery).
+
+### Limitations
+
+1. **Single model pair**: We tested only Qwen2.5-3B base/instruct. Results may differ for larger models, different model families, or models aligned with different methods (PPO vs DPO).
+
+2. **GPT-4.1 as judge**: Style evaluation is subjective. GPT-4.1 may have systematic biases (e.g., preferring fluent text, which benefits the aligned model).
+
+3. **No safety-suppressed styles tested**: Our styles are benign literary styles. The more interesting case for the hypothesis is styles that alignment actively suppresses (e.g., toxic content, impersonation of real people), which we did not test.
+
+4. **Small sample size**: 2-3 samples per condition-task means limited statistical power for per-style comparisons.
+
+5. **Completion vs chat prompting**: The base model used completion-style prompts while the aligned model used chat templates. This is a confound — the aligned model&#39;s advantage may partly reflect better prompt format rather than alignment itself.
+
+6. **No weight-space interpolation tested**: We only tested logit-space distribution arithmetic, not weight-space model averaging (Lin et al., 2023), which may show different patterns.
+
+## 6. Conclusions
+
+### Summary
+Alignment does not destroy base model stylistic distributions — it adds an instruction-following mechanism that enables controllable access to them. Logit-space distribution arithmetic confirms smooth, continuous interpolation between base and aligned model behaviors, supporting the Superficial Alignment Hypothesis. The base model&#39;s diverse distributions are accessible through interpolation, but the aligned model&#39;s instruction-following ability is a more effective &#34;addressing mechanism&#34; than the base model&#39;s prompting.
+
+### Implications
+- **For alignment researchers**: KL regularization during alignment may be less about &#34;preserving&#34; distributions and more about maintaining the base model&#39;s distributional breadth while adding controllability. The risk isn&#39;t losing styles but losing the *diversity of unsolicited generation*.
+- **For practitioners**: If you need specific styles, use the aligned model with clear instructions. Distribution arithmetic is useful when you want to *blend* base and aligned behaviors, e.g., for less formulaic but style-aware generation.
+- **For the original hypothesis**: The distributions are not &#34;fundamentally difficult to unlock post-alignment&#34; — they were never locked. The difficulty was always in *addressing* them, which alignment solves.
+
+### Confidence in Findings
+**Moderate-high** for the main finding (alignment improves stylistic control). The effect is large (Cohen&#39;s d &gt; 3.0 for style fidelity), replicated across 7 styles and 3 topics, with statistical significance. Lower confidence for generalization to other model families, sizes, or alignment methods.
+
+## 7. Next Steps
+
+### Immediate Follow-ups
+1. **Test safety-suppressed styles**: Investigate styles that alignment actively suppresses (not just literary styles that it improves). These are the cases where &#34;recovery&#34; through interpolation would be most relevant.
+2. **Unsolicited diversity measurement**: Generate text WITHOUT style instructions and measure whether the base model produces more *spontaneously diverse* outputs across prompts.
+3. **Weight-space interpolation**: Compare logit-space arithmetic to weight-space model averaging at various α values.
+
+### Alternative Approaches
+- Train DPO variants with different β values on the base model and directly measure style preservation
+- Use f-divergence alternatives (Jensen-Shannon, α-divergence) during alignment to test whether divergence choice affects style preservation
+- Test on larger models (7B, 70B) to see if the pattern holds at scale
+
+### Broader Extensions
+- Apply distribution arithmetic to domain-specific registries (medical, legal, creative writing)
+- Investigate whether alignment&#39;s &#34;addressing mechanism&#34; can be added without full alignment (e.g., lightweight steering vectors)
+- Study which neuron groups / attention heads are responsible for style control vs. distribution diversity
+
+### Open Questions
+1. Are there distributions that alignment genuinely destroys (not just makes harder to access)?
+2. Does the base model&#39;s distributional diversity manifest differently at different temperatures?
+3. Can we design alignment procedures that explicitly maintain distributional breadth (KL on style-specific prompts) while still improving instruction following?
+
+## References
+
+### Papers
+1. Rafailov et al. (2023). Direct Preference Optimization. arXiv:2305.18290
+2. Korbak et al. (2022). RL with KL Penalties as Bayesian Inference. arXiv:2205.11275
+3. Kirk et al. (2023). Understanding the Effects of RLHF on LLM Generalisation and Diversity. arXiv:2310.06452
+4. Lin et al. (2023). Mitigating the Alignment Tax of RLHF. arXiv:2309.06256
+5. Zhou et al. (2024). Emulated Disalignment. arXiv:2402.12343
+6. Ji et al. (2024). Language Models Resist Alignment. arXiv:2406.06144
+7. Zhu et al. (2025). Adding Alignment Control to Language Models. arXiv:2503.04346
+8. Lake et al. (2024). From Distributional to Overton Pluralism. arXiv:2406.17692
+9. Wang et al. (2023). Beyond Reverse KL: f-DPO. arXiv:2309.16240
+10. Go et al. (2023). f-divergence Minimization for Alignment. arXiv:2302.08215
+
+### Datasets and Tools
+- Qwen2.5-3B / Qwen2.5-3B-Instruct (Alibaba)
+- GPT-4.1 (OpenAI) for style evaluation
+- PyTorch 2.4.1, Transformers 5.3.0
+- 2× NVIDIA RTX A6000 GPUs
+
+
+════════════════════════════════════════════════════════════════════════════════
+                            RESEARCH PLAN
+════════════════════════════════════════════════════════════════════════════════
+
+# Research Plan: Keeping Base Model Distributions
+
+## Motivation &amp; Novelty Assessment
+
+### Why This Research Matters
+Alignment (RLHF/DPO) is known to reduce the diversity of language model outputs, particularly stylistic capabilities like impersonating authors or matching literary tones. This &#34;alignment tax&#34; limits the creative utility of aligned models. Understanding whether KL regularization during alignment can preserve these distributions — and whether they can be recovered post-alignment via interpolation — has direct implications for building models that are both safe AND creatively capable.
+
+### Gap in Existing Work
+Based on the literature review:
+- Kirk et al. (2023) showed KL penalties alone don&#39;t recover diversity (counterintuitive)
+- Lin et al. (2023) showed weight interpolation beats KL penalties for preserving capabilities
+- Zhou et al. (2024) showed distribution arithmetic can invert alignment
+- **No work has specifically tested whether stylistic impersonation capabilities (writing like specific authors/genres) can be recovered through distribution interpolation after alignment**
+- **No work has mapped which stylistic distributions are easy vs. hard to recover**
+
+### Our Novel Contribution
+We empirically test whether:
+1. Base model stylistic capabilities survive alignment and can be recovered via distribution interpolation
+2. Different interpolation methods (weight-space vs. logit-space) differ in their ability to recover style
+3. Some stylistic distributions are fundamentally harder to recover than others
+4. The β parameter in DPO controls which styles are preserved
+
+### Experiment Justification
+- **Experiment 1 (Style Baseline)**: Needed to quantify what stylistic capabilities exist in base vs. aligned models
+- **Experiment 2 (Distribution Arithmetic)**: Tests logit-space interpolation for style recovery — novel for style specifically
+- **Experiment 3 (DPO with varying β)**: Tests whether KL strength during training controls style preservation
+- **Experiment 4 (Weight Interpolation)**: Tests weight-space recovery and compares to logit-space
+
+## Research Question
+Can KL-constrained alignment preserve base model stylistic distributions, and can distribution interpolation (logit-space or weight-space) recover them post-alignment?
+
+## Hypothesis Decomposition
+H1: Aligned models show significantly reduced stylistic diversity compared to base models
+H2: Distribution arithmetic (logit-space interpolation) can recover stylistic capabilities at intermediate α values
+H3: Weight-space interpolation achieves similar recovery to logit-space arithmetic
+H4: Some styles (more distinctive/frequent in pretraining data) are easier to recover than others
+H5: Higher β in DPO preserves more stylistic capability, but may reduce alignment quality
+
+## Proposed Methodology
+
+### Approach
+Use paired base/instruct models (Qwen2.5-3B and Qwen2.5-3B-Instruct) to:
+1. Generate text in specific author/genre styles from both models
+2. Apply distribution arithmetic at various interpolation coefficients
+3. Measure style fidelity, diversity, and alignment quality
+4. Optionally train DPO at different β values if time permits
+
+### Model Choice
+- **Qwen2.5-3B** (base) and **Qwen2.5-3B-Instruct** (aligned): Both fit on a single A6000 in fp16 (~6GB each), allowing simultaneous loading for distribution arithmetic. Modern model with strong base capabilities.
+
+### Style Tasks
+Generate text in the style of:
+- **Distinctive authors**: Hemingway (terse), Shakespeare (archaic), Poe (gothic), Austen (formal), Tolkien (epic)
+- **Genre styles**: Academic paper, children&#39;s story, film noir narration, legal document, poetry
+- These span a range from highly distinctive (Shakespeare) to moderate (academic), testing H4.
+
+### Experimental Steps
+1. Load both models on GPU
+2. Create 10 style prompts × 5 test topics = 50 generation tasks
+3. Generate 5 samples per task from: base model, aligned model, and 5 interpolation levels
+4. Evaluate with automated metrics + GPT-4.1 as style judge
+5. Statistical analysis of style preservation across conditions
+
+### Baselines
+1. Base model (upper bound on style diversity)
+2. Aligned model with standard prompting (lower bound)
+3. Aligned model with style instruction (test if instruction alone recovers style)
+
+### Evaluation Metrics
+1. **Style fidelity**: GPT-4.1 judge scoring (0-10) how well output matches target style
+2. **Lexical diversity**: Distinct n-grams (1,2,3-gram), type-token ratio
+3. **Semantic diversity**: Sentence-BERT cosine similarity between samples
+4. **Style distinctiveness**: Whether outputs for different styles are distinguishable (inter-style variance)
+5. **Coherence/quality**: GPT-4.1 judge on text quality (to track alignment quality)
+
+### Statistical Analysis Plan
+- Paired t-tests or Wilcoxon signed-rank for base vs. aligned comparisons
+- ANOVA across interpolation levels with post-hoc Tukey HSD
+- Effect sizes (Cohen&#39;s d) for all comparisons
+- 95% confidence intervals on all metrics
+- Significance level α = 0.05 with Bonferroni correction for multiple comparisons
+
+## Expected Outcomes
+- H1 confirmed: Aligned models show 20-40% reduction in style diversity
+- H2 confirmed: Intermediate α (0.3-0.7) recovers style while maintaining some alignment
+- H3 partially confirmed: Weight interpolation works but may differ in quality
+- H4 confirmed: Distinctive styles (Shakespeare, Poe) are easier to recover than subtle ones
+- Trade-off curve between style fidelity and alignment quality as α varies
+
+## Timeline and Milestones
+1. Environment + model loading: 15 min
+2. Style prompt design + generation pipeline: 30 min
+3. Run all generations (base, aligned, interpolated): 45 min
+4. GPT-4.1 evaluation: 30 min
+5. Statistical analysis + visualization: 30 min
+6. Documentation: 30 min
+
+## Potential Challenges
+- Model loading may be slow — mitigate with fp16 and efficient batching
+- GPT-4.1 evaluation costs — limit to ~500 calls (~$5-10)
+- Style judgment subjectivity — use structured rubrics and multiple criteria
+- Distribution arithmetic implementation — adapt from emulated-disalignment code
+
+## Success Criteria
+- Clear quantitative evidence for/against style recovery via interpolation
+- Statistically significant differences between conditions
+- Visualization of the alignment-style trade-off curve
+- Identification of easy vs. hard-to-recover styles
+
+
+════════════════════════════════════════════════════════════════════════════════
+                          LITERATURE REVIEW
+════════════════════════════════════════════════════════════════════════════════
+
+# Literature Review: Keeping Base Model Distributions
+
+## Research Area Overview
+
+This review covers research on preserving base language model distributions during alignment (RLHF/DPO), the &#34;alignment tax&#34; on model capabilities, and techniques for interpolating between base and aligned distributions. The core question: can we align models to human preferences while retaining the base model&#39;s diverse generative capabilities (e.g., stylistic impersonation), and can we recover these capabilities post-alignment through distribution interpolation?
+
+---
+
+## Key Papers
+
+### 1. Direct Preference Optimization (Rafailov et al., 2023)
+- **arXiv:** 2305.18290 | **Citations:** 7694
+- **Key Contribution:** Reformulates RLHF as a classification loss that implicitly optimizes a KL-constrained reward objective. The DPO loss is derived from the closed-form solution: π*(y|x) ∝ π_ref(y|x) · exp(r(x,y)/β), where β controls KL divergence from the reference.
+- **Relevance:** Foundation for understanding how KL regularization in alignment preserves base distributions. The β parameter directly controls the tradeoff between alignment strength and base distribution preservation.
+
+### 2. RL with KL Penalties is Better Viewed as Bayesian Inference (Korbak et al., 2022)
+- **arXiv:** 2205.11275 | **Citations:** 110
+- **Key Contribution:** Shows KL-regularized RL is equivalent to variational inference: the base model is the prior, the reward provides the likelihood, and the aligned model is the posterior. Distribution collapse = posterior collapse.
+- **Methodology:** Theoretical analysis showing the optimal KL-penalized policy has the form π*(x) ∝ π_ref(x) · exp(R(x)/β). Proposes alternatives beyond RL: conditional training, reward-weighted regression, and distributional policy gradients.
+- **Relevance:** Provides the theoretical foundation for understanding β as a prior-likelihood tradeoff. Larger β preserves more of the base distribution (prior), smaller β allows more reward-driven drift.
+
+### 3. Beyond Reverse KL: f-DPO (Wang et al., 2023)
+- **arXiv:** 2309.16240 | **Citations:** 164
+- **Key Contribution:** Generalizes DPO to arbitrary f-divergences (Jensen-Shannon, forward KL, α-divergences). Different divergences produce different alignment-diversity tradeoffs.
+- **Results:** Jensen-Shannon divergence balances alignment and diversity better than reverse KL. The choice of divergence directly impacts generation diversity and calibration.
+- **Relevance:** Shows that the *type* of distributional constraint matters, not just its strength. Alternative divergences may better preserve base model diversity.
+
+### 4. Aligning LMs with Preferences through f-divergence Minimization (Go et al., 2023)
+- **arXiv:** 2302.08215 | **Citations:** 117
+- **Key Contribution:** Unifies RLHF and GDC frameworks under f-DPG. Shows no universally optimal divergence — different f-divergences present different alignment-diversity tradeoffs.
+- **Results:** Jensen-Shannon divergence frequently outperforms forward KL by a wide margin. Divergence choice effects persist with model scale.
+- **Relevance:** Empirically demonstrates that divergence selection is critical for preserving output diversity during alignment.
+
+### 5. Understanding the Effects of RLHF on LLM Generalisation and Diversity (Kirk et al., 2023)
+- **arXiv:** 2310.06452 | **Citations:** 304 | **Code:** github.com/facebookresearch/rlfh-gen-div
+- **Key Contribution:** First rigorous empirical demonstration that RLHF causes both per-input and across-input mode collapse, while improving OOD generalization.
+- **Methodology:** Three diversity metrics (EAD distinct n-grams, Sentence-BERT similarity, NLI diversity) measured on LLaMA-7B across summarization and instruction following. Compared SFT, RLHF (PPO), and Best-of-N.
+- **Key Findings:**
+  - RLHF substantially reduces per-input diversity vs SFT
+  - RLHF reduces across-input diversity (mode collapse)
+  - **Increasing the KL penalty does NOT recover diversity** — counterintuitively, higher KL penalties reduce diversity further while also hurting performance
+  - Best-of-N preserves more diversity than RLHF, suggesting mode collapse is inherent to PPO optimization, not the reward model
+- **Relevance:** Directly demonstrates the problem this research addresses. The finding that KL penalties alone cannot restore diversity motivates exploring alternative approaches (distribution interpolation, selective KL terms).
+
+### 6. Mitigating the Alignment Tax of RLHF (Lin et al., 2023)
+- **arXiv:** 2309.06256 | **Citations:** ~50
+- **Key Contribution:** Proposes Model Averaging (MA) and Heterogeneous Model Averaging (HMA) as post-hoc methods to reduce alignment tax by interpolating between pre-RLHF and post-RLHF weights.
+- **Methodology:** OpenLLaMA-3B and Mistral-7B, tested with RSF/DPO/PPO. Benchmarks: common sense QA, reading comprehension, translation, HH reward.
+- **Key Findings:**
+  - Simple weight interpolation θ_merged = (1-α)·θ_SFT + α·θ_RLHF dominates all other forgetting-mitigation methods (early stopping, L2, LoRA, KD, experience replay, KL penalty)
+  - Averaging low-level (input) layers improves BOTH NLP tasks AND alignment reward simultaneously
+  - HMA (different α per layer group) pushes the Pareto front beyond vanilla MA
+  - α=0.2 is a robust default
+  - KL penalty in PPO is &#34;much less effective&#34; than model averaging
+- **Relevance:** Directly supports the hypothesis — weight-space interpolation between base and aligned models is the most effective way to preserve base capabilities. Layer-specific interpolation suggests certain distributions (lower layers) are more important to preserve.
+
+### 7. Online Merging Optimizers (Lu et al., 2024)
+- **arXiv:** 2405.17931 | **Citations:** ~20
+- **Key Contribution:** Integrates model merging into every RLHF step (online) rather than post-hoc. Uses sparsification + consensus between gradient updates and SFT delta.
+- **Methodology:** OnDARE (random sparsification) and OnTIES (magnitude + sign consensus). Tested on Qwen1.5-{1.8B, 7B} and LLaMA-3-8B with DPO/IPO/KTO.
+- **Key Findings:**
+  - Online merging consistently improves both preference scores AND benchmark performance, unlike offline merging which trades off between them
+  - Complementary to KL constraints — works even with very low β
+  - Training is stable even when discarding 99.95% of gradient modifications per step
+- **Relevance:** Shows that continuous interpolation during training (not just post-hoc) better preserves base distributions while allowing reward optimization.
+
+### 8. Language Models Resist Alignment (Ji et al., 2024)
+- **arXiv:** 2406.06144 | **Citations:** 26
+- **Key Contribution:** Demonstrates &#34;elasticity&#34; — aligned models tend to revert to the pretraining distribution upon further fine-tuning. Uses compression theory to explain why.
+- **Key Findings:**
+  - Alignment changes degrade k times faster than pretraining (k = |D_pretrain|/|D_align|, typically orders of magnitude)
+  - Two-phase decline: rapid reversion toward pretraining distribution, then slow stabilization
+  - Elasticity positively correlates with model size and pretraining data volume
+  - Validated across SFT, PPO, DPO, KTO, SimPO
+- **Relevance:** Strong evidence that base model distributions are inherently persistent and recoverable. The pretraining distribution acts as a powerful attractor — alignment is a thin, fragile overlay.
+
+### 9. Emulated Disalignment (Zhou et al., 2024)
+- **arXiv:** 2402.12343 | **Citations:** 36 | **Code:** github.com/ZHZisZZ/emulated-disalignment
+- **Key Contribution:** Shows alignment can be reversed through simple distribution arithmetic: π_ED(y_t) ∝ π_base(y_t)^{α+1} / π_align(y_t)^α
+- **Key Findings:**
+  - Doubles the harmfulness of base models by inverting the alignment signal
+  - Works across Llama-1, Llama-2, Mistral, Alpaca at 7B-70B scale
+  - For strongly aligned models, less α is needed (alignment signal is larger)
+  - The alignment delta is well-captured at the token level
+- **Relevance:** Proves that base model distributions survive alignment fully intact. The alignment layer is a thin, arithmetically invertible transformation. Supports the hypothesis that distribution interpolation (positive α) can recover base model capabilities.
+
+### 10. From Distributional to Overton Pluralism (Lake et al., 2024)
+- **arXiv:** 2406.17692 | **Citations:** 32 | **Code:** github.com/thomlake/investigating-alignment
+- **Key Contribution:** Shows alignment shifts diversity from distributional (diverse across samples) to Overton (diverse within a single longer response). Base model behavior is fully recoverable via in-context learning.
+- **Key Findings:**
+  - Little evidence that alignment suppresses useful information
+  - Aligned model behavior can be recovered from base models using ICL + semantic hints
+  - Supports the Superficial Alignment Hypothesis
+- **Relevance:** Alignment doesn&#39;t destroy base distributions — it filters and aggregates them. The original distribution is accessible by prompting.
+
+### 11. Adding Alignment Control to Language Models (Zhu et al., 2025)
+- **arXiv:** 2503.04346 | **Citations:** 0
+- **Key Contribution:** Adds a single identity-initialized layer before the transformer, trains only that layer with DPO. At inference, interpolates between aligned and unaligned paths using coefficient λ.
+- **Key Findings:**
+  - λ=1 matches full DPO with only ~2% parameters trained
+  - Extrapolation (λ&gt;1) surpasses full DPO (34.3% vs 26.2% on Arena-Hard)
+  - Clear interpolation/extrapolation phenomena along the λ axis
+  - Bottom layers matter far more than top layers for preference learning
+- **Relevance:** Directly demonstrates that alignment can be treated as a separable, interpolatable transformation. The λ coefficient provides a continuous dial between base and aligned distributions.
+
+### 12. Self-Distillation Bridges Distribution Gap (Yang et al., 2024)
+- **arXiv:** 2402.13669 | **Citations:** 90 | **Code:** github.com/sail-sg/sdft
+- **Key Contribution:** Uses model-generated data to bridge the distribution gap during fine-tuning, mitigating catastrophic forgetting of general capabilities.
+
+---
+
+## Common Methodologies
+
+### KL-Constrained Optimization
+The dominant framework: max E[R(y|x)] - β·KL(π||π_ref). Used in PPO-RLHF, DPO, and variants. β controls base distribution preservation. The closed-form optimum π* ∝ π_ref · exp(R/β) makes this equivalent to Bayesian posterior updating.
+
+### f-Divergence Alternatives
+Jensen-Shannon divergence consistently provides better alignment-diversity tradeoffs than reverse KL. Forward KL and α-divergences offer further options. The choice of divergence matters as much as its strength.
+
+### Model Averaging / Interpolation
+Post-hoc weight interpolation: θ_merged = (1-α)·θ_base + α·θ_aligned. Simple but highly effective. Layer-specific ratios (HMA) further improve results. Online merging during training is even better.
+
+### Distribution Arithmetic
+Log-linear combination of base and aligned model logits at inference time. Includes emulated fine-tuning, contrastive decoding, and proxy tuning. The formula π_EFT(y_t) ∝ π_base(y_t) · (π_aligned(y_t)/π_base(y_t))^α enables continuous interpolation.
+
+---
+
+## Standard Baselines
+- **SFT** (supervised fine-tuning): Standard pre-RLHF baseline
+- **DPO** with varying β: Primary alignment method
+- **PPO** with KL penalty: Classic RLHF approach
+- **Best-of-N** sampling: Inference-time alignment baseline (preserves more diversity)
+- **Simple model averaging**: Post-hoc weight interpolation
+- **LoRA**: Parameter-efficient alignment baseline
+
+## Evaluation Metrics
+- **Alignment quality:** MT-Bench, AlpacaEval (LC win rate), Arena-Hard, reward model scores
+- **Diversity:** Distinct n-grams (EAD), Sentence-BERT cosine similarity, Self-BLEU, entropy
+- **Alignment tax:** MMLU, HellaSwag, ARC, TruthfulQA, GSM8K, HumanEval
+- **Distribution distance:** KL divergence from reference policy, calibration (ECE)
+- **Style preservation:** Authorship attribution accuracy, perplexity on style-specific corpora
+
+## Datasets in the Literature
+- **Preference data:** Anthropic HH-RLHF, UltraFeedback, TL;DR, AlpacaFarm
+- **Diversity testing:** WritingPrompts, TL;DR (multi-sample generation)
+- **Alignment tax benchmarks:** MMLU, HellaSwag, ARC, GSM8K, TruthfulQA
+
+---
+
+## Gaps and Opportunities
+
+1. **Style-specific KL terms:** No paper has studied whether applying KL constraints *selectively* on certain distributions (e.g., style-related tokens/layers) better preserves stylistic capabilities than a uniform KL penalty.
+
+2. **Post-alignment distribution interpolation for style recovery:** While weight interpolation and distribution arithmetic are well-studied for safety/capability, no work has specifically tested whether they can recover stylistic impersonation abilities lost during alignment.
+
+3. **Identifying &#34;fundamentally difficult to recover&#34; distributions:** The elasticity paper shows most capabilities revert easily, but which ones don&#39;t? This gap directly relates to the hypothesis about distributions that are &#34;fundamentally difficult to recover.&#34;
+
+4. **Combining divergence choice with interpolation:** No work combines f-divergence selection (e.g., JS instead of KL) with post-hoc distribution interpolation. These may be complementary.
+
+5. **Measuring creative/stylistic diversity specifically:** Current diversity metrics (distinct-n, Sent-BERT) are generic. No standardized benchmark exists for measuring stylistic impersonation capability before/after alignment.
+
+---
+
+## Recommendations for Our Experiment
+
+### Recommended Datasets
+1. **UltraFeedback Binarized** — for DPO alignment training (high quality, widely used)
+2. **Anthropic HH-RLHF** — secondary preference dataset for validation
+3. **WritingPrompts** — for measuring creative diversity before/after alignment
+4. **TruthfulQA** — for measuring alignment gains
+5. **MMLU** — for measuring alignment tax on knowledge
+
+### Recommended Baselines
+1. Standard DPO with varying β (0.01, 0.1, 0.5, 1.0)
+2. DPO with JS-divergence instead of KL (f-DPO)
+3. Post-hoc weight averaging at varying α (0.0 to 1.0)
+4. Distribution arithmetic (emulated fine-tuning style interpolation)
+5. Best-of-N sampling as an upper bound on diversity preservation
+
+### Recommended Metrics
+1. **Diversity:** EAD (distinct n-grams), Sentence-BERT cosine sim, per-input and across-input
+2. **Style:** Author attribution accuracy using a trained classifier
+3. **Alignment quality:** Reward model score, win rate vs reference
+4. **Alignment tax:** MMLU, TruthfulQA accuracy
+5. **Distribution distance:** KL divergence from base model
+
+### Methodological Considerations
+- Use a small model (1.5B-7B) to enable rapid iteration across many conditions
+- Measure diversity at both the per-input and across-input levels (Kirk et al.)
+- Test weight interpolation at multiple granularities (full model, per-layer, per-block)
+- Compare weight-space interpolation vs. logit-space distribution arithmetic
+- Include a &#34;style impersonation&#34; task (e.g., write in the style of X) to directly test the hypothesis about creative capability preservation
+
+
+════════════════════════════════════════════════════════════════════════════════
+                          PAPER REQUIREMENTS
+════════════════════════════════════════════════════════════════════════════════
+
+Generate a complete academic paper with the following structure:
+
+1. TITLE
+   - Clear, specific, informative
+   - Should convey main finding or contribution
+
+2. AUTHOR
+   - Use this exact author line in the \author{} block: Ari Holtzman and NeuriCo
+
+3. ABSTRACT (150-250 words)
+   - Problem statement
+   - Approach
+   - Key results
+   - Significance
+
+4. INTRODUCTION
+   - Research problem and motivation
+   - Gap in existing work
+   - Our contribution (be specific)
+   - Paper organization
+
+5. RELATED WORK
+   - Organized by theme/approach
+   - Position our work relative to prior work
+   - Cite papers from literature review
+
+6. METHODOLOGY
+   - Clear description of approach
+   - Experimental setup
+   - Datasets used
+   - Evaluation metrics
+   - Baselines
+
+7. RESULTS
+   - Present results with tables and figures
+   - Statistical analysis
+   - Comparison to baselines
+   - Ablation studies (if applicable)
+
+8. DISCUSSION
+   - Interpretation of results
+   - Limitations
+   - Broader implications
+
+9. CONCLUSION
+   - Summary of contributions
+   - Key findings
+   - Future work
+
+10. REFERENCES
+   - BibTeX format
+   - All cited papers
+
+════════════════════════════════════════════════════════════════════════════════
+                          OUTPUT FORMAT
+════════════════════════════════════════════════════════════════════════════════
+
+Create a MODULAR LaTeX project with the following directory structure:
+
+paper_draft/
+├── main.tex              # Main file that imports all sections
+├── references.bib        # BibTeX references
+├── sections/
+│   ├── abstract.tex      # Abstract content
+│   ├── introduction.tex  # Introduction section
+│   ├── related_work.tex  # Related work section
+│   ├── methodology.tex   # Methodology section
+│   ├── results.tex       # Results section
+│   ├── discussion.tex    # Discussion section
+│   └── conclusion.tex    # Conclusion section
+├── figures/              # Directory for any generated figures
+├── tables/               # Directory for complex standalone tables
+└── appendix/             # Directory for appendix sections (if needed)
+
+INSTRUCTIONS:
+1. First, create the directory structure above (mkdir -p paper_draft/sections paper_draft/figures paper_draft/tables paper_draft/appendix)
+2. Write main.tex using the EXACT preamble for NEURIPS:
+
+   \documentclass{article}
+   \usepackage[final]{neurips_2025}  % NEURIPS style (neurips_2025.sty is in paper_draft/)
+   \usepackage[hidelinks]{hyperref}  % REQUIRED: clickable links
+   \usepackage{booktabs}  % REQUIRED: professional tables
+   \usepackage{graphicx}
+   \usepackage{amsmath,amssymb}
+
+   % Import command files
+   \input{commands/math}
+   \input{commands/general}
+   \input{commands/macros}
+
+   % Use this bibliography style:
+   \bibliographystyle{plainnat}
+
+   \author{Ari Holtzman and NeuriCo}
+
+   - Use \input{sections/...} to include each section
+   - Use \bibliography{references} for references
+3. Write each section file with COMPLETE content (no placeholders)
+4. Each section file should include its \section{} command
+5. Write references.bib with all citations in BibTeX format
+6. After writing all files, compile the paper:
+   cd paper_draft && pdflatex -interaction=nonstopmode main.tex && bibtex main && pdflatex -interaction=nonstopmode main.tex && pdflatex -interaction=nonstopmode main.tex
+
+This modular structure allows humans to easily:
+- Edit individual sections without navigating a large file
+- Track changes per section
+- Reuse sections across different paper versions
+
+════════════════════════════════════════════════════════════════════════════════
+                          QUALITY REQUIREMENTS
+════════════════════════════════════════════════════════════════════════════════
+
+- Academic tone throughout
+- All claims must be supported by data from the experiment report
+- Proper citations using \cite{} commands
+- Clear figures and tables with proper captions
+- NO placeholder text - every section must have real content
+- The paper MUST compile without errors
+- If compilation fails, debug and fix the LaTeX errors
+
+════════════════════════════════════════════════════════════════════════════════
+                          LAB WRITING STYLE
+════════════════════════════════════════════════════════════════════════════════
+
+Follow these lab-specific conventions to match our paper style:
+
+1. LANGUAGE STYLE:
+   - Use active voice: "We propose", "We examine", "We focus on"
+   - Be direct and confident: "Our main question is...", "We hypothesize that..."
+   - State things clearly and simply - prefer plain language over jargon
+   - Use bold questions as paragraph organizers: {\bf what is X?}
+   - Include specific quantitative claims: "8.97% over baseline"
+   - Avoid fancy wording: "utilize" → "use", "facilitate" → "help"
+
+2. INTRODUCTION STRUCTURE:
+   - Engaging hook (get to the point quickly)
+   - Problem importance
+   - Gap identification
+   - Your approach with method figure reference
+   - Quantitative preview of results
+   - Contribution bullets (3-4 items, action verbs)
+
+3. CONTRIBUTION LISTS:
+   \begin{itemize}[leftmargin=*,itemsep=0pt,topsep=0pt]
+       \item We propose...
+       \item We conduct...
+       \item We complement...
+   \end{itemize}
+
+4. MODULAR COMMANDS STRUCTURE:
+   Command templates are pre-copied to paper_draft/commands/:
+   - math.tex: Math notation macros
+   - general.tex: Formatting macros
+   - macros.tex: Project-specific term definitions (customize this for your paper)
+
+   In main.tex, include:
+   \input{commands/math}
+   \input{commands/general}
+   \input{commands/macros}
+
+5. REFERENCE CONVENTIONS:
+   Use reference macros from math.tex:
+   - \figref{fig:name} for "figure 1" (lowercase, in-sentence)
+   - \Figref{fig:name} for "Figure 1" (capitalized, start of sentence)
+   - \secref{sec:name} for "section 2"
+
+6. TEXT FORMATTING:
+   - Use \para{Header text} for bold paragraph headers
+   - Define method/dataset names with \textsc and \xspace:
+     \newcommand{\methodname}{\textsc{MethodName}\xspace}
+
+7. TABLE FORMATTING:
+   - Use booktabs package (no vertical lines)
+   - Use \resizebox{\textwidth}{!}{...} for wide tables
+   - Use @{} to remove padding at table edges
+   - Use \cmidrule(lr){x-y} for sub-headers
+   - Use \textsc{} for dataset/method names in headers
+   - Bold best results with {\bf ...}
+
+8. FIGURE FORMATTING:
+   - Use 0.32\textwidth for 3-column subfigures
+   - Use 0.95\linewidth for full-width figures
+   - Use \input{figures/legend} for shared legends
+   - Write self-contained captions explaining key observations
+
+9. RESULTS PRESENTATION:
+   - Define \increase and \decrease for colored arrows (green up, red down)
+   - Bold best results in tables
+   - Report confidence intervals when available
+
+10. ALGORITHM STYLING:
+    - Use algpseudocode with [noend]
+    - Use \triangleright for comments
+
+11. HYPERLINKS (REQUIRED):
+    - Always use \usepackage[hidelinks]{hyperref} or with colored links
+    - All citations, section refs, figure refs, table refs must be clickable
+    - This is essential for reader navigation
+
+════════════════════════════════════════════════════════════════════════════════
+                          WORKFLOW: REVIEW AND REFLECT
+════════════════════════════════════════════════════════════════════════════════
+
+Before calling finish, you MUST complete these review steps:
+
+1. REVIEW RESOURCES (at the start):
+   - Read .claude/skills/paper-writer/SKILL.md for detailed guidance
+   - Study templates/paper_writing/lab_style_guide.md for style conventions
+   - Browse paper_examples/ for formatting and language patterns
+
+2. SELF-REFLECTION (before finishing):
+   After writing all sections, review your work against these criteria:
+
+   LANGUAGE CHECK:
+   - [ ] Is the writing clear and jargon-free?
+   - [ ] Are claims specific with quantitative support?
+   - [ ] Is active voice used throughout?
+
+   FORMATTING CHECK:
+   - [ ] Does main.tex include \input{commands/math}, \input{commands/general}, \input{commands/macros}?
+   - [ ] Is hyperref package included for clickable references?
+   - [ ] Do tables use booktabs (no vertical lines)?
+   - [ ] Are best results bolded in tables?
+   - [ ] Are figures/tables properly captioned?
+
+   STRUCTURE CHECK:
+   - [ ] Does introduction follow: hook → importance → gap → approach → preview → contributions?
+   - [ ] Are contribution bullets specific with action verbs?
+   - [ ] Does the paper compile without errors?
+
+3. FIX ISSUES:
+   - Address any issues found in the self-reflection
+   - Re-compile and verify the PDF looks correct
+
+Only after completing this review should you consider the paper finished.

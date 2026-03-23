@@ -1,0 +1,9 @@
+PDF: papers/zhu2025_alignment_control.pdf
+Total pages: 16
+Pages per chunk: 4
+
+Chunks:
+  zhu2025_alignment_control_chunk_001.pdf: pages 1-4
+  zhu2025_alignment_control_chunk_002.pdf: pages 5-8
+  zhu2025_alignment_control_chunk_003.pdf: pages 9-12
+  zhu2025_alignment_control_chunk_004.pdf: pages 13-16

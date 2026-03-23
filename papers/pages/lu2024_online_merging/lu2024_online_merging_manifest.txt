@@ -1,0 +1,11 @@
+PDF: papers/lu2024_online_merging.pdf
+Total pages: 21
+Pages per chunk: 4
+
+Chunks:
+  lu2024_online_merging_chunk_001.pdf: pages 1-4
+  lu2024_online_merging_chunk_002.pdf: pages 5-8
+  lu2024_online_merging_chunk_003.pdf: pages 9-12
+  lu2024_online_merging_chunk_004.pdf: pages 13-16
+  lu2024_online_merging_chunk_005.pdf: pages 17-20
+  lu2024_online_merging_chunk_006.pdf: page 21

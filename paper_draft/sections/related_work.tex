@@ -1,0 +1,61 @@
+\section{Related Work}
+\label{sec:related}
+
+\para{Alignment and diversity loss.}
+The observation that alignment reduces output diversity has been documented across
+multiple settings. \citet{kirk2023rlhf} measured per-input and across-input mode
+collapse after RLHF on LLaMA-7B, finding substantial reductions in distinct n-gram
+diversity and Sentence-BERT similarity. Counterintuitively, increasing the KL
+penalty in PPO did not recover diversity---it reduced it further while also
+degrading performance. \citet{lin2023mitigating} characterized the broader
+``alignment tax'' on downstream benchmarks and found that simple weight-space
+interpolation between pre- and post-RLHF checkpoints ($\theta_{\text{merged}} =
+(1-\interpcoeff) \cdot \theta_{\text{SFT}} + \interpcoeff \cdot
+\theta_{\text{RLHF}}$) outperformed all other mitigation strategies, including
+KL penalties, LoRA, and experience replay. Our work differs from these studies
+in two ways: we focus specifically on \emph{stylistic} diversity (targeted
+impersonation of distinct voices) rather than generic output diversity, and we
+operate in logit space rather than weight space.
+
+\para{KL-constrained alignment.}
+DPO~\cite{rafailov2023dpo} implicitly optimizes a KL-constrained reward objective
+with the closed-form solution $\pi^*(y|x) \propto \pi_{\text{ref}}(y|x) \cdot
+\exp(r(x,y)/\beta)$, where $\beta$ controls divergence from the reference policy.
+\citet{korbak2022rl} showed that this framework is equivalent to Bayesian
+inference: the base model serves as the prior, the reward provides the likelihood,
+and the aligned model is the posterior. Larger $\beta$ preserves more of the prior
+distribution. Extensions to alternative f-divergences~\cite{wang2023fdpo,
+go2023fdivergence} demonstrated that Jensen-Shannon divergence often provides
+better alignment--diversity tradeoffs than reverse KL. We build on this
+understanding by asking: regardless of which divergence was used during training,
+can we navigate between base and aligned distributions \emph{post hoc}?
+
+\para{Distribution arithmetic and interpolation.}
+Several lines of work have explored combining base and aligned model distributions
+at inference time. \citet{zhou2024emulated} introduced emulated disalignment,
+showing that alignment can be arithmetically inverted via the log-linear
+combination $\pi_{\text{ED}}(y_t) \propto \pi_{\text{base}}(y_t)^{\interpcoeff+1}
+/ \pi_{\text{align}}(y_t)^{\interpcoeff}$, effectively doubling the harmfulness
+of base models. Contrastive decoding~\cite{li2023contrastive} and proxy
+tuning~\cite{mitchell2023proxy} similarly combine model distributions to steer
+generation. Most recently, \citet{zhu2025adding} added a single
+identity-initialized layer trained with DPO, enabling continuous interpolation
+along a $\lambda$ axis at inference time with only 2\% of parameters trained.
+\citet{lu2024online} integrated model merging into every RLHF training step,
+showing that online weight averaging improves both preference scores and benchmark
+performance. Our contribution applies distribution arithmetic specifically to
+stylistic capabilities, testing whether these distributions are continuously
+navigable.
+
+\para{Superficial Alignment Hypothesis.}
+\citet{zhou2023lima} proposed that alignment primarily teaches format and tone
+rather than new knowledge, suggesting that the base model's capabilities persist
+largely intact. \citet{ji2024resistance} provided mechanistic evidence: aligned
+models exhibit ``elasticity,'' reverting toward the pretraining distribution upon
+further fine-tuning at a rate proportional to the ratio of pretraining to alignment
+data. \citet{lake2024distributional} further showed that alignment shifts diversity
+from distributional (diverse across samples) to Overton (diverse within a single
+response), and that base model behavior is recoverable via in-context learning.
+Our results provide direct evidence for the Superficial Alignment Hypothesis in the
+domain of stylistic generation: base distributions survive alignment, but alignment
+adds a crucial \emph{addressing mechanism} for accessing them controllably.

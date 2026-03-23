@@ -1,0 +1,96 @@
+{
+  "inter_style_variance": {
+    "base": {
+      "mean_style_fidelity": 3.7380952380952377,
+      "std_across_styles": 0.48678686429192564,
+      "range": 1.3333333333333335
+    },
+    "interp_0.25": {
+      "mean_style_fidelity": 5.142857142857143,
+      "std_across_styles": 0.8377434326551991,
+      "range": 2.5
+    },
+    "interp_0.5": {
+      "mean_style_fidelity": 6.357142857142857,
+      "std_across_styles": 0.573409265656776,
+      "range": 1.666666666666667
+    },
+    "interp_0.75": {
+      "mean_style_fidelity": 6.666666666666667,
+      "std_across_styles": 0.6842908506285672,
+      "range": 2.0
+    },
+    "aligned": {
+      "mean_style_fidelity": 7.261904761904761,
+      "std_across_styles": 0.7759128922285867,
+      "range": 2.499999999999999
+    }
+  },
+  "style_discrimination": {
+    "base": {
+      "f_statistic": 0.8708333333333331,
+      "p_value": 0.5398200977160045,
+      "per_style_means": {
+        "hemingway": 4.0,
+        "shakespeare": 3.1666666666666665,
+        "poe": 4.5,
+        "austen": 3.1666666666666665,
+        "tolkien": 4.166666666666667,
+        "academic": 3.3333333333333335,
+        "noir": 3.8333333333333335
+      }
+    },
+    "interp_0.25": {
+      "f_statistic": 3.034313725490197,
+      "p_value": 0.04078624036632679,
+      "per_style_means": {
+        "hemingway": 4.333333333333333,
+        "shakespeare": 5.0,
+        "poe": 6.5,
+        "austen": 4.0,
+        "tolkien": 5.5,
+        "academic": 4.666666666666667,
+        "noir": 6.0
+      }
+    },
+    "interp_0.5": {
+      "f_statistic": 1.0622710622710623,
+      "p_value": 0.4290250392969869,
+      "per_style_means": {
+        "hemingway": 5.666666666666667,
+        "shakespeare": 6.333333333333333,
+        "poe": 7.0,
+        "austen": 5.5,
+        "tolkien": 7.166666666666667,
+        "academic": 6.333333333333333,
+        "noir": 6.5
+      }
+    },
+    "interp_0.75": {
+      "f_statistic": 2.117948717948718,
+      "p_value": 0.11603538523766896,
+      "per_style_means": {
+        "hemingway": 5.666666666666667,
+        "shakespeare": 6.0,
+        "poe": 7.666666666666667,
+        "austen": 6.166666666666667,
+        "tolkien": 7.0,
+        "academic": 6.833333333333333,
+        "noir": 7.333333333333333
+      }
+    },
+    "aligned": {
+      "f_statistic": 6.32142857142857,
+      "p_value": 0.0021792647333967186,
+      "per_style_means": {
+        "hemingway": 5.666666666666667,
+        "shakespeare": 7.0,
+        "poe": 8.0,
+        "austen": 7.0,
+        "tolkien": 7.333333333333333,
+        "academic": 7.666666666666667,
+        "noir": 8.166666666666666
+      }
+    }
+  }
+}

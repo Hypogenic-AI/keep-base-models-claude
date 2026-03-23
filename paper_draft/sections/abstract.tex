@@ -1,0 +1,23 @@
+\begin{abstract}
+Alignment via instruction tuning is widely believed to reduce the diversity
+of language model outputs, imposing an ``alignment tax'' on stylistic and
+creative capabilities. We test this assumption directly by measuring
+stylistic impersonation ability across seven literary and functional styles
+in a paired base/aligned model setup (\qwenbase and \qweninst). We then
+apply logit-space distribution arithmetic---linearly interpolating base and
+aligned model logits at each decoding step---to investigate whether base
+model distributions survive alignment and remain continuously navigable.
+Our results challenge the naive alignment tax narrative: the aligned model
+\emph{significantly outperforms} the base model on style fidelity
+($7.26$ vs.\ $3.74$, $p < 0.0001$), and is the only condition that
+reliably differentiates between target styles (ANOVA $F\!=\!6.32$,
+$p\!=\!0.002$). Distribution arithmetic produces smooth, monotonic
+interpolation between base and aligned behavior, confirming that base
+distributions are neither destroyed nor discontinuously altered by
+alignment. We reframe the alignment--diversity tradeoff: base models
+possess diverse latent distributions but lack the controllability to
+access them on demand; alignment adds an addressing mechanism
+(instruction following) that unlocks this access. The relevant axis is
+not preservation versus loss, but controllability versus distributional
+freedom.
+\end{abstract}

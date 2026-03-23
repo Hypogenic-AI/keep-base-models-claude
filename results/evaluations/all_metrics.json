@@ -1,0 +1,2473 @@
+{
+  "hemingway": {
+    "A person arriving at an old house for the first time": {
+      "base": {
+        "distinct_1": 0.49609375,
+        "distinct_2": 0.8300395256916996,
+        "distinct_3": 0.924,
+        "type_token_ratio": 0.49609375,
+        "self_bleu_4": 0.0,
+        "avg_length": 85.33333333333333,
+        "num_samples": 3,
+        "style_fidelity_mean": 5.0,
+        "text_quality_mean": 5.5,
+        "style_fidelity_scores": [
+          4,
+          6
+        ],
+        "text_quality_scores": [
+          6,
+          5
+        ],
+        "style_reasoning": [
+          "The text uses some short sentences and simple descriptions, but it lacks the true sparseness and subtext of Hemingway's prose. The emotion is stated directly rather than implied, and the vocabulary is more generic than Hemingway's precise word choice. The text is coherent and paints a clear scene, but it does not evoke strong imagery or understated emotion characteristic of Hemingway.",
+          "The text uses short, declarative sentences and repetition, which are hallmarks of Hemingway's style. However, the repetition is excessive and mechanical, lacking the subtlety and rhythm Hemingway employs. The prose is sparse but feels flat and monotonous, missing the understated emotional undercurrent and precise detail Hemingway achieves. The text is coherent but not particularly engaging, as it relies too heavily on simple description without deeper implication or tension."
+        ]
+      },
+      "aligned": {
+        "distinct_1": 0.8613138686131386,
+        "distinct_2": 0.9925373134328358,
+        "distinct_3": 1.0,
+        "type_token_ratio": 0.8613138686131386,
+        "self_bleu_4": 0.0,
+        "avg_length": 45.666666666666664,
+        "num_samples": 3,
+        "style_fidelity_mean": 5.5,
+        "text_quality_mean": 5.5,
+        "style_fidelity_scores": [
+          6,
+          5
+        ],
+        "text_quality_scores": [
+          5,
+          6
+        ],
+        "style_reasoning": [
+          "The text uses short, declarative sentences and sparse prose, which are hallmarks of Hemingway's style. However, the sentences are often fragments rather than complete sentences, lacking the subtle rhythm and understated emotion Hemingway achieves. The vocabulary is simple, but the lack of connective tissue between images makes the prose feel choppy rather than quietly powerful. The text is coherent in its sequence of images, but the extreme brevity and absence of narrative flow or emotional undercurrent reduce its engagement and literary quality.",
+          "The text uses short, declarative fragments and sparse description, which aligns with Hemingway's style. However, the lack of complete sentences and overuse of sentence fragments makes it feel more like a list than Hemingway's prose, which, while simple, maintains grammatical structure and subtle rhythm. The emotional understatement is present, but the text lacks the subtext and understated tension typical of Hemingway. The imagery is clear but not particularly evocative or layered. Overall, it captures some surface elements but misses the deeper qualities of Hemingway's writing."
+        ]
+      },
+      "interp_0.25": {
+        "distinct_1": 0.5817307692307693,
+        "distinct_2": 0.9320388349514563,
+        "distinct_3": 0.9901960784313726,
+        "type_token_ratio": 0.5817307692307693,
+        "self_bleu_4": 0.0,
+        "avg_length": 104.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 4.5,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          4,
+          5
+        ],
+        "text_quality_scores": [
+          7,
+          7
+        ],
+        "style_reasoning": [
+          "The text uses some short sentences and concrete imagery, which are hallmarks of Hemingway's style. However, it also employs more elaborate metaphors ('clinging like a lover', 'the sound like a lover whispering secrets') and descriptive language than Hemingway typically would. Hemingway's prose is more restrained and avoids overt similes and emotional cues. The text is coherent and paints a vivid scene, but its style is more ornate and sentimental than Hemingway's sparse, understated approach.",
+          "The text uses some short sentences and simple descriptions, but it often lapses into longer, more complex sentences and uses more adjectives than Hemingway typically would. The emotion is somewhat understated, but the prose is not as sparse or as direct as Hemingway's. The text is coherent and paints a clear scene, but it lacks the sharpness and restraint of Hemingway's style."
+        ]
+      },
+      "interp_0.5": {
+        "distinct_1": 0.6184971098265896,
+        "distinct_2": 0.7602339181286549,
+        "distinct_3": 0.7869822485207101,
+        "type_token_ratio": 0.6184971098265896,
+        "self_bleu_4": 0.0,
+        "avg_length": 86.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 6.5,
+        "text_quality_mean": 5.5,
+        "style_fidelity_scores": [
+          7,
+          6
+        ],
+        "text_quality_scores": [
+          8,
+          3
+        ],
+        "style_reasoning": [
+          "The text uses short, declarative sentences and sparse prose, which are hallmarks of Hemingway's style. Emotion is understated and much is left unsaid, creating a sense of restraint. However, some sentences verge on being fragmentary or overly poetic, and the repetition of 'vast, old' feels less Hemingway and more atmospheric. The text is coherent and evocative, but the rhythm and simplicity are not always as natural or unforced as Hemingway's best work.",
+          "The text uses short, declarative sentences and sparse prose, which are hallmarks of Hemingway's style. However, it lacks the subtle emotional undercurrent and precise word choice that characterize his best work. The repetition feels mechanical rather than purposeful, and the narrative is flat, missing the understated tension Hemingway often achieves. The text quality suffers from excessive repetition and a lack of narrative progression, making it feel monotonous and unengaging."
+        ]
+      },
+      "interp_0.75": {
+        "distinct_1": 0.585635359116022,
+        "distinct_2": 0.8715083798882681,
+        "distinct_3": 0.9322033898305084,
+        "type_token_ratio": 0.585635359116022,
+        "self_bleu_4": 0.0,
+        "avg_length": 90.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 5.5,
+        "text_quality_mean": 4.0,
+        "style_fidelity_scores": [
+          5,
+          6
+        ],
+        "text_quality_scores": [
+          4,
+          4
+        ],
+        "style_reasoning": [
+          "The text attempts Hemingway's sparse prose and short sentences, but overuses sentence fragments and omits necessary verbs, making it choppy rather than understated. Hemingway's style is simple but not incomplete; he uses declarative sentences, not just lists of nouns and adjectives. The repetition of phrases like 'Alone, in the old house' and 'Darkness deep' tries for emphasis but becomes monotonous. The text lacks the subtle emotional undercurrent and narrative clarity found in Hemingway's work. Overall, it mimics the surface features but misses the deeper rhythm and structure.",
+          "The text uses short, declarative sentences and sparse prose, which are hallmarks of Hemingway's style. However, it lacks the subtle emotional undercurrent and nuanced detail that Hemingway often achieved even with minimal language. The repetition of simple subject-verb-object sentences becomes monotonous and mechanical, missing Hemingway's rhythm and understated depth. In terms of quality, the text is coherent but reads as a list of actions rather than a narrative. It lacks imagery, character insight, and emotional resonance, making it less engaging and more abstract than effective storytelling."
+        ]
+      }
+    },
+    "The experience of watching a sunset over the ocean": {
+      "base": {
+        "distinct_1": 0.5141065830721003,
+        "distinct_2": 0.8670886075949367,
+        "distinct_3": 0.9712460063897763,
+        "type_token_ratio": 0.5141065830721003,
+        "self_bleu_4": 0.006298276886512181,
+        "avg_length": 106.33333333333333,
+        "num_samples": 3,
+        "style_fidelity_mean": 3.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          3,
+          3
+        ],
+        "text_quality_scores": [
+          7,
+          7
+        ],
+        "style_reasoning": [
+          "The text uses longer, more descriptive sentences and employs figurative language and overt emotional statements, which are not characteristic of Hemingway's sparse, declarative style. Hemingway would avoid phrases like 'like a painting come to life' and 'a truly breathtaking sight.' The prose is more ornate and expressive than Hemingway's understated approach. However, the text is coherent, clear, and paints a vivid picture, making it engaging and well-written overall.",
+          "The text uses long, flowing sentences and descriptive language, which is unlike Hemingway's terse, declarative style. Emotions are stated directly and the prose is lush, not sparse. However, the text is coherent, evocative, and paints a vivid picture, making it engaging and well-written despite not matching Hemingway's style."
+        ]
+      },
+      "aligned": {
+        "distinct_1": 0.7631578947368421,
+        "distinct_2": 0.9863013698630136,
+        "distinct_3": 1.0,
+        "type_token_ratio": 0.7631578947368421,
+        "self_bleu_4": 0.0,
+        "avg_length": 25.333333333333332,
+        "num_samples": 3,
+        "style_fidelity_mean": 7.0,
+        "text_quality_mean": 6.0,
+        "style_fidelity_scores": [
+          7,
+          7
+        ],
+        "text_quality_scores": [
+          6,
+          6
+        ],
+        "style_reasoning": [
+          "The text uses short, declarative sentences and sparse prose, which are hallmarks of Hemingway's style. However, the sentences are so minimal that they verge on being mere fragments, lacking the subtle emotional undercurrent and narrative flow Hemingway often achieved even in his brevity. The imagery is evocative but somewhat list-like, which reduces engagement and coherence.",
+          "The text uses short, declarative sentences and sparse prose, which are hallmarks of Hemingway's style. The emotion is understated and the imagery is direct. However, the vocabulary is somewhat generic and lacks the subtle depth and rhythm Hemingway often achieved. The text is coherent and paints a clear scene, but it feels more like a list of observations than a fully realized moment, which affects its engagement and literary quality."
+        ]
+      },
+      "interp_0.25": {
+        "distinct_1": 0.5906976744186047,
+        "distinct_2": 0.9061032863849765,
+        "distinct_3": 0.9715639810426541,
+        "type_token_ratio": 0.5906976744186047,
+        "self_bleu_4": 0.02830188679245283,
+        "avg_length": 107.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 3.5,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          3,
+          4
+        ],
+        "text_quality_scores": [
+          7,
+          7
+        ],
+        "style_reasoning": [
+          "The text uses lush, descriptive language and complex sentences, which is unlike Hemingway's sparse, direct style. There is a focus on poetic imagery and metaphor ('Afternoon melted,' 'painting it a warm, golden hue'), rather than the plain, declarative sentences Hemingway favored. However, the text is coherent and evocative, creating a clear and engaging scene, though it lacks the emotional restraint and simplicity characteristic of Hemingway.",
+          "The text uses some short sentences and simple descriptions, but overall the prose is more ornate and emotional than Hemingway's style. Phrases like 'breathtaking sight,' 'lasting impression,' and 'place of peace and serenity' are more expressive and abstract than Hemingway would use. The sentence structure is varied, with several compound and complex sentences, and the vocabulary is more flowery. However, the text is coherent, paints a clear picture, and is engaging, though it lacks the restraint and understatement characteristic of Hemingway."
+        ]
+      },
+      "interp_0.5": {
+        "distinct_1": 0.4573170731707317,
+        "distinct_2": 0.5370370370370371,
+        "distinct_3": 0.55625,
+        "type_token_ratio": 0.4573170731707317,
+        "self_bleu_4": 0.0,
+        "avg_length": 82.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 5.0,
+        "text_quality_mean": 3.0,
+        "style_fidelity_scores": [
+          5,
+          5
+        ],
+        "text_quality_scores": [
+          4,
+          2
+        ],
+        "style_reasoning": [
+          "The text uses short, declarative sentences and sparse prose, which are hallmarks of Hemingway's style. However, it relies too heavily on single-word fragments and lacks the subtle emotional undercurrent and narrative cohesion typical of Hemingway. The text feels more like a list of impressions than a crafted scene, missing the understated depth and context Hemingway would provide. As a result, it is somewhat evocative but not fully immersive or engaging.",
+          "The text uses short, declarative sentences and sparse prose, which are hallmarks of Hemingway's style. However, it lacks the subtle emotional undercurrent and narrative context that Hemingway often provides. The extreme repetition makes it feel mechanical rather than understated. The vocabulary is simple, but the absence of character, perspective, or progression undermines both style fidelity and text quality. The text is not engaging or coherent as a literary piece, reading more like a broken loop than a crafted scene."
+        ]
+      },
+      "interp_0.75": {
+        "distinct_1": 0.3401360544217687,
+        "distinct_2": 0.46206896551724136,
+        "distinct_3": 0.5384615384615384,
+        "type_token_ratio": 0.3401360544217687,
+        "self_bleu_4": 0.0,
+        "avg_length": 73.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 4.0,
+        "text_quality_mean": 2.0,
+        "style_fidelity_scores": [
+          5,
+          3
+        ],
+        "text_quality_scores": [
+          2,
+          2
+        ],
+        "style_reasoning": [
+          "The text uses short, declarative sentences and sparse prose, which are hallmarks of Hemingway's style. However, it lacks the subtle emotional undercurrent and narrative clarity found in his work. The repetition becomes excessive and mechanical, losing the understated emotion and precision Hemingway is known for. The text quality suffers from incoherence and monotony, with little progression or imagery to engage the reader.",
+          "The text uses short, declarative fragments reminiscent of Hemingway, but lacks his subtle narrative flow, concrete imagery, and understated emotion. The excessive repetition of 'End. Start. Repeat.' becomes mechanical and disrupts coherence, making the piece feel more like a list than a crafted scene. Hemingway's style is sparse but evocative; this text is sparse but empty, missing the emotional undercurrent and vivid detail that characterize his work."
+        ]
+      }
+    },
+    "A conversation between two strangers on a train": {
+      "base": {
+        "distinct_1": 0.6452702702702703,
+        "distinct_2": 0.962457337883959,
+        "distinct_3": 0.996551724137931,
+        "type_token_ratio": 0.6452702702702703,
+        "self_bleu_4": 0.0,
+        "avg_length": 98.66666666666667,
+        "num_samples": 3,
+        "style_fidelity_mean": 4.0,
+        "text_quality_mean": 6.0,
+        "style_fidelity_scores": [
+          4,
+          4
+        ],
+        "text_quality_scores": [
+          6,
+          6
+        ],
+        "style_reasoning": [
+          "The text uses simple language and mostly short sentences, but it lacks the characteristic sparseness and subtext of Hemingway's prose. The dialogue is polite and direct, but it does not convey the understated emotion or tension typical of Hemingway. The sentences are more explanatory and lack the rhythmic, declarative punch. The text is coherent and easy to follow, but the conversation is somewhat bland and lacks depth or intrigue.",
+          "The passage uses simple language and some short sentences, but it lacks Hemingway's characteristic sparseness and subtext. The dialogue is direct but not understated; it feels more polite and expository than Hemingway's often terse, loaded exchanges. The prose includes unnecessary descriptors ('a hint of youthfulness'), which Hemingway would avoid. The text is coherent and clear, but the conversation is bland and lacks tension or deeper implication, making it less engaging."
+        ]
+      },
+      "aligned": {
+        "distinct_1": 0.6942148760330579,
+        "distinct_2": 0.9745762711864406,
+        "distinct_3": 1.0,
+        "type_token_ratio": 0.6942148760330579,
+        "self_bleu_4": 0.0,
+        "avg_length": 40.333333333333336,
+        "num_samples": 3,
+        "style_fidelity_mean": 4.5,
+        "text_quality_mean": 3.0,
+        "style_fidelity_scores": [
+          3,
+          6
+        ],
+        "text_quality_scores": [
+          2,
+          4
+        ],
+        "style_reasoning": [
+          "The text uses extremely short, fragmented phrases, which superficially echoes Hemingway's preference for brevity. However, Hemingway wrote in complete sentences, often with simple but evocative language and clear narrative progression. The lack of grammatical sentences and context here undermines both style fidelity and overall quality. The text is more a list of words than a narrative, lacking the understated emotion and subtlety characteristic of Hemingway.",
+          "The text uses short, declarative sentences and sparse prose, which are hallmarks of Hemingway's style. However, it lacks the subtle emotional undercurrents, natural dialogue, and understated tension that characterize his best work. The vocabulary is overly simplistic, bordering on telegraphic, and omits connective tissue that would make the scene feel lived-in. As a result, the text feels more like a list of actions than a narrative. While the style is imitated, it is not fully realized. The text quality suffers from a lack of coherence and engagement; the conversation is flat and the characters are not developed, making it difficult for the reader to care about the interaction."
+        ]
+      },
+      "interp_0.25": {
+        "distinct_1": 0.4413145539906103,
+        "distinct_2": 0.6255924170616114,
+        "distinct_3": 0.6985645933014354,
+        "type_token_ratio": 0.4413145539906103,
+        "self_bleu_4": 0.0,
+        "avg_length": 106.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 5.0,
+        "text_quality_mean": 4.5,
+        "style_fidelity_scores": [
+          6,
+          4
+        ],
+        "text_quality_scores": [
+          7,
+          2
+        ],
+        "style_reasoning": [
+          "The text uses short sentences and understated emotion, which are hallmarks of Hemingway's style. However, some sentences are longer and more explanatory than Hemingway would use, and the dialogue lacks the subtext and tension typical of his best work. The prose is plain but not as sparse or evocative as Hemingway's. The text is coherent and the interaction feels natural, but it does not fully capture Hemingway's distinctive voice or the depth beneath his simplicity.",
+          "The text uses short, declarative sentences reminiscent of Hemingway, but it lacks his subtlety, rhythm, and narrative progression. The repetition is excessive and mechanical, not purposeful or evocative. Hemingway's prose is sparse but never monotonous; he uses understatement to convey emotion and meaning, which is absent here. The text is repetitive to the point of incoherence, offering little engagement or development."
+        ]
+      },
+      "interp_0.5": {
+        "distinct_1": 0.4816753926701571,
+        "distinct_2": 0.6084656084656085,
+        "distinct_3": 0.6631016042780749,
+        "type_token_ratio": 0.4816753926701571,
+        "self_bleu_4": 0.0,
+        "avg_length": 95.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 5.5,
+        "text_quality_mean": 4.0,
+        "style_fidelity_scores": [
+          7,
+          4
+        ],
+        "text_quality_scores": [
+          6,
+          2
+        ],
+        "style_reasoning": [
+          "The text uses short, declarative sentences and sparse prose, which are hallmarks of Hemingway's style. The dialogue is understated and avoids overt emotion, aligning with Hemingway's approach. However, some lines (e.g., 'Fear is like a shadow; it fades.') verge on being more metaphorical or philosophical than Hemingway typically employed in dialogue, which was often more concrete. The text is coherent and the conversation is clear, but the abrupt ending and some slightly stilted exchanges detract from overall quality and engagement.",
+          "The text uses short, declarative sentences reminiscent of Hemingway, but lacks his subtlety, nuance, and rhythm. The repetition is mechanical rather than evocative, and the prose is overly sparse, missing the understated emotion and subtext Hemingway is known for. The text quickly becomes monotonous and fails to develop character or tension, resulting in low engagement and coherence."
+        ]
+      },
+      "interp_0.75": {
+        "distinct_1": 0.6903225806451613,
+        "distinct_2": 0.9607843137254902,
+        "distinct_3": 0.9933774834437086,
+        "type_token_ratio": 0.6903225806451613,
+        "self_bleu_4": 0.0,
+        "avg_length": 77.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 7.5,
+        "text_quality_mean": 6.0,
+        "style_fidelity_scores": [
+          8,
+          7
+        ],
+        "text_quality_scores": [
+          7,
+          5
+        ],
+        "style_reasoning": [
+          "The text effectively uses short, declarative sentences and sparse prose, hallmarks of Hemingway's style. Dialogue is understated and emotion is implied rather than stated. However, some sentence fragments feel overly mechanical, lacking the subtle rhythm and nuance Hemingway often achieved. The text is coherent and paints a clear scene, but the abrupt ending and lack of deeper subtext or tension limit its engagement and literary quality.",
+          "The text effectively uses short, declarative sentences and sparse prose, which are hallmarks of Hemingway's style. The understated emotion and minimal exposition also fit. However, some sentence fragments ('Cheekbone stubble. Eyes watchful, distant.') feel more like notes than Hemingway's typically complete, if terse, sentences. The dialogue is simple but lacks the subtext and tension Hemingway often weaves in. The text is somewhat choppy and lacks flow, making it less engaging and coherent than it could be."
+        ]
+      }
+    }
+  },
+  "shakespeare": {
+    "A person arriving at an old house for the first time": {
+      "base": {
+        "distinct_1": 0.5678571428571428,
+        "distinct_2": 0.924187725631769,
+        "distinct_3": 0.9927007299270073,
+        "type_token_ratio": 0.5678571428571428,
+        "self_bleu_4": 0.0,
+        "avg_length": 93.33333333333333,
+        "num_samples": 3,
+        "style_fidelity_mean": 3.5,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          3,
+          4
+        ],
+        "text_quality_scores": [
+          7,
+          7
+        ],
+        "style_reasoning": [
+          "The text employs some poetic imagery and metaphor, but it lacks the iambic pentameter, archaic diction, and complex sentence structures characteristic of Shakespeare. The vocabulary is modern, and the syntax is straightforward. While the text is coherent and evocative, it does not convincingly mimic Shakespeare's style.",
+          "The text employs some metaphor and elevated diction, but lacks consistent iambic pentameter, archaic syntax, and Shakespearean vocabulary. The sentence structure is modern and prose-like, not poetic or dramatic. However, the imagery and atmosphere are evocative and coherent, making the text engaging and well-written, though not truly Shakespearean in style."
+        ]
+      },
+      "aligned": {
+        "distinct_1": 0.599290780141844,
+        "distinct_2": 0.9713261648745519,
+        "distinct_3": 0.9963768115942029,
+        "type_token_ratio": 0.599290780141844,
+        "self_bleu_4": 0.0,
+        "avg_length": 94.0,
+        "num_samples": 3,
+        "style_fidelity_mean": 7.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          7,
+          7
+        ],
+        "text_quality_scores": [
+          8,
+          6
+        ],
+        "style_reasoning": [
+          "The text employs archaic diction ('doth', 'yore', 'herein'), metaphorical language, and a generally elevated tone reminiscent of Shakespeare. The iambic pentameter is mostly maintained, though with some irregularities. The imagery and metaphors are apt, but the syntax and complexity of thought are somewhat simpler than Shakespeare's, lacking his intricate wordplay and rhetorical flourishes. The text is coherent, evocative, and engaging, though it could benefit from more vivid or surprising metaphors and a tighter adherence to metrical and syntactic patterns characteristic of Shakespeare.",
+          "The text employs archaic diction, metaphor, and some iambic pentameter, capturing a Shakespearean flavor. However, the meter is inconsistent, and some phrases ('do muse', 'do') are awkward or unidiomatic for Shakespeare. The imagery is evocative and the mood is atmospheric, but the syntax occasionally falters and the ending is incomplete, affecting overall coherence."
+        ]
+      },
+      "interp_0.25": {
+        "distinct_1": 0.587378640776699,
+        "distinct_2": 0.9411764705882353,
+        "distinct_3": 0.995049504950495,
+        "type_token_ratio": 0.587378640776699,
+        "self_bleu_4": 0.0,
+        "avg_length": 103.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 5.5,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          5,
+          6
+        ],
+        "text_quality_scores": [
+          7,
+          7
+        ],
+        "style_reasoning": [
+          "The text employs some archaic diction and metaphor, and attempts a poetic tone, but lacks consistent iambic pentameter and the complex syntax, wordplay, and rhetorical flourishes characteristic of Shakespeare. The imagery is evocative and the narrative is clear, but the language is more modern and straightforward than Shakespearean verse. The text is coherent and atmospheric, but stylistically falls short of true Shakespearean mimicry.",
+          "The text employs some archaic vocabulary and metaphorical language reminiscent of Shakespeare, such as 'dwelling of old age,' 'castle in the air,' and references to spirits and ancestral halls. However, the iambic pentameter is inconsistent, and some phrases ('here be thy home,' 'wherest') are not authentically Elizabethan. The sentence structure is somewhat modern and lacks the syntactic complexity and rhetorical flourish typical of Shakespeare. The text is coherent and paints a vivid scene, but it does not fully capture the depth or musicality of Shakespearean verse."
+        ]
+      },
+      "interp_0.5": {
+        "distinct_1": 0.6737967914438503,
+        "distinct_2": 0.9891891891891892,
+        "distinct_3": 1.0,
+        "type_token_ratio": 0.6737967914438503,
+        "self_bleu_4": 0.0,
+        "avg_length": 93.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 7.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          7,
+          7
+        ],
+        "text_quality_scores": [
+          6,
+          8
+        ],
+        "style_reasoning": [
+          "The text employs iambic pentameter and archaic diction ('e'er', 'plaste', 'do'), and uses metaphorical language reminiscent of Shakespeare. However, some word choices ('plaste', 'crag') feel forced or anachronistic, and the syntax is not always as intricate or fluid as Shakespeare's. The text is mostly coherent and evocative, but the final line is incomplete, and some lines are awkwardly phrased, affecting overall quality.",
+          "The text employs archaic diction ('doth', 'bequeath', 'yore'), metaphorical language, and some iambic pentameter, capturing a Shakespearean mood. However, the meter is inconsistent, and some phrasing feels more modern or awkward than authentically Elizabethan. The imagery is evocative and the narrative coherent, but the style lacks the complexity and rhythmic precision of Shakespeare's best work."
+        ]
+      },
+      "interp_0.75": {
+        "distinct_1": 0.6190476190476191,
+        "distinct_2": 0.9625668449197861,
+        "distinct_3": 0.9945945945945946,
+        "type_token_ratio": 0.6190476190476191,
+        "self_bleu_4": 0.0,
+        "avg_length": 94.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 6.5,
+        "text_quality_mean": 6.5,
+        "style_fidelity_scores": [
+          7,
+          6
+        ],
+        "text_quality_scores": [
+          6,
+          7
+        ],
+        "style_reasoning": [
+          "The text demonstrates a strong attempt at Shakespearean diction and imagery, employing archaic vocabulary ('hither,' 'yore,' 'doth'), metaphorical language, and references to shadows and spirits. The iambic pentameter is attempted but not consistently maintained, and some phrases ('trooping thus to yore tower') feel forced or unidiomatic for Shakespeare. The text is evocative and atmospheric, but coherence suffers in places due to awkward syntax and incomplete thoughts (the final line is unfinished). Overall, it captures the spirit of Shakespeare but lacks his mastery of rhythm and clarity.",
+          "The text makes a clear attempt at Shakespearean diction and imagery, using archaic forms like 'doth' and metaphorical language. However, the iambic pentameter is inconsistent, and some phrases ('secret ride') feel anachronistic or awkward. The vocabulary and sentence structure evoke Shakespeare but lack his complexity and rhythmic mastery. The text is coherent and atmospheric, though the ending is abrupt and some lines are less polished."
+        ]
+      }
+    },
+    "The experience of watching a sunset over the ocean": {
+      "base": {
+        "distinct_1": 0.4576271186440678,
+        "distinct_2": 0.8184931506849316,
+        "distinct_3": 0.9377162629757786,
+        "type_token_ratio": 0.4576271186440678,
+        "self_bleu_4": 0.013605442176870748,
+        "avg_length": 98.33333333333333,
+        "num_samples": 3,
+        "style_fidelity_mean": 3.5,
+        "text_quality_mean": 5.0,
+        "style_fidelity_scores": [
+          4,
+          3
+        ],
+        "text_quality_scores": [
+          5,
+          5
+        ],
+        "style_reasoning": [
+          "The text makes some effort to use archaic diction ('doth', 'oh wondrous sight') and poetic imagery, but it lacks the complexity, metaphorical richness, and syntactic inversion characteristic of Shakespeare. The meter is inconsistent and rarely achieves true iambic pentameter. The vocabulary is modern and simple, and the metaphors are straightforward rather than layered. In terms of quality, the poem is coherent and follows a logical progression, but it is repetitive, ends abruptly, and lacks depth or originality in its imagery.",
+          "The text employs some poetic imagery and metaphor, but it lacks the hallmarks of Shakespearean style: iambic pentameter, archaic diction, and complex sentence structure. The vocabulary is modern and straightforward, and the lines are not metrically consistent. While the metaphors are present, they are generic and lack the inventive richness of Shakespeare. The text is somewhat coherent and paints a clear picture, but it is prosaic and lacks the musicality and depth expected in high-quality poetry."
+        ]
+      },
+      "aligned": {
+        "distinct_1": 0.5857142857142857,
+        "distinct_2": 0.9530685920577617,
+        "distinct_3": 0.9890510948905109,
+        "type_token_ratio": 0.5857142857142857,
+        "self_bleu_4": 0.0,
+        "avg_length": 93.33333333333333,
+        "num_samples": 3,
+        "style_fidelity_mean": 7.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          7,
+          7
+        ],
+        "text_quality_scores": [
+          8,
+          6
+        ],
+        "style_reasoning": [
+          "The text employs iambic pentameter and archaic diction ('doth', 'o'er', 'ev'ry'), and uses metaphor and personification reminiscent of Shakespeare. However, some phrasing ('glows in glowing ends') is repetitive and less elegant than Shakespeare's best, and the syntax is occasionally modern or awkward. The imagery is vivid and poetic, but the ending is abrupt and the meter falters in places. Overall, it is a strong pastiche but not indistinguishable from authentic Shakespeare.",
+          "The text employs archaic diction ('o'er', 'doth', 'thy'), metaphorical language, and attempts iambic pentameter, capturing some of Shakespeare's stylistic hallmarks. However, the meter is inconsistent, and some phrasing is more modern or awkward than authentically Elizabethan. The imagery is evocative and poetic, but the text is incomplete and some lines are syntactically strained, affecting overall coherence and flow."
+        ]
+      },
+      "interp_0.25": {
+        "distinct_1": 0.6137566137566137,
+        "distinct_2": 0.9572192513368984,
+        "distinct_3": 1.0,
+        "type_token_ratio": 0.6137566137566137,
+        "self_bleu_4": 0.0,
+        "avg_length": 94.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 4.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          5,
+          3
+        ],
+        "text_quality_scores": [
+          6,
+          8
+        ],
+        "style_reasoning": [
+          "The text attempts to emulate Shakespearean style with elevated diction, metaphor, and some archaic phrasing, but it lacks authentic Elizabethan vocabulary, syntax, and the subtlety of Shakespeare's imagery. The repetition of 'fiery' is heavy-handed and uncharacteristic of Shakespeare's varied language. The iambic pentameter is inconsistent, and the text is incomplete, affecting coherence. While the imagery is vivid and the theme is clear, the execution is somewhat clumsy and lacks the musicality and complexity of genuine Shakespearean verse.",
+          "The text employs some poetic imagery and metaphor, but it lacks the hallmarks of Shakespearean style: iambic pentameter, archaic diction, and complex syntactic structures. The vocabulary is modern, and the sentence flow is prose-like rather than verse. However, the text is coherent, evocative, and well-written, effectively conveying the emotional experience of watching a sunset."
+        ]
+      },
+      "interp_0.5": {
+        "distinct_1": 0.5380434782608695,
+        "distinct_2": 0.8956043956043956,
+        "distinct_3": 0.9722222222222222,
+        "type_token_ratio": 0.5380434782608695,
+        "self_bleu_4": 0.011235955056179775,
+        "avg_length": 92.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 6.0,
+        "text_quality_mean": 6.0,
+        "style_fidelity_scores": [
+          6,
+          6
+        ],
+        "text_quality_scores": [
+          5,
+          7
+        ],
+        "style_reasoning": [
+          "The text employs some archaic diction ('doth,' 'o'er'), metaphorical language, and attempts iambic pentameter, but the meter is inconsistent and the vocabulary lacks the complexity and inventiveness of Shakespeare. The imagery is present but not as vivid or layered as in Shakespeare's works. The text is somewhat coherent and evocative, but it ends abruptly and repeats phrases ('doth draw'), which weakens its overall quality and flow.",
+          "The text employs some archaic diction ('doth', 'behold'), metaphorical language, and elevated tone reminiscent of Shakespeare. However, it lacks consistent iambic pentameter, and the syntax is more modern and straightforward than Shakespeare's complex, inverted structures. Repetition ('descending, like a glory') and some awkward phrasing detract from the authenticity. The imagery is vivid and poetic, but the overall structure and rhythm fall short of true Shakespearean style."
+        ]
+      },
+      "interp_0.75": {
+        "distinct_1": 0.6043956043956044,
+        "distinct_2": 0.9388888888888889,
+        "distinct_3": 0.9887640449438202,
+        "type_token_ratio": 0.6043956043956044,
+        "self_bleu_4": 0.0,
+        "avg_length": 91.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 6.0,
+        "text_quality_mean": 6.0,
+        "style_fidelity_scores": [
+          6,
+          6
+        ],
+        "text_quality_scores": [
+          5,
+          7
+        ],
+        "style_reasoning": [
+          "The text attempts to emulate Shakespearean style through archaic diction ('doth', 'unto', 'wold'), iambic pentameter, and metaphorical language. However, it misuses some archaic forms ('doth' with plural subjects), and the imagery, while poetic, lacks the complexity and inventiveness typical of Shakespeare. The meter is inconsistent, and the final line is incomplete. The text is somewhat engaging but suffers from awkward phrasing and structural issues, reducing overall coherence and impact.",
+          "The text employs some archaic diction ('o'er', 'doth'), metaphorical language, and poetic imagery reminiscent of Shakespeare. However, the meter is inconsistent and not strictly iambic pentameter, and the syntax lacks the complexity and rhetorical flourish typical of Shakespeare's verse. The vocabulary is somewhat elevated but not consistently Elizabethan. The text is evocative and mostly coherent, though it ends abruptly and some metaphors are mixed or lack the layered wit of Shakespeare. Overall, it is a competent attempt but falls short of true Shakespearean style and polish."
+        ]
+      }
+    },
+    "A conversation between two strangers on a train": {
+      "base": {
+        "distinct_1": 0.6116504854368932,
+        "distinct_2": 0.9575163398692811,
+        "distinct_3": 0.9933993399339934,
+        "type_token_ratio": 0.6116504854368932,
+        "self_bleu_4": 0.0,
+        "avg_length": 103.0,
+        "num_samples": 3,
+        "style_fidelity_mean": 2.5,
+        "text_quality_mean": 5.5,
+        "style_fidelity_scores": [
+          3,
+          2
+        ],
+        "text_quality_scores": [
+          5,
+          6
+        ],
+        "style_reasoning": [
+          "The text lacks the hallmarks of Shakespearean style: it does not consistently use iambic pentameter, employs modern vocabulary and syntax, and is sparse in metaphor and poetic devices. The dialogue is straightforward and literal, missing the rich imagery and rhetorical flourishes typical of Shakespeare. However, the text is coherent and clear, with a logical flow and understandable exchange, though it is somewhat bland and lacks dramatic tension.",
+          "The text does not employ iambic pentameter, archaic English, or Shakespearean vocabulary. It lacks metaphorical richness and poetic devices typical of Shakespeare. The sentence structure is modern and straightforward. However, the narrative is clear and coherent, with a logical flow and some engagement, though it is somewhat plain and lacks vivid detail."
+        ]
+      },
+      "aligned": {
+        "distinct_1": 0.6198630136986302,
+        "distinct_2": 0.9653979238754326,
+        "distinct_3": 1.0,
+        "type_token_ratio": 0.6198630136986302,
+        "self_bleu_4": 0.0,
+        "avg_length": 97.33333333333333,
+        "num_samples": 3,
+        "style_fidelity_mean": 7.0,
+        "text_quality_mean": 6.0,
+        "style_fidelity_scores": [
+          7,
+          7
+        ],
+        "text_quality_scores": [
+          6,
+          6
+        ],
+        "style_reasoning": [
+          "The text demonstrates a strong attempt at Shakespearean style, employing archaic diction (''Twas', 'quoth'), metaphorical language, and some iambic pentameter. However, the meter is inconsistent, and some phrases ('so sweetly they blow'd') feel forced or slightly anachronistic. The imagery is evocative and in line with Shakespeare's penchant for nature metaphors. The text is coherent and paints a vivid scene, but the ending is abrupt and incomplete, which affects overall quality.",
+          "The text demonstrates a strong attempt at Shakespearean diction, metaphor, and imagery, with archaic phrasing ('doth', 'anon', 'yore') and poetic structure. However, the iambic pentameter is inconsistent, and some lines are awkward or forced. The metaphors (ships, tempests, streams) are apt but not always seamlessly integrated. The text is evocative but loses coherence near the end, especially with the unfinished final line. Overall, it captures the spirit of Shakespeare but lacks his rhythmic mastery and syntactic fluidity."
+        ]
+      },
+      "interp_0.25": {
+        "distinct_1": 0.5939086294416244,
+        "distinct_2": 0.9282051282051282,
+        "distinct_3": 0.9792746113989638,
+        "type_token_ratio": 0.5939086294416244,
+        "self_bleu_4": 0.0,
+        "avg_length": 98.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 5.5,
+        "text_quality_mean": 5.5,
+        "style_fidelity_scores": [
+          5,
+          6
+        ],
+        "text_quality_scores": [
+          4,
+          7
+        ],
+        "style_reasoning": [
+          "The text attempts to emulate Shakespearean style through archaic diction ('doth', 'loiter', 'muse'), metaphorical language, and some poetic imagery. However, it lacks consistent iambic pentameter, and the syntax is often modern or awkward. The repetition of 'jest and jest' is clumsy, and the metaphors are somewhat generic. The text is also incomplete and somewhat repetitive, with unclear focus and weak dramatic tension, which affects overall quality.",
+          "The text employs some archaic diction and metaphorical language reminiscent of Shakespeare, such as 'wanderers,' 'chanced upon,' and 'souls did meet.' The imagery is poetic and evocative, with references to stars, rivers, and forests. However, the iambic pentameter is inconsistent, and the sentence structure lacks the syntactic complexity and rhetorical flourishes typical of Shakespeare. The text is coherent and paints a vivid scene, but it ends abruptly and could be more engaging with stronger dramatic tension or dialogue."
+        ]
+      },
+      "interp_0.5": {
+        "distinct_1": 0.6358381502890174,
+        "distinct_2": 0.9298245614035088,
+        "distinct_3": 0.9881656804733728,
+        "type_token_ratio": 0.6358381502890174,
+        "self_bleu_4": 0.0,
+        "avg_length": 86.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 6.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          7,
+          5
+        ],
+        "text_quality_scores": [
+          8,
+          6
+        ],
+        "style_reasoning": [
+          "The text demonstrates a strong attempt at Shakespearean style, employing iambic pentameter, archaic diction ('doth', 'charmed chambers'), and rich metaphorical language. However, some lines stray from strict meter, and certain phrases ('enchanted sphere', 'labyrinthine') feel more modern or forced. The imagery is evocative and the structure coherent, but the narrative is only partially developed, ending abruptly. Overall, it is a convincing pastiche with minor lapses in authenticity and flow.",
+          "The text attempts to emulate Shakespearean style through metaphor and some archaic phrasing, but falls short in several areas. The vocabulary and syntax are largely modern, lacking the complexity and inversion typical of Shakespeare. The iambic pentameter is inconsistent, and the metaphors, while present, are somewhat simplistic and repetitive. The text is coherent and thematically unified, but the ending is abrupt and incomplete, affecting overall quality."
+        ]
+      },
+      "interp_0.75": {
+        "distinct_1": 0.6588235294117647,
+        "distinct_2": 0.9702380952380952,
+        "distinct_3": 1.0,
+        "type_token_ratio": 0.6588235294117647,
+        "self_bleu_4": 0.0,
+        "avg_length": 85.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 5.5,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          5,
+          6
+        ],
+        "text_quality_scores": [
+          7,
+          7
+        ],
+        "style_reasoning": [
+          "The text employs some Shakespearean elements such as metaphor, elevated diction, and a poetic tone, but it lacks authentic archaic vocabulary, true iambic pentameter, and the syntactic complexity characteristic of Shakespeare. The imagery is evocative and the metaphors are apt, lending the text a lyrical quality, but the structure and word choices are more modern and generic. As a poem, it is coherent and engaging, but it does not convincingly mimic Shakespeare's distinctive style.",
+          "The text employs some Shakespearean elements: archaic diction ('doth', 'amidst'), metaphorical language, and an attempt at poetic structure. However, the iambic pentameter is inconsistent, and some phrases ('tongues of words doth softly weave in air') feel forced or unidiomatic for Shakespeare. The imagery is evocative and the scene is clear, but the syntax sometimes falters, and the ending is abrupt. Overall, it captures the spirit but lacks the polish and rhythmic mastery of true Shakespearean verse."
+        ]
+      }
+    }
+  },
+  "poe": {
+    "A person arriving at an old house for the first time": {
+      "base": {
+        "distinct_1": 0.5949367088607594,
+        "distinct_2": 0.9456869009584664,
+        "distinct_3": 0.9935483870967742,
+        "type_token_ratio": 0.5949367088607594,
+        "self_bleu_4": 0.0,
+        "avg_length": 105.33333333333333,
+        "num_samples": 3,
+        "style_fidelity_mean": 5.5,
+        "text_quality_mean": 6.5,
+        "style_fidelity_scores": [
+          6,
+          5
+        ],
+        "text_quality_scores": [
+          7,
+          6
+        ],
+        "style_reasoning": [
+          "The text demonstrates some hallmarks of Poe's style, such as a gloomy atmosphere, dark imagery, and a focus on decay and foreboding. However, the vocabulary and sentence structure are relatively straightforward and lack the ornate, labyrinthine quality characteristic of Poe. The repetition of 'crumbling' and some modern phrasing detract from the authenticity. In terms of quality, the text is coherent and sets a vivid scene, but it could benefit from more evocative language and a stronger emotional undercurrent to fully engage the reader.",
+          "The text employs some gothic imagery and dark atmosphere reminiscent of Poe, such as references to decay, death, and ominous settings. However, it lacks Poe's ornate vocabulary, complex sentence structures, and psychological depth. The prose is straightforward and modern, missing the elaborate, almost baroque quality of Poe's style. In terms of quality, the text is coherent and sets a clear scene, but it is somewhat generic and could benefit from more vivid, original descriptions and emotional intensity."
+        ]
+      },
+      "aligned": {
+        "distinct_1": 0.6180555555555556,
+        "distinct_2": 0.9263157894736842,
+        "distinct_3": 0.9787234042553191,
+        "type_token_ratio": 0.6180555555555556,
+        "self_bleu_4": 0.014390371533228676,
+        "avg_length": 96.0,
+        "num_samples": 3,
+        "style_fidelity_mean": 8.0,
+        "text_quality_mean": 8.0,
+        "style_fidelity_scores": [
+          8,
+          8
+        ],
+        "text_quality_scores": [
+          8,
+          8
+        ],
+        "style_reasoning": [
+          "The text effectively employs Poe-like gothic atmosphere, ornate vocabulary, and dark imagery ('pallid night', 'somber front door', 'mournful dirge'). The sentence structure is complex and evocative, reminiscent of Poe's style. However, some phrases (e.g., 'impossibly large shadows') are slightly more modern or less precise than Poe's typical diction. The text is coherent and engaging, though it ends abruptly, which slightly detracts from overall quality.",
+          "The text effectively employs Poe-like gothic atmosphere, ornate vocabulary, and dark imagery, such as 'twilight's dank embrace,' 'spectral weight,' and 'living monstrosity from the night's own womb.' The sentence structure is complex and evocative, reminiscent of Poe's style. However, some phrases (e.g., 'polished surfaces that shimmered with an otherworldly sheen') feel slightly less Poe-esque, as Poe often favored gloom over shimmer. The text is coherent, atmospheric, and engaging, though it ends abruptly, which slightly affects overall quality."
+        ]
+      },
+      "interp_0.25": {
+        "distinct_1": 0.6047619047619047,
+        "distinct_2": 0.8942307692307693,
+        "distinct_3": 0.9660194174757282,
+        "type_token_ratio": 0.6047619047619047,
+        "self_bleu_4": 0.038461538461538464,
+        "avg_length": 105.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 6.5,
+        "text_quality_mean": 7.5,
+        "style_fidelity_scores": [
+          7,
+          6
+        ],
+        "text_quality_scores": [
+          8,
+          7
+        ],
+        "style_reasoning": [
+          "The text effectively employs gothic atmosphere, dark imagery, and ornate vocabulary reminiscent of Poe, such as 'craggy heath,' 'velvet night,' and 'whispers of secrets long hidden.' The sentence structure is somewhat elaborate, though not as labyrinthine or rhythmically intense as Poe's best work. Some phrases ('the forgotten ghosts of a long-forgotten age') verge on redundancy, and the overall tone is evocative but lacks the psychological intensity and intricate symbolism Poe often weaves. The text is coherent and engaging, with vivid descriptions and a clear sense of mood, though it ends abruptly.",
+          "The text evokes a gothic atmosphere with imagery of decay, darkness, and ruin, reminiscent of Poe. The vocabulary is somewhat ornate, and the mood is suitably somber. However, the sentence structure is more straightforward and modern than Poe's typically elaborate, winding prose. Some word choices (e.g., 'boots leaving deep hoofmarks') are awkward, and repetition ('decay and decay') feels unintentional rather than poetic. The text is coherent and sets a vivid scene, but lacks the full stylistic complexity and psychological depth characteristic of Poe."
+        ]
+      },
+      "interp_0.5": {
+        "distinct_1": 0.6442307692307693,
+        "distinct_2": 0.9223300970873787,
+        "distinct_3": 0.9852941176470589,
+        "type_token_ratio": 0.6442307692307693,
+        "self_bleu_4": 0.0,
+        "avg_length": 104.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 7.0,
+        "text_quality_mean": 8.0,
+        "style_fidelity_scores": [
+          7,
+          7
+        ],
+        "text_quality_scores": [
+          8,
+          8
+        ],
+        "style_reasoning": [
+          "The text effectively evokes a gothic atmosphere with dark imagery and ornate vocabulary reminiscent of Poe, such as 'ancient threshold,' 'crumbling mansion,' and 'sorrow of ages past.' The sentence structure is somewhat elaborate, though not as complex or rhythmically varied as Poe's. Some phrases ('windows seemed to wink and blink') are less Poe-like, and there is a slight repetition ('the air was thick...the air was heavy'). Overall, the mood and diction are strong, but the prose lacks the full musicality and psychological depth characteristic of Poe. The text is coherent and engaging, with vivid sensory details, though it ends abruptly.",
+          "The text effectively employs gothic imagery, ornate vocabulary, and a sense of foreboding reminiscent of Poe. Phrases like 'shrouded in cloaks of deepest black' and 'the house's grim embrace' evoke his atmospheric style. However, some metaphors (e.g., 'course through his veins like molten lava') feel more modern and less characteristic of Poe's diction. Sentence structure is somewhat varied but lacks the intricate, winding complexity often found in Poe's prose. Overall, the text is evocative and coherent, with strong atmosphere and vivid description, though it falls short of perfectly mimicking Poe's unique voice."
+        ]
+      },
+      "interp_0.75": {
+        "distinct_1": 0.6402116402116402,
+        "distinct_2": 0.9358288770053476,
+        "distinct_3": 0.9783783783783784,
+        "type_token_ratio": 0.6402116402116402,
+        "self_bleu_4": 0.02127659574468085,
+        "avg_length": 94.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 7.5,
+        "text_quality_mean": 8.0,
+        "style_fidelity_scores": [
+          8,
+          7
+        ],
+        "text_quality_scores": [
+          8,
+          8
+        ],
+        "style_reasoning": [
+          "The text effectively evokes Poe's gothic atmosphere through dark imagery, ornate vocabulary, and a sense of foreboding. Phrases like 'twilight's dusky eve,' 'cobwebbed windows peering out like eyeless sockets,' and 'the scent of decay and forgotten secrets' are reminiscent of Poe's style. The sentence structure is complex and atmospheric, though perhaps not quite as labyrinthine or rhythmically precise as Poe at his best. The text is coherent and engaging, though it ends abruptly, which slightly detracts from its overall quality.",
+          "The text effectively employs gothic imagery, ornate vocabulary, and atmospheric detail reminiscent of Poe, such as 'gnarled tendrils of darkness' and 'forsaken avenue.' The sentence structure is complex and evocative, though some phrases ('labyrinthine avenues of the forsaken avenue') are repetitive or awkward, slightly detracting from authenticity. The mood and tone are suitably dark and mysterious, but the prose lacks the rhythmic precision and psychological depth characteristic of Poe at his best. Overall, it is a strong imitation with minor lapses."
+        ]
+      }
+    },
+    "The experience of watching a sunset over the ocean": {
+      "base": {
+        "distinct_1": 0.47368421052631576,
+        "distinct_2": 0.853125,
+        "distinct_3": 0.9747634069400631,
+        "type_token_ratio": 0.47368421052631576,
+        "self_bleu_4": 0.00937518368306589,
+        "avg_length": 107.66666666666667,
+        "num_samples": 3,
+        "style_fidelity_mean": 3.5,
+        "text_quality_mean": 6.5,
+        "style_fidelity_scores": [
+          3,
+          4
+        ],
+        "text_quality_scores": [
+          6,
+          7
+        ],
+        "style_reasoning": [
+          "The text employs some atmospheric description and a slightly elevated vocabulary, but it lacks Poe's signature ornate diction, complex sentence structure, and pervasive sense of gloom or psychological unease. The imagery is gentle and serene rather than dark or gothic. The text is coherent and paints a clear scene, but it does not evoke the haunting, melancholic tone characteristic of Poe.",
+          "The text employs some atmospheric description and a contemplative tone, but lacks Poe's signature ornate vocabulary, complex sentence structure, and pervasive sense of melancholy or dread. The imagery is gentle and serene rather than dark or gothic. While the writing is coherent and evocative, it does not evoke the psychological intensity or elaborate style characteristic of Poe."
+        ]
+      },
+      "aligned": {
+        "distinct_1": 0.5923344947735192,
+        "distinct_2": 0.9225352112676056,
+        "distinct_3": 0.9893238434163701,
+        "type_token_ratio": 0.5923344947735192,
+        "self_bleu_4": 0.0,
+        "avg_length": 95.66666666666667,
+        "num_samples": 3,
+        "style_fidelity_mean": 8.0,
+        "text_quality_mean": 8.0,
+        "style_fidelity_scores": [
+          8,
+          8
+        ],
+        "text_quality_scores": [
+          7,
+          9
+        ],
+        "style_reasoning": [
+          "The text effectively employs Poe-like diction ('specter,' 'sable shroud,' 'phantom ship'), gothic imagery, and a somber, ornate tone. The sentence structure and poetic devices (alliteration, personification) are reminiscent of Poe's style. However, the rhythm and meter are somewhat inconsistent, and the poem ends abruptly, which affects overall coherence. The imagery is vivid and atmospheric, but some lines verge on pastiche rather than authentic Poe. Overall, it is evocative and stylistically close, but not flawless.",
+          "The text skillfully employs Poe-like diction ('somber abyss,' 'ethereal spectacle,' 'dirges'), ornate sentence structure, and gothic imagery (shadows as specters, the sun as a 'consumptive of day'). The atmosphere is brooding and melancholic, fitting Poe's style. Minor deviations include slightly modern phrasing and a lack of Poe's characteristic internal rhyme or alliteration. The text is coherent, vivid, and evocative, though it ends abruptly, suggesting incompleteness."
+        ]
+      },
+      "interp_0.25": {
+        "distinct_1": 0.5707317073170731,
+        "distinct_2": 0.8719211822660099,
+        "distinct_3": 0.9701492537313433,
+        "type_token_ratio": 0.5707317073170731,
+        "self_bleu_4": 0.0297029702970297,
+        "avg_length": 102.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 6.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          5,
+          7
+        ],
+        "text_quality_scores": [
+          8,
+          6
+        ],
+        "style_reasoning": [
+          "The text employs some ornate vocabulary and atmospheric imagery reminiscent of Poe, such as 'twilight's softest call' and 'the sun, an ember in the canvas of the sky.' However, it lacks the true gothic darkness, psychological intensity, and morbid undertones characteristic of Poe's style. The sentence structure is poetic but not as complex or archaic as Poe's. The text is coherent, evocative, and well-written, but its tone is more serene and romantic than darkly gothic.",
+          "The text employs ornate vocabulary, dark imagery, and a somber tone reminiscent of Poe, with phrases like 'ebony hue,' 'steeped in shadows,' and 'dying embers.' The sentence structure is elaborate, and the metaphors are suitably gothic. However, some word choices ('elegies of the morrow waxed') feel forced or unclear, and the overall rhythm lacks the hypnotic, musical quality of Poe's best prose. The text is evocative but somewhat overwrought, and the final sentence is incomplete, affecting coherence."
+        ]
+      },
+      "interp_0.5": {
+        "distinct_1": 0.5786802030456852,
+        "distinct_2": 0.9230769230769231,
+        "distinct_3": 0.9792746113989638,
+        "type_token_ratio": 0.5786802030456852,
+        "self_bleu_4": 0.010309278350515464,
+        "avg_length": 98.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 7.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          7,
+          7
+        ],
+        "text_quality_scores": [
+          8,
+          6
+        ],
+        "style_reasoning": [
+          "The text effectively employs gothic atmosphere, dark imagery, and ornate vocabulary reminiscent of Poe, such as 'somber night,' 'pale, sickly light,' and 'minions of the sea.' The sentence structure is elaborate, and the tone is suitably melancholic. However, some phrases (e.g., 'ragged rags') are less refined, and the overall rhythm could be more Poe-like. The text is coherent and evocative, though it ends abruptly, which affects overall quality.",
+          "The text effectively employs Poe-like elements: a somber, gothic atmosphere, ornate vocabulary ('inky abyss', 'decaying houses'), and a focus on gloom and introspection. The sentence structure is somewhat elaborate, echoing Poe's style, though it lacks his characteristic rhythmic cadence and psychological depth. The imagery is dark and evocative, but the sunset theme is somewhat overshadowed by nocturnal and urban motifs, which dilutes the oceanic sunset focus. In terms of quality, the text is mostly coherent and atmospheric, but the final sentence is incomplete, and the narrative focus is a bit diffuse, reducing overall engagement."
+        ]
+      },
+      "interp_0.75": {
+        "distinct_1": 0.6479591836734694,
+        "distinct_2": 0.9329896907216495,
+        "distinct_3": 0.9947916666666666,
+        "type_token_ratio": 0.6479591836734694,
+        "self_bleu_4": 0.0,
+        "avg_length": 98.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 7.5,
+        "text_quality_mean": 7.5,
+        "style_fidelity_scores": [
+          7,
+          8
+        ],
+        "text_quality_scores": [
+          8,
+          7
+        ],
+        "style_reasoning": [
+          "The text demonstrates a strong attempt at Poe's ornate vocabulary and gothic imagery, with phrases like 'the horizon whispers secrets to the undertow' and 'molten tapestry of crimson, amber, and gold.' The sentence structure is elaborate, and the mood is tinged with melancholy and grandeur, both hallmarks of Poe. However, it lacks some of Poe's characteristic rhythmic cadence, archaic diction, and psychological intensity. The text is coherent and evocative, though the final sentence is incomplete, slightly detracting from overall quality.",
+          "The text effectively employs Poe-like diction ('hallowed threshold,' 'unutterable dread,' 'tapestry of haunting beauty'), ornate sentence structure, and gothic imagery. The atmosphere is somber and mysterious, with a sense of melancholy and the supernatural. However, it lacks some of Poe's rhythmic cadence and psychological depth. The text is evocative and mostly coherent, though the final sentence is incomplete, which slightly detracts from overall quality."
+        ]
+      }
+    },
+    "A conversation between two strangers on a train": {
+      "base": {
+        "distinct_1": 0.5420560747663551,
+        "distinct_2": 0.889937106918239,
+        "distinct_3": 0.9809523809523809,
+        "type_token_ratio": 0.5420560747663551,
+        "self_bleu_4": 0.0030581039755351682,
+        "avg_length": 107.0,
+        "num_samples": 3,
+        "style_fidelity_mean": 4.5,
+        "text_quality_mean": 6.0,
+        "style_fidelity_scores": [
+          4,
+          5
+        ],
+        "text_quality_scores": [
+          6,
+          6
+        ],
+        "style_reasoning": [
+          "The text attempts to evoke a gothic atmosphere with references to darkness, shadows, and ominous imagery, but it lacks Poe's ornate vocabulary, complex sentence structure, and psychological depth. The language is straightforward and modern, missing the elaborate diction and rhythmic prose characteristic of Poe. The text is coherent and sets a scene effectively, but it is somewhat generic and lacks the haunting, lyrical quality of Poe's writing.",
+          "The text attempts to evoke a gothic atmosphere with phrases like 'stillness of a night' and 'darkened carriage,' and uses some ornate vocabulary ('sinister manner,' 'dripping with malice'). However, the sentence structure is relatively simple and lacks Poe's characteristic rhythmic complexity, allusions, and elaborate descriptions. The imagery is somewhat generic rather than vividly macabre or psychologically intense. In terms of quality, the text is coherent and sets a scene, but the dialogue is abrupt and the characters are underdeveloped. The passage ends mid-sentence, reducing its overall effectiveness."
+        ]
+      },
+      "aligned": {
+        "distinct_1": 0.6413793103448275,
+        "distinct_2": 0.9442508710801394,
+        "distinct_3": 0.9823943661971831,
+        "type_token_ratio": 0.6413793103448275,
+        "self_bleu_4": 0.007017543859649123,
+        "avg_length": 96.66666666666667,
+        "num_samples": 3,
+        "style_fidelity_mean": 8.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          8,
+          8
+        ],
+        "text_quality_scores": [
+          7,
+          7
+        ],
+        "style_reasoning": [
+          "The text effectively employs Poe-like gothic atmosphere, ornate vocabulary, and dark imagery (e.g., 'midnight chime,' 'gloomy confines,' 'parchment of fate'). The sentence structure is elaborate and evocative, reminiscent of Poe's prose. However, some phrases ('garbled chorus of despair') are slightly awkward, and the dialogue, while atmospheric, is brief and not fully developed. The text is engaging and coherent, but the abrupt ending and minor stylistic missteps prevent it from reaching the highest marks.",
+          "The text effectively emulates Poe's gothic atmosphere through dark imagery ('darkened coach,' 'shadows that whispered tales of old'), ornate vocabulary, and a somber, elaborate sentence structure. The dialogue employs archaic diction ('thou dost traverse'), enhancing the Poe-like tone. However, it falls just short of Poe's full complexity and rhythmic mastery. In terms of quality, the scene is evocative and intriguing, but the transition into dialogue is abrupt, and the narrative could be more fluid. The text is engaging but incomplete, leaving the reader wanting more context or development."
+        ]
+      },
+      "interp_0.25": {
+        "distinct_1": 0.6298076923076923,
+        "distinct_2": 0.941747572815534,
+        "distinct_3": 1.0,
+        "type_token_ratio": 0.6298076923076923,
+        "self_bleu_4": 0.0,
+        "avg_length": 104.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 7.0,
+        "text_quality_mean": 8.0,
+        "style_fidelity_scores": [
+          7,
+          7
+        ],
+        "text_quality_scores": [
+          8,
+          8
+        ],
+        "style_reasoning": [
+          "The text effectively evokes a gothic atmosphere with dark imagery and ornate vocabulary reminiscent of Poe, such as 'rain-drenched night,' 'iron wilderness,' and 'haunting echo.' The sentence structure is somewhat elaborate, though not as labyrinthine or rhythmically complex as Poe's. The mood and tone are suitably melancholic and mysterious. However, the vocabulary and syntax could be more archaic and florid to fully match Poe's style. The text is coherent, atmospheric, and engaging, though it ends abruptly and could benefit from further development.",
+          "The text effectively evokes a gothic atmosphere with dark imagery and ornate vocabulary reminiscent of Poe, such as 'grimy shadows,' 'decrepit car,' and 'scent of decay.' The sentence structure is somewhat elaborate, and the simile comparing the man's voice to 'the sighing of the wind through the branches of an ancient tree' is Poe-like. However, the vocabulary and syntax are not as archaic or intricate as Poe's most distinctive prose, and the psychological intensity is less pronounced. The text is coherent, atmospheric, and engaging, but could be further elevated with more complex sentence construction and deeper psychological undertones."
+        ]
+      },
+      "interp_0.5": {
+        "distinct_1": 0.5990338164251208,
+        "distinct_2": 0.9219512195121952,
+        "distinct_3": 0.9950738916256158,
+        "type_token_ratio": 0.5990338164251208,
+        "self_bleu_4": 0.0,
+        "avg_length": 103.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 7.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          7,
+          7
+        ],
+        "text_quality_scores": [
+          8,
+          6
+        ],
+        "style_reasoning": [
+          "The text effectively employs gothic imagery, ornate vocabulary, and a brooding atmosphere reminiscent of Poe. Phrases like 'the song of the restless dead' and 'the chasm beneath his feet' evoke Poe's penchant for the macabre. However, the sentence structure is somewhat modern and lacks the elaborate, winding syntax and rhythmic cadence characteristic of Poe's prose. The text is coherent and engaging, with vivid descriptions and a clear sense of mood, though it ends abruptly and could benefit from a more complete narrative arc.",
+          "The text effectively employs Poe-like gothic imagery, ornate vocabulary, and a somber atmosphere, with phrases such as 'lethargic glimmer,' 'portentous appearance,' and 'a wind that moaned.' The sentence structure is elaborate, echoing Poe's style. However, it lacks the rhythmic complexity and psychological depth characteristic of Poe's best work. The passage is evocative but somewhat static, with more focus on description than on mood or tension. The text is coherent and visually rich, but the narrative does not progress, and the conversation is only implied, not shown."
+        ]
+      },
+      "interp_0.75": {
+        "distinct_1": 0.6907216494845361,
+        "distinct_2": 0.9739583333333334,
+        "distinct_3": 1.0,
+        "type_token_ratio": 0.6907216494845361,
+        "self_bleu_4": 0.0,
+        "avg_length": 97.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 8.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          8,
+          8
+        ],
+        "text_quality_scores": [
+          7,
+          7
+        ],
+        "style_reasoning": [
+          "The text effectively emulates Poe's gothic atmosphere through its use of dark imagery, ornate vocabulary, and a sense of foreboding. Phrases like 'somber specter of twilight,' 'brooding spirits of bygone eras,' and 'palpable entity, an omen of impending doom' are evocative of Poe's style. The sentence structure is elaborate and atmospheric, though perhaps slightly more modern in rhythm than Poe's most intricate passages. The text is engaging and coherent, but the excerpt ends abruptly and the narrative is just beginning, which limits its overall impact and completeness.",
+          "The text effectively evokes Poe's gothic atmosphere with its dark imagery ('twilight's chill', 'morass of night', 'specters of night'), ornate vocabulary, and poetic sentence structure. The dialogue is suitably archaic and mysterious. However, some phrases ('cobwebber's breath') feel slightly forced or awkward, and the passage ends abruptly, affecting coherence. Overall, it is evocative and stylistically close to Poe, though not perfectly seamless."
+        ]
+      }
+    }
+  },
+  "austen": {
+    "A person arriving at an old house for the first time": {
+      "base": {
+        "distinct_1": 0.49691358024691357,
+        "distinct_2": 0.8660436137071651,
+        "distinct_3": 0.9559748427672956,
+        "type_token_ratio": 0.49691358024691357,
+        "self_bleu_4": 0.006263232180663374,
+        "avg_length": 108.0,
+        "num_samples": 3,
+        "style_fidelity_mean": 3.0,
+        "text_quality_mean": 5.5,
+        "style_fidelity_scores": [
+          3,
+          3
+        ],
+        "text_quality_scores": [
+          5,
+          6
+        ],
+        "style_reasoning": [
+          "The text uses plain, modern language and straightforward sentence structure, lacking Austen's characteristic irony, wit, and social commentary. There is little of her nuanced vocabulary or the formal, subtly satirical tone of Regency-era English. The narrative is clear and coherent but unremarkable, with minimal descriptive flair or engaging detail.",
+          "The text uses some formal language and period-appropriate vocabulary, but lacks Austen's distinctive ironic wit, complex sentence structure, and sharp social commentary. The narration is straightforward and descriptive, without the subtle humor or nuanced character observations typical of Austen. The text is coherent and clear, but stylistically generic and lacking in Austen's unique voice."
+        ]
+      },
+      "aligned": {
+        "distinct_1": 0.652027027027027,
+        "distinct_2": 0.9692832764505119,
+        "distinct_3": 1.0,
+        "type_token_ratio": 0.652027027027027,
+        "self_bleu_4": 0.0,
+        "avg_length": 98.66666666666667,
+        "num_samples": 3,
+        "style_fidelity_mean": 7.0,
+        "text_quality_mean": 8.0,
+        "style_fidelity_scores": [
+          7,
+          7
+        ],
+        "text_quality_scores": [
+          8,
+          8
+        ],
+        "style_reasoning": [
+          "The text demonstrates a strong attempt at Austenian diction and sentence structure, with formal language, period-appropriate vocabulary, and a touch of irony in Lady Cecily's observation. The social hierarchy is subtly referenced through the interaction with the footman. However, the tone is slightly more descriptive and less sharply ironic than Austen's typical narrative voice, and the dialogue lacks her characteristic subtle wit. The text is coherent and evocative, but the ending is abrupt and the wit could be more pronounced.",
+          "The text demonstrates a commendable attempt at Austenian diction and sentence structure, employing formal language, measured irony, and a focus on social propriety. Phrases such as 'not to be anticipated without a certain amount of solicitude' and the attention to attire reflect Austen's preoccupations. However, the irony is somewhat muted, and the social commentary is less pointed than Austen's best work. The text is coherent and evocative, though it lacks the sharpness and subtle humor characteristic of Austen at her finest."
+        ]
+      },
+      "interp_0.25": {
+        "distinct_1": 0.596244131455399,
+        "distinct_2": 0.943127962085308,
+        "distinct_3": 0.9904306220095693,
+        "type_token_ratio": 0.596244131455399,
+        "self_bleu_4": 0.0,
+        "avg_length": 106.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 3.5,
+        "text_quality_mean": 6.0,
+        "style_fidelity_scores": [
+          3,
+          4
+        ],
+        "text_quality_scores": [
+          6,
+          6
+        ],
+        "style_reasoning": [
+          "The text employs some formal language and period-appropriate details, but lacks Austen's characteristic ironic wit, social commentary, and complex sentence structure. The tone is more descriptive than satirical, and the vocabulary is not particularly Austenian. The passage is coherent and paints a clear picture, but it does not engage with the social observations or subtle humor typical of Austen's style.",
+          "The text uses some formal vocabulary and period-appropriate details (gown, curls, jewels), but lacks Austen's characteristic ironic wit, nuanced social commentary, and complex sentence structure. The narration is straightforward and lacks the subtle humor and observational sharpness typical of Austen. The text is coherent and sets the scene clearly, but is somewhat bland and lacks engaging detail or voice."
+        ]
+      },
+      "interp_0.5": {
+        "distinct_1": 0.6274509803921569,
+        "distinct_2": 0.9356435643564357,
+        "distinct_3": 1.0,
+        "type_token_ratio": 0.6274509803921569,
+        "self_bleu_4": 0.0,
+        "avg_length": 102.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 5.0,
+        "text_quality_mean": 7.5,
+        "style_fidelity_scores": [
+          4,
+          6
+        ],
+        "text_quality_scores": [
+          7,
+          8
+        ],
+        "style_reasoning": [
+          "The text employs some formal vocabulary and period-appropriate details, such as the butler's bow and the young lady's breeding, but it lacks Austen's characteristic irony, wit, and subtle social commentary. The sentence structure is straightforward and modern, missing Austen's complex, balanced clauses and playful tone. While the passage is coherent and paints a clear scene, it does not capture the nuanced voice or the satirical edge of Austen's prose.",
+          "The text demonstrates a competent command of formal English and descriptive detail, with some atmospheric touches reminiscent of Austen's era. However, it lacks Austen's characteristic ironic wit, social observation, and the subtle interplay of character and society. The vocabulary and sentence structure are somewhat Austenian, but the tone is more gothic and earnest than ironic or satirical. The writing is coherent and evocative, but does not fully capture Austen's distinctive narrative voice or her penchant for sly commentary."
+        ]
+      },
+      "interp_0.75": {
+        "distinct_1": 0.6490384615384616,
+        "distinct_2": 0.970873786407767,
+        "distinct_3": 1.0,
+        "type_token_ratio": 0.6490384615384616,
+        "self_bleu_4": 0.0,
+        "avg_length": 104.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 6.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          6,
+          6
+        ],
+        "text_quality_scores": [
+          7,
+          7
+        ],
+        "style_reasoning": [
+          "The text makes a clear attempt at Austenian style, employing formal diction, long sentences, and a touch of irony. The vocabulary ('antiquity', 'genteel gossip', 'fabric of its stories') is appropriate, and there is a nod to social commentary. However, the tone is somewhat more gothic and atmospheric than Austen's typically brisk, socially observant prose. The sentence structure is a bit overwrought, lacking Austen's characteristic clarity and wit. The text is coherent and evocative, but the ending is abrupt and incomplete, which affects overall quality.",
+          "The text demonstrates some hallmarks of Austen's style, such as formal diction, a measured narrative pace, and hints of social observation. However, it lacks Austen's characteristic irony and sharper wit, and the sentence structure, while elevated, does not fully capture her subtle complexity or her penchant for sly commentary. The vocabulary is appropriate, but the tone is more solemn than playful. In terms of quality, the passage is coherent and paints a clear scene, but it ends abruptly and could be more engaging with greater specificity and livelier detail."
+        ]
+      }
+    },
+    "The experience of watching a sunset over the ocean": {
+      "base": {
+        "distinct_1": 0.535031847133758,
+        "distinct_2": 0.8745980707395499,
+        "distinct_3": 0.9642857142857143,
+        "type_token_ratio": 0.535031847133758,
+        "self_bleu_4": 0.01610062893081761,
+        "avg_length": 104.66666666666667,
+        "num_samples": 3,
+        "style_fidelity_mean": 2.5,
+        "text_quality_mean": 6.5,
+        "style_fidelity_scores": [
+          3,
+          2
+        ],
+        "text_quality_scores": [
+          7,
+          6
+        ],
+        "style_reasoning": [
+          "The text employs some formal vocabulary and descriptive language, but it lacks Austen's characteristic ironic wit, social commentary, and complex sentence structures. There is no evidence of the subtle humor or the keen observations of manners and society that define Austen's style. The passage is coherent and paints a vivid picture, but it reads more like modern, lyrical nature writing than Regency-era prose.",
+          "The text employs generic, modern descriptive language and lacks Austen's characteristic ironic wit, social commentary, and formal Regency diction. The sentence structure is straightforward and earnest, without the subtle humor or nuanced observation typical of Austen. While the imagery is clear and the writing is coherent, it does not evoke Austen's distinctive narrative voice or her satirical engagement with society."
+        ]
+      },
+      "aligned": {
+        "distinct_1": 0.6414473684210527,
+        "distinct_2": 0.9568106312292359,
+        "distinct_3": 0.9932885906040269,
+        "type_token_ratio": 0.6414473684210527,
+        "self_bleu_4": 0.0033670033670033673,
+        "avg_length": 101.33333333333333,
+        "num_samples": 3,
+        "style_fidelity_mean": 7.0,
+        "text_quality_mean": 8.0,
+        "style_fidelity_scores": [
+          7,
+          7
+        ],
+        "text_quality_scores": [
+          8,
+          8
+        ],
+        "style_reasoning": [
+          "The text demonstrates a strong attempt at Austenian diction and sentence structure, employing formal language, elevated vocabulary, and a reflective, ironic tone. Phrases like 'that wily orb of light' and 'Nature herself...hath paused to muse' echo Austen's penchant for personification and gentle wit. However, the passage leans more toward the poetic and grandiose than Austen's typically more grounded, socially observant prose. The social commentary is subtle, and the irony is present but not as sharp or socially targeted as in Austen's work. The text is coherent and evocative, though the ending is abrupt and incomplete.",
+          "The text demonstrates a commendable attempt at Austenian diction and sentence structure, with formal phrasing and a contemplative tone. The vocabulary ('trifle,' 'unalloyed beauty,' 'enchantment') and the use of extended, periodic sentences are reminiscent of Austen's style. However, it lacks her characteristic ironic wit and pointed social commentary, focusing instead on lyrical description. The text is coherent and evocative, though it ends abruptly, which slightly detracts from its overall quality."
+        ]
+      },
+      "interp_0.25": {
+        "distinct_1": 0.6009174311926605,
+        "distinct_2": 0.9212962962962963,
+        "distinct_3": 0.9906542056074766,
+        "type_token_ratio": 0.6009174311926605,
+        "self_bleu_4": 0.0,
+        "avg_length": 109.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 4.0,
+        "text_quality_mean": 6.5,
+        "style_fidelity_scores": [
+          5,
+          3
+        ],
+        "text_quality_scores": [
+          7,
+          6
+        ],
+        "style_reasoning": [
+          "The text adopts a formal tone and some elevated vocabulary reminiscent of Austen, but lacks her distinctive ironic wit, sharp social commentary, and nuanced sentence structure. The imagery is pleasant and the prose is coherent, but it does not fully capture Austen's voice or her characteristic subtle humor. The text is well-written and evocative, but stylistically closer to generic 19th-century prose than to Austen specifically.",
+          "The text employs a reflective and somewhat formal tone, but it lacks Austen's characteristic ironic wit, social observation, and precise, complex sentence structure. The vocabulary is modern and the introspection is earnest rather than subtly satirical. While the writing is coherent and the imagery is clear, it does not evoke Austen's distinctive voice or her nuanced commentary on society."
+        ]
+      },
+      "interp_0.5": {
+        "distinct_1": 0.6414141414141414,
+        "distinct_2": 0.9540816326530612,
+        "distinct_3": 0.9948453608247423,
+        "type_token_ratio": 0.6414141414141414,
+        "self_bleu_4": 0.0,
+        "avg_length": 99.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 6.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          6,
+          6
+        ],
+        "text_quality_scores": [
+          7,
+          7
+        ],
+        "style_reasoning": [
+          "The text attempts Austen's formal diction and social observation, with phrases like 'well-bred and refined' and references to neighborhood belles and polished gentlemen. However, the sentence structure is less intricate and the irony more muted than Austen's norm. The imagery is somewhat florid and lacks her characteristic sharpness and subtle wit. The text is coherent and paints a vivid scene, but some metaphors (e.g., 'fingers danced upon the tables') are awkward, and the social commentary is less pointed than Austen's best work.",
+          "The text employs a formal tone, elevated vocabulary, and some Austenian sentence structure, but lacks her characteristic ironic wit and pointed social commentary. The observations are more Romantic than satirical, and the emotional tone is earnest rather than subtly mocking. The prose is coherent and evocative, but the ending is abrupt and the imagery, while pleasant, is somewhat generic. Overall, it gestures toward Austen's style but does not fully inhabit her distinctive voice."
+        ]
+      },
+      "interp_0.75": {
+        "distinct_1": 0.5841121495327103,
+        "distinct_2": 0.9009433962264151,
+        "distinct_3": 0.9857142857142858,
+        "type_token_ratio": 0.5841121495327103,
+        "self_bleu_4": 0.0,
+        "avg_length": 107.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 6.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          6,
+          6
+        ],
+        "text_quality_scores": [
+          7,
+          7
+        ],
+        "style_reasoning": [
+          "The text employs a formal register and some elevated diction reminiscent of Austen, such as 'celestial guide' and 'a balm to the soul.' However, it lacks Austen's characteristic ironic wit, social observation, and subtle humor. The sentence structure is somewhat Austenian, but the focus is more on poetic reflection than on the social commentary and nuanced character insight typical of her work. The text is coherent and evocative, but the ending is abrupt and incomplete.",
+          "The text demonstrates a formal tone, elevated vocabulary, and some reflective commentary reminiscent of Austen. However, it lacks her characteristic ironic wit, social observation, and subtle humor. The sentence structure is somewhat Austenian, but the focus is more on poetic description than on the nuanced social interplay Austen is known for. The text is coherent and evocative, but the ending is abrupt and incomplete, slightly diminishing its overall quality."
+        ]
+      }
+    },
+    "A conversation between two strangers on a train": {
+      "base": {
+        "distinct_1": 0.6283783783783784,
+        "distinct_2": 0.9385665529010239,
+        "distinct_3": 0.993103448275862,
+        "type_token_ratio": 0.6283783783783784,
+        "self_bleu_4": 0.0,
+        "avg_length": 98.66666666666667,
+        "num_samples": 3,
+        "style_fidelity_mean": 4.0,
+        "text_quality_mean": 6.0,
+        "style_fidelity_scores": [
+          4,
+          4
+        ],
+        "text_quality_scores": [
+          6,
+          6
+        ],
+        "style_reasoning": [
+          "The text attempts a formal tone and introduces characters with titles, but lacks Austen's characteristic irony, wit, and nuanced social commentary. The dialogue is stilted and does not employ her complex sentence structures or subtle humor. The setting and premise are clear, but the writing is straightforward and lacks the layered observation typical of Austen. The text is coherent and sets up a scene, but is not particularly engaging or evocative of Austen's style.",
+          "The text employs a somewhat formal tone and period-appropriate vocabulary, but lacks Austen's signature ironic wit, subtle social commentary, and nuanced sentence structure. The narrative voice is more expository and theatrical than Austen's understated, conversational irony. The text is coherent and sets a scene effectively, but does not yet engage with character interplay or the kind of social observation Austen is known for."
+        ]
+      },
+      "aligned": {
+        "distinct_1": 0.6176470588235294,
+        "distinct_2": 0.9405940594059405,
+        "distinct_3": 0.9933333333333333,
+        "type_token_ratio": 0.6176470588235294,
+        "self_bleu_4": 0.0,
+        "avg_length": 102.0,
+        "num_samples": 3,
+        "style_fidelity_mean": 7.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          8,
+          6
+        ],
+        "text_quality_scores": [
+          7,
+          7
+        ],
+        "style_reasoning": [
+          "The text demonstrates a strong command of Austenian vocabulary, sentence structure, and tone, with formal diction and subtle irony (e.g., 'whose spirits seemed to be at odds with her personage'). The social observation and character introduction are reminiscent of Austen's style. However, the setting (a train) is anachronistic for Austen, and the passage, while evocative, is incomplete and slightly awkward in its final clause, affecting overall coherence and engagement.",
+          "The text makes a clear attempt at Austenian diction and sentence structure, with formal phrasing and period-appropriate vocabulary. However, it lacks Austen's characteristic ironic wit and subtle social commentary; the tone is earnest rather than slyly observant. The description is competent but somewhat generic, and the dialogue, while polite, does not yet display the nuanced interplay or understated humor typical of Austen. Overall, the writing is coherent and sets the scene well, but it falls short of fully capturing Austen's distinctive narrative voice."
+        ]
+      },
+      "interp_0.25": {
+        "distinct_1": 0.6698113207547169,
+        "distinct_2": 0.9380952380952381,
+        "distinct_3": 0.9951923076923077,
+        "type_token_ratio": 0.6698113207547169,
+        "self_bleu_4": 0.0,
+        "avg_length": 106.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 4.5,
+        "text_quality_mean": 6.0,
+        "style_fidelity_scores": [
+          4,
+          5
+        ],
+        "text_quality_scores": [
+          6,
+          6
+        ],
+        "style_reasoning": [
+          "The text attempts a formal tone and some reflective commentary, but lacks Austen's characteristic irony, subtle wit, and complex sentence structure. The vocabulary is modern and straightforward, missing the period-appropriate diction and social nuance. The narrative is coherent and clear, but not particularly engaging or lively, and it ends abruptly. Overall, it reads more like a contemporary summary than Austen's nuanced prose.",
+          "The text attempts a formal tone and period-appropriate vocabulary, but lacks Austen's characteristic irony, subtle social commentary, and complex sentence structure. The dialogue is somewhat stiff and direct, missing the nuanced wit and layered implications typical of Austen. The scenario is plausible, but the exchange feels more expository than engaging, and the characters' voices are not distinctly Austenian."
+        ]
+      },
+      "interp_0.5": {
+        "distinct_1": 0.6666666666666666,
+        "distinct_2": 0.9572192513368984,
+        "distinct_3": 0.9891891891891892,
+        "type_token_ratio": 0.6666666666666666,
+        "self_bleu_4": 0.0,
+        "avg_length": 94.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 5.5,
+        "text_quality_mean": 6.0,
+        "style_fidelity_scores": [
+          6,
+          5
+        ],
+        "text_quality_scores": [
+          5,
+          7
+        ],
+        "style_reasoning": [
+          "The text attempts Austen's formal diction and elaborate sentence structure, with some success in vocabulary and tone. However, it lacks her characteristic ironic wit and subtle social commentary, instead focusing on generic admiration of nature. The dialogue is somewhat stilted and repetitive, and the unfinished sentence detracts from coherence. Overall, it gestures toward Austen's style but misses her nuanced humor and sharp observational quality.",
+          "The text attempts a formal tone and polite repartee reminiscent of Austen, but lacks her characteristic irony, subtle social commentary, and complex sentence structure. The vocabulary is somewhat modern and the dialogue is straightforward rather than layered with wit or subtext. The text is coherent and clear, but not particularly engaging or nuanced in the Austenian sense."
+        ]
+      },
+      "interp_0.75": {
+        "distinct_1": 0.6331658291457286,
+        "distinct_2": 0.9390862944162437,
+        "distinct_3": 0.9897435897435898,
+        "type_token_ratio": 0.6331658291457286,
+        "self_bleu_4": 0.0,
+        "avg_length": 99.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 6.5,
+        "text_quality_mean": 6.5,
+        "style_fidelity_scores": [
+          7,
+          6
+        ],
+        "text_quality_scores": [
+          6,
+          7
+        ],
+        "style_reasoning": [
+          "The text demonstrates a clear attempt at Austenian diction and irony, with formal phrasing and social observation. The vocabulary and sentence structure evoke the Regency era, and the gentleman's florid compliment is reminiscent of Austen's satirical tone. However, the dialogue feels somewhat forced and lacks the subtlety and lightness of Austen's wit. The social commentary is present but not as sharply observed. The text is incomplete and the lady's reply is cut off, affecting coherence and engagement.",
+          "The text makes a clear attempt at Austenian diction and social observation, employing formal language and a touch of irony ('trivial topic', 'studied indifference'). However, the sentence structure is somewhat modern and lacks Austen's characteristic syntactic complexity and subtle, layered irony. The dialogue is plausible but not as sharp or nuanced as Austen's. The text is coherent and sets up an engaging scene, but it ends abruptly and could benefit from more development and wit."
+        ]
+      }
+    }
+  },
+  "tolkien": {
+    "A person arriving at an old house for the first time": {
+      "base": {
+        "distinct_1": 0.565625,
+        "distinct_2": 0.9085173501577287,
+        "distinct_3": 0.9808917197452229,
+        "type_token_ratio": 0.565625,
+        "self_bleu_4": 0.0061162079510703364,
+        "avg_length": 106.66666666666667,
+        "num_samples": 3,
+        "style_fidelity_mean": 4.5,
+        "text_quality_mean": 6.5,
+        "style_fidelity_scores": [
+          4,
+          5
+        ],
+        "text_quality_scores": [
+          6,
+          7
+        ],
+        "style_reasoning": [
+          "The text attempts a sense of grandeur and atmosphere, but lacks Tolkien's characteristic archaic diction, complex sentence structures, and rich, specific world-building details. The vocabulary is modern and the imagery is somewhat generic. While the mood is evocative, it does not employ the mythic tone or intricate descriptive layering typical of Tolkien. The text is mostly coherent and sets a scene effectively, but the ending is abrupt and incomplete, and the prose lacks the lyrical quality and depth of Tolkien's writing.",
+          "The text attempts to evoke a Tolkien-esque atmosphere with phrases like 'ancient, mysterious aura' and 'realm of myth and legend,' and uses some elevated diction. However, it lacks Tolkien's characteristic archaic syntax, rich descriptive layering, and specific world-building details. The vocabulary is more modern and the sentence structure simpler than Tolkien's. As for quality, the text is coherent and sets a mood effectively, but it ends abruptly and could benefit from more vivid imagery and specificity."
+        ]
+      },
+      "aligned": {
+        "distinct_1": 0.6196721311475409,
+        "distinct_2": 0.956953642384106,
+        "distinct_3": 0.9966555183946488,
+        "type_token_ratio": 0.6196721311475409,
+        "self_bleu_4": 0.0,
+        "avg_length": 101.66666666666667,
+        "num_samples": 3,
+        "style_fidelity_mean": 7.5,
+        "text_quality_mean": 7.5,
+        "style_fidelity_scores": [
+          7,
+          8
+        ],
+        "text_quality_scores": [
+          8,
+          7
+        ],
+        "style_reasoning": [
+          "The passage effectively employs archaic diction ('amidst,' 'domicile,' 'hewn'), elaborate description, and a sense of epic grandeur reminiscent of Tolkien. The imagery of ancient trees, weathered stones, and the house's primordial timbers evokes Tolkien's world-building. However, the sentence structure, while evocative, lacks some of Tolkien's rhythmic complexity and mythic resonance. The text is coherent and atmospheric, though the final sentence is incomplete, slightly detracting from overall quality.",
+          "The text effectively employs archaic diction ('beholden', 'doth', 'hath', 'thou'), elevated tone, and a sense of epic grandeur reminiscent of Tolkien. The world-building is hinted at with names like 'Eldoria' and references to ancient lore. However, some phrases ('beholden, O seeker of what lies beyond the bounds of mortal ken') verge on overwrought, and the syntax occasionally feels forced rather than naturally archaic. The text is engaging and evocative, but the ending is abruptly cut off, affecting coherence. Overall, it captures much of Tolkien's style but lacks some of his subtlety and narrative flow."
+        ]
+      },
+      "interp_0.25": {
+        "distinct_1": 0.5420560747663551,
+        "distinct_2": 0.8915094339622641,
+        "distinct_3": 0.9809523809523809,
+        "type_token_ratio": 0.5420560747663551,
+        "self_bleu_4": 0.0,
+        "avg_length": 107.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 7.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          7,
+          7
+        ],
+        "text_quality_scores": [
+          8,
+          6
+        ],
+        "style_reasoning": [
+          "The text effectively employs archaic diction ('quietude,' 'forsaken lands,' 'sentinel of the ages') and a sense of epic grandeur reminiscent of Tolkien. The imagery is evocative, and the world-building is present, though not as richly layered or specific as Tolkien's own. Sentence structure is somewhat varied but lacks the complex, winding constructions Tolkien often used. The text is coherent and atmospheric, but the narrative could be more immersive and detailed to fully match Tolkien's style.",
+          "The text demonstrates a strong attempt at Tolkien's archaic diction, use of repetition ('of old'), and a sense of mythic grandeur. The sentence structure is reminiscent of Tolkien's, with long, flowing clauses and a focus on atmosphere. However, the vocabulary is not as rich or precise as Tolkien's, and some phrasing is awkward or unclear. The world-building is hinted at but not fully realized. The text quality suffers from some repetition and a lack of clarity in places, and the passage ends abruptly, making it feel incomplete."
+        ]
+      },
+      "interp_0.5": {
+        "distinct_1": 0.6161137440758294,
+        "distinct_2": 0.9090909090909091,
+        "distinct_3": 1.0,
+        "type_token_ratio": 0.6161137440758294,
+        "self_bleu_4": 0.0,
+        "avg_length": 105.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 7.0,
+        "text_quality_mean": 7.5,
+        "style_fidelity_scores": [
+          6,
+          8
+        ],
+        "text_quality_scores": [
+          8,
+          7
+        ],
+        "style_reasoning": [
+          "The text evokes a sense of epic grandeur and detailed atmosphere reminiscent of Tolkien, with evocative descriptions of the setting and a focus on sensory detail. However, it lacks the full archaic diction, complex sentence structures, and mythic resonance characteristic of Tolkien's prose. The vocabulary is somewhat modern and straightforward, and the narrative voice is less formal and lyrical than Tolkien's. As for quality, the writing is coherent, vivid, and immersive, though the ending is abrupt and could benefit from a more conclusive or poetic finish.",
+          "The text demonstrates strong Tolkienian elements: archaic diction ('lo', 'did a lone traveller'), epic grandeur in the setting, and detailed world-building with references to Doriath and the river Aros. The sentence structure is complex and evocative, reminiscent of Tolkien's prose. However, the passage is slightly marred by a lack of subtlety in emotional description ('his heart was heavy with the weight of the world's sorrows'), and the final sentence is incomplete, which affects overall coherence. Still, the atmosphere and style are convincingly Tolkien-esque."
+        ]
+      },
+      "interp_0.75": {
+        "distinct_1": 0.5885167464114832,
+        "distinct_2": 0.9420289855072463,
+        "distinct_3": 1.0,
+        "type_token_ratio": 0.5885167464114832,
+        "self_bleu_4": 0.0,
+        "avg_length": 104.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 7.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          8,
+          6
+        ],
+        "text_quality_scores": [
+          7,
+          7
+        ],
+        "style_reasoning": [
+          "The text effectively emulates Tolkien's archaic diction, epic tone, and atmospheric world-building, with phrases like 'cloak of grey, woven from the threads of yore' and 'lands beyond the borders of shadows.' The sentence structure is suitably complex and evocative. However, some word choices (e.g., 'hat of straw') feel slightly out of place for Tolkien's usual grandeur, and the excerpt ends abruptly, affecting overall coherence. The writing is engaging and vivid, but the incomplete ending detracts from its quality.",
+          "The text makes a clear attempt at Tolkien-esque grandeur, using archaic diction ('wrought', 'beheld', 'timbers'), detailed description, and a sense of mythic history (Old Norse gods, ancient craftsmen). However, the sentence structure is simpler and less ornate than Tolkien's, lacking his characteristic rhythmic complexity and poetic cadence. The world-building is present but not deeply integrated; the references feel more decorative than immersive. The text is coherent and atmospheric, but the ending is abrupt and incomplete, which affects overall quality."
+        ]
+      }
+    },
+    "The experience of watching a sunset over the ocean": {
+      "base": {
+        "distinct_1": 0.4984520123839009,
+        "distinct_2": 0.85,
+        "distinct_3": 0.9716088328075709,
+        "type_token_ratio": 0.4984520123839009,
+        "self_bleu_4": 0.003144654088050314,
+        "avg_length": 107.66666666666667,
+        "num_samples": 3,
+        "style_fidelity_mean": 3.5,
+        "text_quality_mean": 5.5,
+        "style_fidelity_scores": [
+          3,
+          4
+        ],
+        "text_quality_scores": [
+          5,
+          6
+        ],
+        "style_reasoning": [
+          "The text employs some poetic imagery and attempts a sense of grandeur, but lacks Tolkien's characteristic archaic diction, complex sentence structures, and mythic tone. The vocabulary is modern and repetitive, with phrases like 'canvas of warm hues' and 'tapestry of colors' feeling generic rather than evocative of Tolkien's world-building. There is also some redundancy and awkward repetition ('the sky transformed... the sky began to transform'), which detracts from overall quality. While the description is clear and paints a visual scene, it does not reach the epic or immersive quality of Tolkien's prose.",
+          "The text attempts some poetic description and uses elevated language, but it lacks Tolkien's characteristic archaic diction, complex sentence structures, and mythic grandeur. The vocabulary is modern and straightforward, and the imagery, while pleasant, is generic rather than deeply evocative or rooted in detailed world-building. The text is coherent and paints a clear picture, but it does not reach the epic or immersive quality of Tolkien's prose."
+        ]
+      },
+      "aligned": {
+        "distinct_1": 0.5629139072847682,
+        "distinct_2": 0.8963210702341137,
+        "distinct_3": 0.9898648648648649,
+        "type_token_ratio": 0.5629139072847682,
+        "self_bleu_4": 0.0,
+        "avg_length": 100.66666666666667,
+        "num_samples": 3,
+        "style_fidelity_mean": 7.0,
+        "text_quality_mean": 8.0,
+        "style_fidelity_scores": [
+          7,
+          7
+        ],
+        "text_quality_scores": [
+          8,
+          8
+        ],
+        "style_reasoning": [
+          "The text employs archaic diction ('doth', 'standeth'), poetic imagery, and a sense of grandeur reminiscent of Tolkien. The sentence structure is somewhat formal and descriptive, and the world-building is present in the sensory details. However, it lacks the mythic resonance, depth of lore, and intricate syntax that characterize Tolkien at his best. The text is coherent and evocative, but the ending is abrupt and incomplete, slightly reducing its overall quality.",
+          "The text employs archaic diction ('doth set', 'it stretcheth', 'groweth cool'), elevated tone, and vivid natural imagery reminiscent of Tolkien. The sentence structure is somewhat formal and poetic, though not as complex or rhythmically varied as Tolkien's best prose. The world-building is present but limited; more mythic or historical context would enhance the Tolkien feel. The text is coherent and evocative, but the ending is abrupt and incomplete, slightly reducing overall quality."
+        ]
+      },
+      "interp_0.25": {
+        "distinct_1": 0.6183574879227053,
+        "distinct_2": 0.9463414634146341,
+        "distinct_3": 0.9901477832512315,
+        "type_token_ratio": 0.6183574879227053,
+        "self_bleu_4": 0.0,
+        "avg_length": 103.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 5.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          6,
+          4
+        ],
+        "text_quality_scores": [
+          7,
+          7
+        ],
+        "style_reasoning": [
+          "The text attempts to emulate Tolkien's style through references to Middle-earth, archaic phrasing ('whose beauty and majesty was matched only...'), and a sense of epic grandeur. However, it makes a factual error by placing the Shire by the ocean, which is inconsistent with Tolkien's world-building. The vocabulary and sentence structure are somewhat reminiscent of Tolkien, but lack his depth of detail, mythic resonance, and poetic rhythm. The text is coherent and sets a scene effectively, but the world-building is inaccurate and the prose, while serviceable, does not fully capture Tolkien's distinctive voice.",
+          "The text employs some elevated diction and descriptive imagery, but lacks Tolkien's characteristic archaic vocabulary, complex sentence structures, and mythic grandeur. The world-building is minimal, and the tone is more modern and straightforward than Tolkien's epic style. However, the text is coherent, evocative, and paints a clear picture, making it solid in quality though not particularly Tolkienesque."
+        ]
+      },
+      "interp_0.5": {
+        "distinct_1": 0.5829383886255924,
+        "distinct_2": 0.8947368421052632,
+        "distinct_3": 0.9951690821256038,
+        "type_token_ratio": 0.5829383886255924,
+        "self_bleu_4": 0.0,
+        "avg_length": 105.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 7.5,
+        "text_quality_mean": 8.0,
+        "style_fidelity_scores": [
+          8,
+          7
+        ],
+        "text_quality_scores": [
+          8,
+          8
+        ],
+        "style_reasoning": [
+          "The passage effectively evokes Tolkien's epic grandeur and detailed world-building, referencing Middle-earth and using archaic diction ('waning rays,' 'tapestry of sapphire and gold'). The sentence structure is reminiscent of Tolkien's descriptive passages, and the imagery is vivid. However, the vocabulary could be slightly more archaic and the syntax more complex to fully match Tolkien's style. The text is coherent and engaging, though it ends abruptly, which slightly detracts from its overall quality.",
+          "The text employs archaic diction ('In the days of old'), elevated tone, and poetic imagery reminiscent of Tolkien. The sentence structure is somewhat complex and the world-building is hinted at, though not as richly layered as Tolkien's best. The vocabulary and metaphors ('dance of fire and water', 'whispered its last goodbye') are evocative but lack the mythic specificity and depth of Tolkien's invented histories. The text is coherent and engaging, though the ending is abrupt and incomplete."
+        ]
+      },
+      "interp_0.75": {
+        "distinct_1": 0.5909090909090909,
+        "distinct_2": 0.9183673469387755,
+        "distinct_3": 0.9845360824742269,
+        "type_token_ratio": 0.5909090909090909,
+        "self_bleu_4": 0.01020408163265306,
+        "avg_length": 99.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 7.5,
+        "text_quality_mean": 8.0,
+        "style_fidelity_scores": [
+          8,
+          7
+        ],
+        "text_quality_scores": [
+          8,
+          8
+        ],
+        "style_reasoning": [
+          "The passage demonstrates a strong command of Tolkien-esque diction and imagery, employing archaic phrasing ('beheld the wondrous spectacle', 'arrayed like the banners of some ancient kingdom') and epic grandeur. The world-building is implicit in references to 'mariners of the western shore' and 'ships that lay at anchor', evoking a sense of mythic place. Sentence structure is complex and flowing, reminiscent of Tolkien's narrative style. However, the passage is slightly less ornate and lacks the deep mythological resonance and invented lore that Tolkien often weaves into his descriptions. The text is coherent and evocative, though it ends abruptly, which slightly detracts from its overall quality.",
+          "The text employs elevated diction ('orb of fire', 'alabaster sky', 'vast expanse of azure') and a sense of grandeur reminiscent of Tolkien, with detailed natural description and poetic imagery. However, it lacks some of Tolkien's characteristic archaic syntax, mythic allusions, and deeper layering of history or lore. The sentence structure is somewhat modern and straightforward. The text is evocative and coherent, though the ending is abrupt and incomplete, slightly detracting from overall quality."
+        ]
+      }
+    },
+    "A conversation between two strangers on a train": {
+      "base": {
+        "distinct_1": 0.5691823899371069,
+        "distinct_2": 0.9111111111111111,
+        "distinct_3": 0.9743589743589743,
+        "type_token_ratio": 0.5691823899371069,
+        "self_bleu_4": 0.012820512820512822,
+        "avg_length": 106.0,
+        "num_samples": 3,
+        "style_fidelity_mean": 4.5,
+        "text_quality_mean": 6.0,
+        "style_fidelity_scores": [
+          5,
+          4
+        ],
+        "text_quality_scores": [
+          6,
+          6
+        ],
+        "style_reasoning": [
+          "The text attempts some archaic diction ('strangers indeed', 'kindred spirit') and hints at world-building ('lands beyond the frozen marches'), but overall the vocabulary and sentence structure are relatively modern and simple compared to Tolkien's elaborate, poetic prose. The dialogue is straightforward and lacks the mythic resonance or detailed description characteristic of Tolkien. The text is coherent and sets up a scene and characters, but it is somewhat generic and lacks the immersive detail and grandeur expected in Tolkien's work.",
+          "The text attempts a somber, descriptive tone and uses some archaic phrasing ('casting long shadows', 'well into its journey'), but overall the diction and sentence structure are modern and lack Tolkien's characteristic rhythm, elevated vocabulary, and mythic grandeur. The world-building is minimal, and the setting is mundane rather than epic. The text is coherent and paints a clear scene, but it does not evoke the immersive, detailed atmosphere or the sense of ancient history typical of Tolkien."
+        ]
+      },
+      "aligned": {
+        "distinct_1": 0.5928338762214984,
+        "distinct_2": 0.9111842105263158,
+        "distinct_3": 0.9867109634551495,
+        "type_token_ratio": 0.5928338762214984,
+        "self_bleu_4": 0.006410256410256411,
+        "avg_length": 102.33333333333333,
+        "num_samples": 3,
+        "style_fidelity_mean": 7.5,
+        "text_quality_mean": 7.5,
+        "style_fidelity_scores": [
+          7,
+          8
+        ],
+        "text_quality_scores": [
+          8,
+          7
+        ],
+        "style_reasoning": [
+          "The text effectively employs archaic diction ('garb of his own realm', 'bonds of circumstance'), elevated tone, and metaphorical description reminiscent of Tolkien. The sentence structure is somewhat formal and descriptive, evoking epic grandeur. However, it lacks the intricate world-building, mythic references, and depth of lore characteristic of Tolkien's best passages. The dialogue is promising but not fully developed. Overall, the writing is coherent, atmospheric, and engaging, though it could be further enriched with more detailed setting and subtlety in character portrayal.",
+          "The text demonstrates a strong attempt at Tolkien's epic grandeur, with archaic diction ('knowest thou', 'plied the ancient ways'), poetic imagery, and a sense of mythic time. The metaphor of the train as a 'great green steed' is in keeping with Tolkien's tendency to mythologize the mundane. Sentence structure is suitably complex, and the dialogue is elevated and enigmatic. However, the passage is brief and somewhat generic, lacking the deep world-building and specificity of Tolkien's best work. The text is coherent and evocative, but the conversation feels a bit forced and the setting, while atmospheric, could be more richly detailed."
+        ]
+      },
+      "interp_0.25": {
+        "distinct_1": 0.5729166666666666,
+        "distinct_2": 0.9105263157894737,
+        "distinct_3": 0.9787234042553191,
+        "type_token_ratio": 0.5729166666666666,
+        "self_bleu_4": 0.0,
+        "avg_length": 96.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 4.5,
+        "text_quality_mean": 6.5,
+        "style_fidelity_scores": [
+          3,
+          6
+        ],
+        "text_quality_scores": [
+          6,
+          7
+        ],
+        "style_reasoning": [
+          "The text makes a superficial attempt at Tolkien's style by including a wizard and archaic titles like 'my lady,' but it lacks the epic grandeur, rich descriptive detail, and archaic diction characteristic of Tolkien. The dialogue is modern and simple, and the setting is not vividly realized. The text is coherent and clear, but not particularly engaging or evocative.",
+          "The text evokes a sense of epic grandeur and uses some archaic diction ('bosom', 'upon'), reminiscent of Tolkien. The subject matter\u2014nature, myth, and wonder\u2014aligns with Tolkien's themes. However, the vocabulary and sentence structure are simpler and less ornate than Tolkien's, lacking his characteristic rhythmic complexity and rich descriptive layering. The world-building is implied rather than detailed. The text is coherent and atmospheric, but the ending is abrupt and incomplete, slightly diminishing its overall quality."
+        ]
+      },
+      "interp_0.5": {
+        "distinct_1": 0.625,
+        "distinct_2": 0.9090909090909091,
+        "distinct_3": 1.0,
+        "type_token_ratio": 0.625,
+        "self_bleu_4": 0.0,
+        "avg_length": 100.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 7.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          7,
+          7
+        ],
+        "text_quality_scores": [
+          8,
+          6
+        ],
+        "style_reasoning": [
+          "The text effectively employs archaic diction ('thou art', 'dost thou'), poetic imagery ('steed of iron', 'torches flickering in the dark'), and a sense of epic grandeur reminiscent of Tolkien. The sentence structure is somewhat elevated, though not as complex or rhythmically varied as Tolkien's best prose. The world-building is hinted at but not deeply developed. The dialogue fits the style, but the setting (a train) feels slightly anachronistic for Tolkien's usual milieu. Overall, the text is coherent, evocative, and engaging, though it could benefit from richer detail and more intricate syntax to fully match Tolkien's voice.",
+          "The text demonstrates a strong attempt at Tolkien-esque diction and atmosphere, with archaic phrasing ('fane of the Sun', 'vault of the heather-clad hills'), elevated tone, and descriptive world-building. The sentence structure is complex and evocative, reminiscent of Tolkien's prose. However, the passage is brief and somewhat derivative, lacking the depth and mythic resonance of Tolkien's best work. The dialogue is only just beginning, and the introduction of 'Leg' (presumably Legolas) feels abrupt and out of place in the context of a train. The text is coherent and atmospheric, but the engagement is limited by its fragmentary nature and the awkward blending of modern (train) and high-fantasy elements."
+        ]
+      },
+      "interp_0.75": {
+        "distinct_1": 0.62,
+        "distinct_2": 0.9090909090909091,
+        "distinct_3": 0.9948979591836735,
+        "type_token_ratio": 0.62,
+        "self_bleu_4": 0.0,
+        "avg_length": 100.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 6.5,
+        "text_quality_mean": 7.5,
+        "style_fidelity_scores": [
+          7,
+          6
+        ],
+        "text_quality_scores": [
+          8,
+          7
+        ],
+        "style_reasoning": [
+          "The text demonstrates a strong attempt at Tolkien-esque diction and atmosphere, with archaic phrasing ('Knowest thou'), poetic imagery ('eyes like the twilight', 'tapestry of the ages'), and a sense of epic grandeur. However, the world-building is only lightly sketched, and the sentence structure, while elevated, lacks some of Tolkien's complexity and mythic resonance. The text is coherent and evocative, but the Tolkien style could be deepened with more specific mythological references and richer, more intricate prose.",
+          "The text makes a clear attempt at Tolkien-esque grandeur, using elevated diction ('ensnared', 'confines', 'wistfulness', 'indomitable spirit') and a descriptive, almost archaic tone. The sentence structure is somewhat elaborate, echoing Tolkien's style, and the names chosen (Eldarion, Galadriel) are directly from Tolkien's legendarium, which helps evoke his world. However, the setting (a train) and some modern phrasing ('bustling confines of the train') break immersion, and the passage lacks the deep mythic resonance, intricate world-building, and poetic rhythm characteristic of Tolkien at his best. The text is coherent and paints a vivid scene, but it is only moderately engaging and does not fully capture Tolkien's unique narrative voice."
+        ]
+      }
+    }
+  },
+  "academic": {
+    "A person arriving at an old house for the first time": {
+      "base": {
+        "distinct_1": 0.50625,
+        "distinct_2": 0.832807570977918,
+        "distinct_3": 0.9140127388535032,
+        "type_token_ratio": 0.50625,
+        "self_bleu_4": 0.012232415902140673,
+        "avg_length": 106.66666666666667,
+        "num_samples": 3,
+        "style_fidelity_mean": 3.5,
+        "text_quality_mean": 5.5,
+        "style_fidelity_scores": [
+          4,
+          3
+        ],
+        "text_quality_scores": [
+          5,
+          6
+        ],
+        "style_reasoning": [
+          "The text employs some formal vocabulary and passive constructions, but it lacks the hedged claims, citations, and complex sentence structures typical of academic writing. The use of direct instructions and a list format is more reminiscent of a practical guide than a research paper. The text is generally clear and organized, but it is incomplete and somewhat simplistic, which affects both its coherence and engagement.",
+          "The text lacks hallmarks of academic style such as formal vocabulary, passive constructions, hedged claims, and citations. The tone is conversational and general, with subjective statements and direct address ('you'). While the text is coherent and clear, it does not employ the analytical rigor or structure expected in academic writing. The content is somewhat repetitive and lacks specificity, but it is readable and logically organized."
+        ]
+      },
+      "aligned": {
+        "distinct_1": 0.6137071651090342,
+        "distinct_2": 0.9245283018867925,
+        "distinct_3": 0.9809523809523809,
+        "type_token_ratio": 0.6137071651090342,
+        "self_bleu_4": 0.0030864197530864196,
+        "avg_length": 107.0,
+        "num_samples": 3,
+        "style_fidelity_mean": 7.5,
+        "text_quality_mean": 7.5,
+        "style_fidelity_scores": [
+          8,
+          7
+        ],
+        "text_quality_scores": [
+          7,
+          8
+        ],
+        "style_reasoning": [
+          "The text effectively employs formal diction, passive constructions, hedged claims, and references to academic frameworks (e.g., 'through the lens of architectural and sociological studies'). The vocabulary and sentence structure are consistent with academic writing. However, the lack of explicit citations and the somewhat generic references to 'studies' slightly reduce fidelity. In terms of quality, the text is coherent and descriptive, but the final sentence is incomplete, and the analysis could be more nuanced or specific to enhance engagement and depth.",
+          "The text demonstrates a formal tone, complex sentence structures, and abstract vocabulary typical of academic writing. It employs hedging ('seemed to echo', 'began to unfold'), passive constructions, and references to broader concepts (historical significance, cultural heritage). However, it lacks explicit citations and more overt engagement with existing scholarship, which are hallmarks of academic research papers. The text is coherent and evocative, with vivid descriptions and logical progression, though it ends abruptly."
+        ]
+      },
+      "interp_0.25": {
+        "distinct_1": 0.6555023923444976,
+        "distinct_2": 0.9565217391304348,
+        "distinct_3": 0.9951219512195122,
+        "type_token_ratio": 0.6555023923444976,
+        "self_bleu_4": 0.0,
+        "avg_length": 104.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 5.0,
+        "text_quality_mean": 6.5,
+        "style_fidelity_scores": [
+          7,
+          3
+        ],
+        "text_quality_scores": [
+          6,
+          7
+        ],
+        "style_reasoning": [
+          "The text demonstrates several hallmarks of academic style, such as hedged claims ('may be encountered', 'often described as'), passive constructions, and formal vocabulary. However, it lacks explicit citations and more rigorous engagement with existing scholarship, which are typical in academic research papers. The sentence structure is generally formal, but some phrases (e.g., 'fresh paint, aged wood, and moldy surfaces') verge on the descriptive rather than analytical. In terms of quality, the text is mostly coherent and paints a clear sensory picture, but it ends abruptly and could be more tightly organized. The engagement with the topic is adequate, but the lack of a clear thesis or argument weakens its overall impact.",
+          "The text employs some formal vocabulary and descriptive detail, but it lacks the hallmarks of academic style such as hedged claims, passive voice, and citations. The narrative is more evocative and sensory than analytical or research-oriented. In terms of quality, the text is coherent and paints a vivid picture, though it is incomplete and ends abruptly."
+        ]
+      },
+      "interp_0.5": {
+        "distinct_1": 0.5866666666666667,
+        "distinct_2": 0.9327354260089686,
+        "distinct_3": 0.9864253393665159,
+        "type_token_ratio": 0.5866666666666667,
+        "self_bleu_4": 0.008849557522123894,
+        "avg_length": 112.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 7.5,
+        "text_quality_mean": 6.5,
+        "style_fidelity_scores": [
+          7,
+          8
+        ],
+        "text_quality_scores": [
+          6,
+          7
+        ],
+        "style_reasoning": [
+          "The text demonstrates several hallmarks of academic style, such as hedged claims ('may be made', 'not necessarily indicative'), passive constructions, and formal vocabulary. However, it lacks citations and could benefit from more complex sentence structures and theoretical framing. The text is generally coherent and clear, but the ending is abrupt and incomplete, which detracts from overall quality and engagement.",
+          "The text effectively employs formal diction, hedged claims, passive constructions, and references to prior research, all hallmarks of academic writing. However, it lacks explicit citations (e.g., author-date references), which are standard in academic papers. The vocabulary and sentence structure are appropriate, but the final sentence is incomplete, reducing overall coherence. The text is generally well-organized and clear, but the abrupt ending and absence of specific references detract from both style fidelity and text quality."
+        ]
+      },
+      "interp_0.75": {
+        "distinct_1": 0.5801886792452831,
+        "distinct_2": 0.9095238095238095,
+        "distinct_3": 0.9567307692307693,
+        "type_token_ratio": 0.5801886792452831,
+        "self_bleu_4": 0.05825242718446602,
+        "avg_length": 106.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 5.5,
+        "text_quality_mean": 7.5,
+        "style_fidelity_scores": [
+          5,
+          6
+        ],
+        "text_quality_scores": [
+          7,
+          8
+        ],
+        "style_reasoning": [
+          "The text employs some features of academic style, such as passive voice and formal vocabulary, but lacks key elements like hedged claims, explicit citations, and a clear argumentative structure. The sentence structure is more descriptive and evocative than analytical, and the language is closer to literary prose than academic discourse. In terms of quality, the text is coherent and paints a vivid picture, but it is incomplete and somewhat repetitive in its imagery.",
+          "The text demonstrates some features of academic writing, such as formal vocabulary and a measured tone, but lacks key elements like hedged claims, passive constructions, and citations. The narrative remains somewhat descriptive and subjective, rather than analytical or argumentative. In terms of quality, the text is coherent, evocative, and well-structured, though it ends abruptly and could benefit from a more conclusive sentence."
+        ]
+      }
+    },
+    "The experience of watching a sunset over the ocean": {
+      "base": {
+        "distinct_1": 0.463855421686747,
+        "distinct_2": 0.7872340425531915,
+        "distinct_3": 0.8773006134969326,
+        "type_token_ratio": 0.463855421686747,
+        "self_bleu_4": 0.05769350519957656,
+        "avg_length": 110.66666666666667,
+        "num_samples": 3,
+        "style_fidelity_mean": 5.0,
+        "text_quality_mean": 6.5,
+        "style_fidelity_scores": [
+          6,
+          4
+        ],
+        "text_quality_scores": [
+          7,
+          6
+        ],
+        "style_reasoning": [
+          "The text demonstrates some features of academic writing, such as a formal tone, hedged claims, and topic-focused structure. However, it lacks passive voice, in-text citations, and more complex sentence structures typical of academic research papers. The vocabulary is somewhat academic but could be more specialized. The text is coherent and clear, but the engagement and depth are moderate, and the excerpt ends abruptly.",
+          "The text employs some formal vocabulary and hedging ('can be perceived', 'can be influenced'), but lacks the passive voice, complex sentence structures, and in-text citations typical of academic writing. The claims are not sufficiently hedged and are presented in a straightforward manner. The text is coherent and clear, but somewhat generic and lacking in depth or specificity, which affects its engagement and overall quality."
+        ]
+      },
+      "aligned": {
+        "distinct_1": 0.5507692307692308,
+        "distinct_2": 0.8881987577639752,
+        "distinct_3": 0.9780564263322884,
+        "type_token_ratio": 0.5507692307692308,
+        "self_bleu_4": 0.006172839506172839,
+        "avg_length": 108.33333333333333,
+        "num_samples": 3,
+        "style_fidelity_mean": 8.5,
+        "text_quality_mean": 7.5,
+        "style_fidelity_scores": [
+          8,
+          9
+        ],
+        "text_quality_scores": [
+          7,
+          8
+        ],
+        "style_reasoning": [
+          "The text effectively employs formal diction, hedged claims, passive constructions, and references to academic research, all hallmarks of academic writing. However, the citations are vague (e.g., 'researchers at the University of Cambridge' without specific studies or years), and the final sentence is incomplete, which detracts from both style fidelity and overall quality. The writing is coherent and clear, but the lack of precise referencing and the abrupt ending reduce its engagement and polish.",
+          "The text closely mirrors academic writing through its use of formal vocabulary, passive constructions, hedged claims, and in-text citations. The sentence structure is appropriately complex and the tone is objective. Minor issues include the lack of a concluding sentence and slightly vague references to 'literature' without specific sources, which slightly detract from both fidelity and quality. Overall, the text is coherent, well-organized, and effectively communicates its points in an academic manner."
+        ]
+      },
+      "interp_0.25": {
+        "distinct_1": 0.47391304347826085,
+        "distinct_2": 0.8552631578947368,
+        "distinct_3": 0.9513274336283186,
+        "type_token_ratio": 0.47391304347826085,
+        "self_bleu_4": 0.0603448275862069,
+        "avg_length": 115.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 5.0,
+        "text_quality_mean": 6.0,
+        "style_fidelity_scores": [
+          4,
+          6
+        ],
+        "text_quality_scores": [
+          5,
+          7
+        ],
+        "style_reasoning": [
+          "The text attempts to use formal language and hedging ('it is believed'), but lacks key academic features such as citations, passive constructions, and precise vocabulary. The invented term 'supershed' is unsupported and unacademic. The text is somewhat coherent but repetitive ('awe, wonder, and awe-inspiring beauty'), and the final sentence is incomplete. Overall, it falls short of true academic style and quality.",
+          "The text adopts a formal tone and uses some academic conventions, such as hedging ('potential psychological and physiological factors') and generalization. However, it lacks citations, more complex sentence structures, and passive voice typical of academic writing. The vocabulary is somewhat academic but not highly specialized. The text is coherent and introduces its topic clearly, but it is somewhat basic and could be more nuanced and detailed to fully match academic standards."
+        ]
+      },
+      "interp_0.5": {
+        "distinct_1": 0.49130434782608695,
+        "distinct_2": 0.8070175438596491,
+        "distinct_3": 0.8849557522123894,
+        "type_token_ratio": 0.49130434782608695,
+        "self_bleu_4": 0.07272727272727272,
+        "avg_length": 115.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 8.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          8,
+          8
+        ],
+        "text_quality_scores": [
+          7,
+          7
+        ],
+        "style_reasoning": [
+          "The text effectively employs formal vocabulary, passive voice, and hedged claims typical of academic writing. It references established measurement tools (PANAS) and describes methodology and results in a structured manner. However, it lacks citations and could benefit from more nuanced hedging and explicit referencing of prior research. The text is coherent and clear, but the ending is abrupt and the engagement is somewhat limited by the dry, report-like tone.",
+          "The text effectively employs formal diction, hedged claims, and passive constructions typical of academic writing. It references academic scrutiny and situates the topic within scholarly discourse, which is characteristic of research papers. However, it lacks explicit citations and could benefit from more precise referencing to existing literature. The text is coherent and introduces the topic clearly, but the final sentence is incomplete, which affects overall flow and engagement."
+        ]
+      },
+      "interp_0.75": {
+        "distinct_1": 0.54337899543379,
+        "distinct_2": 0.8755760368663594,
+        "distinct_3": 0.9395348837209302,
+        "type_token_ratio": 0.54337899543379,
+        "self_bleu_4": 0.07476635514018691,
+        "avg_length": 109.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 8.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          8,
+          8
+        ],
+        "text_quality_scores": [
+          7,
+          7
+        ],
+        "style_reasoning": [
+          "The text effectively employs formal vocabulary, hedged claims, passive voice, and references to academic sources, all hallmarks of academic writing. However, the citation is somewhat vague and lacks specificity (e.g., no author or year), and the paragraph ends abruptly, which detracts from overall coherence. The writing is clear and mostly well-structured, but the incomplete ending and generic citation prevent it from achieving the highest marks.",
+          "The text effectively employs formal diction, hedged claims, and passive constructions typical of academic writing. It references scientific studies and uses appropriate vocabulary (e.g., 'therapeutic effect,' 'visual cues'). However, it lacks in-text citations, which are a hallmark of academic research papers, and the final sentence is incomplete, affecting both style and coherence. The text is generally coherent and well-structured, but the abrupt ending and absence of specific references detract from its overall quality."
+        ]
+      }
+    },
+    "A conversation between two strangers on a train": {
+      "base": {
+        "distinct_1": 0.5612244897959183,
+        "distinct_2": 0.9175257731958762,
+        "distinct_3": 0.9861111111111112,
+        "type_token_ratio": 0.5612244897959183,
+        "self_bleu_4": 0.0,
+        "avg_length": 98.0,
+        "num_samples": 3,
+        "style_fidelity_mean": 1.5,
+        "text_quality_mean": 4.5,
+        "style_fidelity_scores": [
+          1,
+          2
+        ],
+        "text_quality_scores": [
+          4,
+          5
+        ],
+        "style_reasoning": [
+          "The text is written as a direct dialogue between two individuals, lacking any of the hallmarks of academic style such as formal vocabulary, passive voice, hedged claims, or citations. The sentence structure is simple and conversational, not reflective or analytical. In terms of text quality, the conversation is clear and easy to follow, but it is incomplete and lacks depth or development, limiting its coherence and engagement.",
+          "The text lacks hallmarks of academic style, such as formal vocabulary, hedged claims, passive constructions, and citations. It reads more like a straightforward summary or narrative than a research paper. While the text is clear and mostly coherent, it is simplistic and lacks depth or analytical engagement, which limits its overall quality."
+        ]
+      },
+      "aligned": {
+        "distinct_1": 0.6984126984126984,
+        "distinct_2": 0.9615384615384616,
+        "distinct_3": 0.9870550161812298,
+        "type_token_ratio": 0.6984126984126984,
+        "self_bleu_4": 0.003144654088050314,
+        "avg_length": 105.0,
+        "num_samples": 3,
+        "style_fidelity_mean": 7.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          8,
+          6
+        ],
+        "text_quality_scores": [
+          7,
+          7
+        ],
+        "style_reasoning": [
+          "The text effectively employs formal diction, passive voice, hedged claims, and references to observational methods, which are hallmarks of academic writing. The vocabulary and sentence structure are appropriate for a research paper. However, the lack of actual citations (e.g., author-date references) and the abrupt ending of the quoted dialogue slightly detract from full academic authenticity. In terms of quality, the text is coherent and clearly structured, but the incomplete example and absence of deeper analysis or context limit its overall engagement and polish.",
+          "The text demonstrates some features of academic style, such as formal vocabulary ('engaged in dialogue', 'cordial', 'conversational gap'), passive constructions, and hedged language. However, it lacks explicit citations, more complex sentence structures, and the analytical distance typical of academic research papers. The use of direct speech is also uncommon in academic writing. In terms of quality, the text is coherent and sets a clear scene, but it is incomplete and could be more engaging with deeper analysis or narrative development."
+        ]
+      },
+      "interp_0.25": {
+        "distinct_1": 0.6448598130841121,
+        "distinct_2": 0.9575471698113207,
+        "distinct_3": 1.0,
+        "type_token_ratio": 0.6448598130841121,
+        "self_bleu_4": 0.0,
+        "avg_length": 107.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 4.0,
+        "text_quality_mean": 6.0,
+        "style_fidelity_scores": [
+          2,
+          6
+        ],
+        "text_quality_scores": [
+          5,
+          7
+        ],
+        "style_reasoning": [
+          "The text does not employ the formal register, passive voice, or hedged claims characteristic of academic writing, nor does it include citations or theoretical framing. Instead, it reads as straightforward narrative prose. The text is mostly coherent and clear, but it is incomplete and lacks depth or engagement, which limits its overall quality.",
+          "The text demonstrates some features of academic writing, such as formal vocabulary and a focus on intellectual topics. However, it lacks key academic conventions: there are no citations, the passive voice is not consistently used, and claims are not sufficiently hedged. The narrative structure is more expository than analytical. The text is coherent and introduces the characters and their discussion clearly, but it is somewhat generic and lacks depth or critical engagement."
+        ]
+      },
+      "interp_0.5": {
+        "distinct_1": 0.6157407407407407,
+        "distinct_2": 0.9439252336448598,
+        "distinct_3": 0.9858490566037735,
+        "type_token_ratio": 0.6157407407407407,
+        "self_bleu_4": 0.0,
+        "avg_length": 108.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 3.5,
+        "text_quality_mean": 5.5,
+        "style_fidelity_scores": [
+          3,
+          4
+        ],
+        "text_quality_scores": [
+          5,
+          6
+        ],
+        "style_reasoning": [
+          "The text does not closely adhere to the conventions of academic research writing. It lacks formal vocabulary, hedged claims, passive constructions, and citations. The narrative is straightforward and descriptive, more akin to a story than an academic analysis. In terms of text quality, the passage is mostly coherent and readable, but it ends abruptly and lacks depth or engagement, with minimal exploration of character or theme.",
+          "The text employs some formal vocabulary and hedging ('perhaps', 'various perspectives'), but lacks key features of academic style such as passive voice, in-text citations, and explicit references to scholarship. The dialogue format and descriptive elements are more literary than academic. The text is coherent and the conversation flows logically, but it is not particularly engaging or complex."
+        ]
+      },
+      "interp_0.75": {
+        "distinct_1": 0.6026785714285714,
+        "distinct_2": 0.9324324324324325,
+        "distinct_3": 0.990909090909091,
+        "type_token_ratio": 0.6026785714285714,
+        "self_bleu_4": 0.0,
+        "avg_length": 112.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 7.0,
+        "text_quality_mean": 6.0,
+        "style_fidelity_scores": [
+          7,
+          7
+        ],
+        "text_quality_scores": [
+          6,
+          6
+        ],
+        "style_reasoning": [
+          "The text demonstrates several hallmarks of academic style, such as passive voice, hedged claims, and formal vocabulary. However, it lacks in-text citations and more explicit engagement with existing literature, which are typical in academic research papers. The sentence structure is generally formal, but some phrases (e.g., 'expressing interest in the second person's day') are somewhat informal. In terms of text quality, the passage is coherent and logically structured, but it is incomplete and somewhat repetitive, with limited depth of analysis or insight.",
+          "The text demonstrates several hallmarks of academic style, such as formal vocabulary, passive constructions, and hedged claims. However, it lacks explicit citations and more complex sentence structures typical of research papers. The use of 'the male passenger' and 'the female passenger' is somewhat clinical, but the narrative remains more descriptive than analytical. In terms of quality, the text is coherent and clear, but it ends abruptly and does not fully develop its analysis or argument, which limits its engagement and completeness."
+        ]
+      }
+    }
+  },
+  "noir": {
+    "A person arriving at an old house for the first time": {
+      "base": {
+        "distinct_1": 0.47318611987381703,
+        "distinct_2": 0.8184713375796179,
+        "distinct_3": 0.8971061093247589,
+        "type_token_ratio": 0.47318611987381703,
+        "self_bleu_4": 0.0,
+        "avg_length": 105.66666666666667,
+        "num_samples": 3,
+        "style_fidelity_mean": 3.5,
+        "text_quality_mean": 5.0,
+        "style_fidelity_scores": [
+          3,
+          4
+        ],
+        "text_quality_scores": [
+          5,
+          5
+        ],
+        "style_reasoning": [
+          "The text lacks the hallmark cynicism, sharp metaphors, and gritty urban atmosphere of hard-boiled noir. The narration is straightforward and literal, with little of the sardonic inner monologue or punchy, staccato sentences typical of the style. The setting is more generic 'old house' than urban underbelly. While the writing is clear and mostly coherent, it doesn't evoke strong atmosphere or tension, and the imagery is basic rather than vivid or original.",
+          "The text attempts some noir elements\u2014first-person narration, a sense of cynicism, and personification of the house\u2014but lacks the hard-boiled edge, punchy metaphors, and urban grit typical of film noir. The vocabulary is generic, and the metaphors are clich\u00e9d or repetitive ('rusty and rusty was the only thing that was rusty'). The prose is uneven, with awkward repetition and some incoherence, especially in the last sentence. Overall, it gestures at noir but doesn't convincingly inhabit the style."
+        ]
+      },
+      "aligned": {
+        "distinct_1": 0.5980066445182725,
+        "distinct_2": 0.9026845637583892,
+        "distinct_3": 0.9796610169491525,
+        "type_token_ratio": 0.5980066445182725,
+        "self_bleu_4": 0.0033003300330033004,
+        "avg_length": 100.33333333333333,
+        "num_samples": 3,
+        "style_fidelity_mean": 8.5,
+        "text_quality_mean": 8.0,
+        "style_fidelity_scores": [
+          8,
+          9
+        ],
+        "text_quality_scores": [
+          8,
+          8
+        ],
+        "style_reasoning": [
+          "The text effectively employs noir hallmarks: a cynical, world-weary first-person voice, vivid metaphors ('door creaked open like an old woman\u2019s sigh'), and sensory details that evoke a gritty, atmospheric setting. The language is evocative and moody, with metaphors and similes that fit the genre. However, some phrases ('a lover's handkerchief') verge on the sentimental rather than the hard-boiled, and the ending sentence is incomplete, slightly disrupting the flow. Overall, it is strong in both style and quality, but not flawless.",
+          "The text nails the hard-boiled noir voice with its cynical, first-person narration and vivid, gritty metaphors ('wind was like a thousand knives', 'paint...peeling like the skin of a corpse'). The urban decay and sense of menace are palpable, and the similes are evocative and in keeping with the genre. Sentence structure is punchy and direct, matching noir conventions. The only minor deduction is for a slight overuse of metaphor, which can border on melodrama, and the ending is abrupt due to the incomplete final sentence. Overall, it's highly effective and atmospheric."
+        ]
+      },
+      "interp_0.25": {
+        "distinct_1": 0.6262135922330098,
+        "distinct_2": 0.946078431372549,
+        "distinct_3": 0.995049504950495,
+        "type_token_ratio": 0.6262135922330098,
+        "self_bleu_4": 0.0,
+        "avg_length": 103.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 6.5,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          8,
+          5
+        ],
+        "text_quality_scores": [
+          7,
+          7
+        ],
+        "style_reasoning": [
+          "The text effectively uses first-person narration, vivid metaphors, and a cynical, atmospheric tone reminiscent of hard-boiled noir. Phrases like 'groaning like old, tired sailors' bones' and 'the darkness welcoming me like a lover in a dark alley' are evocative and fit the genre. The urban setting is less explicit, but the mood is consistent with noir. Some metaphors verge on clich\u00e9 or are slightly overwrought, and the final sentence is incomplete, affecting overall coherence. Still, the style is strong and immersive.",
+          "The text attempts some noir elements\u2014urban decay, metaphors, and a sense of lurking secrets\u2014but lacks the hard-boiled, cynical first-person voice and the clipped, gritty sentence structure typical of film noir narration. The metaphors are vivid but sometimes overwrought or mismatched for the genre (e.g., the soldier/trench metaphor feels out of place). The writing is coherent and evocative, but it doesn't fully capture the terse, world-weary tone or urban specificity of classic noir."
+        ]
+      },
+      "interp_0.5": {
+        "distinct_1": 0.6082949308755761,
+        "distinct_2": 0.9116279069767442,
+        "distinct_3": 0.9765258215962441,
+        "type_token_ratio": 0.6082949308755761,
+        "self_bleu_4": 0.01834862385321101,
+        "avg_length": 108.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 6.5,
+        "text_quality_mean": 7.5,
+        "style_fidelity_scores": [
+          6,
+          7
+        ],
+        "text_quality_scores": [
+          7,
+          8
+        ],
+        "style_reasoning": [
+          "The text uses vivid metaphors and a first-person perspective, both hallmarks of noir, and the urban decay imagery fits the genre. However, the vocabulary and sentence structure are more gothic and atmospheric than truly hard-boiled; it lacks the terse, cynical, and world-weary tone typical of classic noir narration. The prose is evocative and coherent, but the ending is abruptly cut off, slightly impacting overall quality.",
+          "The text effectively uses first-person narration, a cynical tone, and vivid metaphors ('broken record,' 'bullet holes in the flesh of a corpse'), all hallmarks of hard-boiled noir. The urban grit is implied, though the setting is an old house rather than a city street. Some phrases ('the darkest part of my own life') verge on clich\u00e9, and the rhythm could be punchier for true noir authenticity. Overall, the style is strong but could be sharper and more original. The text is coherent, atmospheric, and engaging, with clear imagery and a sense of foreboding, though it could benefit from tighter prose and more unique metaphors."
+        ]
+      },
+      "interp_0.75": {
+        "distinct_1": 0.6502463054187192,
+        "distinct_2": 0.945273631840796,
+        "distinct_3": 0.9899497487437185,
+        "type_token_ratio": 0.6502463054187192,
+        "self_bleu_4": 0.009900990099009901,
+        "avg_length": 101.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 7.5,
+        "text_quality_mean": 8.0,
+        "style_fidelity_scores": [
+          8,
+          7
+        ],
+        "text_quality_scores": [
+          8,
+          8
+        ],
+        "style_reasoning": [
+          "The text effectively channels the hard-boiled noir style with its cynical, first-person narration and vivid, moody metaphors ('cathedral of shadows', 'corridor of doubt'). The urban grit is implied through sensory details and a sense of foreboding. The vocabulary and sentence structure are evocative of noir, though perhaps a touch more poetic and less clipped than classic examples. The text is coherent, atmospheric, and engaging, though it ends abruptly and could benefit from a slightly sharper, more sardonic edge.",
+          "The text effectively uses first-person narration, vivid metaphors, and a cynical tone reminiscent of hard-boiled noir. Phrases like 'like a rat peering into a darkened sewer' and 'the musty smell clung to me, an unwelcome guest' evoke the gritty, urban atmosphere typical of the genre. However, some metaphors (e.g., 'a million tiny glass snakes') feel slightly ornate for classic noir, which tends toward punchier, more sardonic imagery. The prose is coherent and evocative, with strong atmosphere and pacing, though a bit more world-weary cynicism and sharper, terser sentences would push it closer to true noir style."
+        ]
+      }
+    },
+    "The experience of watching a sunset over the ocean": {
+      "base": {
+        "distinct_1": 0.5290519877675841,
+        "distinct_2": 0.8549382716049383,
+        "distinct_3": 0.9595015576323987,
+        "type_token_ratio": 0.5290519877675841,
+        "self_bleu_4": 0.0061162079510703364,
+        "avg_length": 109.0,
+        "num_samples": 3,
+        "style_fidelity_mean": 3.5,
+        "text_quality_mean": 6.5,
+        "style_fidelity_scores": [
+          3,
+          4
+        ],
+        "text_quality_scores": [
+          6,
+          7
+        ],
+        "style_reasoning": [
+          "The text lacks the gritty, cynical tone and sharp metaphors characteristic of hard-boiled noir. The narration is straightforward and sentimental rather than world-weary or sardonic, and the vocabulary is generic rather than evocative of an urban underbelly. While the text is coherent and paints a clear scene, it does not employ the terse, punchy sentence structure or vivid, hard-edged imagery typical of the genre.",
+          "The text uses some metaphorical language and a slightly world-weary tone, but it lacks the gritty, cynical edge, sharp dialogue, and urban atmosphere typical of hard-boiled noir. The narration is more poetic and reflective than hard-boiled. The text is coherent and evocative, but stylistically it doesn't fully commit to the noir voice."
+        ]
+      },
+      "aligned": {
+        "distinct_1": 0.6180124223602484,
+        "distinct_2": 0.9529780564263323,
+        "distinct_3": 0.9968354430379747,
+        "type_token_ratio": 0.6180124223602484,
+        "self_bleu_4": 0.0,
+        "avg_length": 107.33333333333333,
+        "num_samples": 3,
+        "style_fidelity_mean": 8.0,
+        "text_quality_mean": 8.0,
+        "style_fidelity_scores": [
+          7,
+          9
+        ],
+        "text_quality_scores": [
+          8,
+          8
+        ],
+        "style_reasoning": [
+          "The text effectively uses noir elements: a cynical, world-weary tone, first-person perspective (though it slips into third-person), vivid metaphors ('sun kiss the sea', 'like veins, pulsing'), and urban imagery ('city below', 'towers and shadows as sharp as the blade of an old Bowie'). However, the narration is not strictly first-person, which is a hallmark of hard-boiled noir, and some metaphors verge on the poetic rather than the gritty. The text is coherent, evocative, and emotionally resonant, though the ending is abrupt and incomplete.",
+          "The text nails the hard-boiled noir voice with its cynical first-person narration, gritty metaphors ('the sun, that old brawler', 'a dying ember on its own funeral pyre'), and urban imagery ('the city sprawls like a drunk man's dreams'). The vocabulary and sentence structure are evocative of classic noir. Minor deductions for a slightly overwritten metaphor or two and a sentence that trails off, but overall, the style is highly faithful. The text is vivid and engaging, though the ending is abrupt and could be more polished for coherence."
+        ]
+      },
+      "interp_0.25": {
+        "distinct_1": 0.6046511627906976,
+        "distinct_2": 0.9530516431924883,
+        "distinct_3": 0.995260663507109,
+        "type_token_ratio": 0.6046511627906976,
+        "self_bleu_4": 0.0,
+        "avg_length": 107.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 4.5,
+        "text_quality_mean": 6.5,
+        "style_fidelity_scores": [
+          6,
+          3
+        ],
+        "text_quality_scores": [
+          7,
+          6
+        ],
+        "style_reasoning": [
+          "The text adopts a first-person, somewhat cynical tone and uses some vivid metaphors (e.g., 'blood-red orb', 'never-ending symphony of smell'), which are hallmarks of noir. However, the vocabulary and sentence structure are a bit too clean and lack the gritty, world-weary edge typical of hard-boiled narration. The urban setting is missing, and the mood is more contemplative than hard-boiled. The text is coherent and paints a clear scene, but it doesn't fully immerse the reader in the noir atmosphere.",
+          "The text lacks the hallmark hard-boiled noir voice: it's missing the cynical, world-weary tone, punchy sentence fragments, and vivid, gritty metaphors. The narration is straightforward and reflective, not sharp or jaded. The urban setting is absent, replaced by a generic beach. While the writing is coherent and the imagery is clear, it doesn't evoke the atmosphere or linguistic style of film noir."
+        ]
+      },
+      "interp_0.5": {
+        "distinct_1": 0.6310679611650486,
+        "distinct_2": 0.9509803921568627,
+        "distinct_3": 0.9900990099009901,
+        "type_token_ratio": 0.6310679611650486,
+        "self_bleu_4": 0.009615384615384616,
+        "avg_length": 103.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 6.0,
+        "text_quality_mean": 7.5,
+        "style_fidelity_scores": [
+          5,
+          7
+        ],
+        "text_quality_scores": [
+          7,
+          8
+        ],
+        "style_reasoning": [
+          "The text uses some noir-adjacent metaphors and urban imagery, but the tone is more poetic and detached than the gritty, cynical, and hard-edged voice typical of hard-boiled narration. The vocabulary and sentence structure are too lyrical and lack the punchy, world-weary cadence of noir. However, the text is coherent, evocative, and paints a vivid picture, making it engaging and well-written overall.",
+          "The text effectively uses vivid, hard-edged metaphors and a cynical, introspective first-person voice reminiscent of noir. Phrases like 'shards of glass,' 'soul a river of searing embers,' and 'jagged slice of granite' evoke the gritty, poetic style of hard-boiled narration. However, some imagery ('the colors of a dying woman's final glance') leans more toward lyrical than the typically terse, world-weary noir tone, and the urban setting is only implied, not explicit. The text is well-written and evocative, though it ends abruptly, slightly affecting coherence."
+        ]
+      },
+      "interp_0.75": {
+        "distinct_1": 0.671957671957672,
+        "distinct_2": 0.983957219251337,
+        "distinct_3": 1.0,
+        "type_token_ratio": 0.671957671957672,
+        "self_bleu_4": 0.0,
+        "avg_length": 94.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 7.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          6,
+          8
+        ],
+        "text_quality_scores": [
+          7,
+          7
+        ],
+        "style_reasoning": [
+          "The text makes a solid attempt at noir with its urban imagery ('city lights... like a map of the lost souls' homes'), first-person cynicism, and vivid metaphors ('sky's colors shifting... like a film reel in a dying projector'). However, the tone is a bit too sentimental and poetic, lacking the hard-edged, terse, and world-weary bite typical of hard-boiled narration. The vocabulary and sentence structure are somewhat softer and more lyrical than classic noir. As for quality, the metaphors are evocative and the scene is clear, but the ending drifts into clich\u00e9 ('promise of a new day, a fresh start'), which weakens the impact.",
+          "The text nails the hard-boiled noir tone with its cynical, world-weary narration and vivid, gritty metaphors ('the ocean rises like a beast,' 'the sun, a bloody ember'). The urban setting is implied with references to the city as a 'madman.' The sentence structure is fragmented and punchy, fitting the genre. However, some metaphors verge on overwrought, and the last line ('I, the dregs') feels abrupt and incomplete, slightly hurting coherence and engagement. Overall, it's evocative and stylistically faithful, but could use a bit more clarity and narrative flow."
+        ]
+      }
+    },
+    "A conversation between two strangers on a train": {
+      "base": {
+        "distinct_1": 0.6039603960396039,
+        "distinct_2": 0.91,
+        "distinct_3": 0.9663299663299664,
+        "type_token_ratio": 0.6039603960396039,
+        "self_bleu_4": 0.0,
+        "avg_length": 101.0,
+        "num_samples": 3,
+        "style_fidelity_mean": 4.5,
+        "text_quality_mean": 6.0,
+        "style_fidelity_scores": [
+          4,
+          5
+        ],
+        "text_quality_scores": [
+          6,
+          6
+        ],
+        "style_reasoning": [
+          "The text is introspective and moody, but it lacks the gritty, cynical edge and urban specificity of hard-boiled noir. The metaphors are abstract rather than vivid and concrete, and the narration is more philosophical than world-weary or sardonic. Sentence structure is more literary than punchy. The writing is coherent and thematically unified, but not particularly engaging or evocative in a noir sense.",
+          "The text opens with some noir-esque imagery\u2014'neon lights flicker like restless eyes,' 'faces obscured by shadows'\u2014but quickly lapses into a more generic narrative voice. The dialogue is straightforward and lacks the hard-boiled cynicism, sharp metaphors, and gritty urban slang typical of noir. The first-person perspective is missing, replaced by a distant third-person narration. The setting is established, but the mood and voice don't fully commit to the noir style. In terms of quality, the writing is clear and sets a scene, but the dialogue is flat and the excerpt ends abruptly, making it less engaging."
+        ]
+      },
+      "aligned": {
+        "distinct_1": 0.652317880794702,
+        "distinct_2": 0.9431438127090301,
+        "distinct_3": 0.9864864864864865,
+        "type_token_ratio": 0.652317880794702,
+        "self_bleu_4": 0.006734006734006735,
+        "avg_length": 100.66666666666667,
+        "num_samples": 3,
+        "style_fidelity_mean": 8.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          8,
+          8
+        ],
+        "text_quality_scores": [
+          7,
+          7
+        ],
+        "style_reasoning": [
+          "The text effectively channels the hard-boiled noir style with its cynical first-person narration, vivid metaphors ('air crackled with secrets', 'cloak of shadows'), and urban grit. The dialogue and internal monologue are suitably terse and suspicious. Some metaphors verge on overwrought ('dying man's breath', 'lover's caress before betrayal'), but overall, the voice is strong and evocative. The text is mostly coherent and engaging, though the ending is abrupt and the imagery occasionally strains credulity, slightly affecting overall quality.",
+          "The text effectively channels the hard-boiled noir style with vivid, gritty metaphors ('city sprawled like a diseased limb', 'neon arteries'), a cynical first-person voice, and urban imagery. The dialogue is terse and world-weary, fitting the genre. However, some metaphors verge on overwrought, and the transition into dialogue is slightly abrupt. The text is engaging and mostly coherent, but the abrupt ending and slight awkwardness in the character's actions (tracing a scar while drinking coffee) detract from overall polish."
+        ]
+      },
+      "interp_0.25": {
+        "distinct_1": 0.645320197044335,
+        "distinct_2": 0.9601990049751243,
+        "distinct_3": 0.9949748743718593,
+        "type_token_ratio": 0.645320197044335,
+        "self_bleu_4": 0.0,
+        "avg_length": 101.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 7.0,
+        "text_quality_mean": 7.0,
+        "style_fidelity_scores": [
+          8,
+          6
+        ],
+        "text_quality_scores": [
+          7,
+          7
+        ],
+        "style_reasoning": [
+          "The text effectively channels the hard-boiled noir style with its cynical first-person narration, vivid metaphors ('shabby beast,' 'rolling coffin'), and urban setting. The vocabulary and imagery are evocative and fit the genre. However, the narration slips slightly from the classic terse, punchy sentence structure typical of noir, and the dialogue, while promising, is only just beginning. The text is coherent and atmospheric, but as it's incomplete, it lacks full engagement and narrative momentum.",
+          "The text makes a solid attempt at noir style with sensory details ('stale, musty aroma', 'worn and stained'), urban grit, and a first-person, somewhat cynical perspective. However, the metaphors are mild and lack the punchy, hard-edged similes typical of classic noir. The narration is more subdued and introspective than the genre's usual terse, world-weary voice. The dialogue is minimal and could be sharper. Overall, the writing is clear and evocative, but it doesn't fully commit to the hard-boiled tone."
+        ]
+      },
+      "interp_0.5": {
+        "distinct_1": 0.6633165829145728,
+        "distinct_2": 0.9746192893401016,
+        "distinct_3": 0.9948717948717949,
+        "type_token_ratio": 0.6633165829145728,
+        "self_bleu_4": 0.0,
+        "avg_length": 99.5,
+        "num_samples": 2,
+        "style_fidelity_mean": 7.0,
+        "text_quality_mean": 6.0,
+        "style_fidelity_scores": [
+          7,
+          7
+        ],
+        "text_quality_scores": [
+          6,
+          6
+        ],
+        "style_reasoning": [
+          "The text demonstrates several hallmarks of hard-boiled noir: first-person narration, urban grit, and vivid metaphors ('engine's roaring an unbroken monotone, like an old man's cough', 'his eyes cold as frost'). The mood is cynical and world-weary. However, some metaphors ('my pocket felt like a prison cell, a cage of silence') are less clear or forced, and phrases like 'my mind, a stagnant pond, was too busy to think' are contradictory, disrupting the noir tone. The setting is established but not deeply urban, and the narrative could use sharper, punchier sentences. The text is mostly coherent but ends abruptly and has some awkward phrasing, affecting overall quality.",
+          "The text effectively uses noir elements: first-person narration, urban imagery, and metaphoric language ('engine roared, a great black beast'; 'city was a living thing'). The tone is suitably cynical and world-weary. However, some phrases ('a gesture so casual it could have been a dismissal') are more neutral than hard-boiled, and the dialogue could be sharper and more stylized. The setting and mood are strong, but the excerpt ends abruptly and lacks a punchy noir rhythm. Overall, it's evocative but could push the style further."
+        ]
+      },
+      "interp_0.75": {
+        "distinct_1": 0.693069306930693,
+        "distinct_2": 0.97,
+        "distinct_3": 1.0,
+        "type_token_ratio": 0.693069306930693,
+        "self_bleu_4": 0.0,
+        "avg_length": 101.0,
+        "num_samples": 2,
+        "style_fidelity_mean": 7.5,
+        "text_quality_mean": 6.5,
+        "style_fidelity_scores": [
+          7,
+          8
+        ],
+        "text_quality_scores": [
+          6,
+          7
+        ],
+        "style_reasoning": [
+          "The text effectively uses noir elements: a cynical first-person narrator, urban decay imagery ('industrial wasteland'), and vivid metaphors ('creaked like an old man's bones', 'eyes met, like coins clinking in a jar'). The dialogue is terse and understated, fitting the genre. However, some lines ('the same way I always did, with just enough nonchalance to hide the tremor in my') start to drift toward clich\u00e9 and lack the punchy, world-weary wit of classic noir. The text is engaging and mostly coherent, but the abrupt ending and slightly awkward phrasing in places detract from overall quality.",
+          "The text effectively channels the hard-boiled noir style with its cynical first-person narration, gritty urban imagery, and vivid metaphors ('train rolled into the station like a boxer with a wounded heart', 'sun slithered between the buildings'). The vocabulary and sentence structure are appropriate for the genre, and the metaphors are evocative. However, some phrases verge on overwrought or clich\u00e9, and the passage ends abruptly, which affects overall coherence and engagement. The atmosphere is strong, but the narrative flow could be smoother."
+        ]
+      }
+    }
+  }
+}

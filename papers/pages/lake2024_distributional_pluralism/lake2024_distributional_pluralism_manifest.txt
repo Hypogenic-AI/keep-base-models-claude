@@ -1,0 +1,11 @@
+PDF: papers/lake2024_distributional_pluralism.pdf
+Total pages: 21
+Pages per chunk: 4
+
+Chunks:
+  lake2024_distributional_pluralism_chunk_001.pdf: pages 1-4
+  lake2024_distributional_pluralism_chunk_002.pdf: pages 5-8
+  lake2024_distributional_pluralism_chunk_003.pdf: pages 9-12
+  lake2024_distributional_pluralism_chunk_004.pdf: pages 13-16
+  lake2024_distributional_pluralism_chunk_005.pdf: pages 17-20
+  lake2024_distributional_pluralism_chunk_006.pdf: page 21

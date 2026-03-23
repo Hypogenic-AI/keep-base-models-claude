@@ -1,0 +1,58 @@
+\section{Introduction}
+\label{sec:intro}
+
+Language models learn rich distributional structure during pretraining---including
+the ability to produce text spanning many registers, genres, and authorial voices.
+Alignment procedures such as RLHF~\cite{ouyang2022instructgpt} and
+DPO~\cite{rafailov2023dpo} reshape these distributions toward human preferences,
+yielding models that are helpful, harmless, and honest. But a persistent concern
+accompanies this process: \emph{does alignment narrow the model's expressive range?}
+\citet{kirk2023rlhf} showed that RLHF causes measurable mode collapse in both
+per-input and across-input diversity. \citet{lin2023mitigating} documented
+degradation on downstream benchmarks, coining the term ``alignment tax.'' If
+alignment suppresses stylistic distributions that existed in the base model, then
+creative applications---authorial impersonation, genre writing, code-switching
+across registers---may suffer.
+
+{\bf But is this the right framing?} The Superficial Alignment
+Hypothesis~\cite{zhou2023lima} suggests that alignment is a thin veneer atop
+pretraining distributions, adjusting format and tone without fundamentally altering
+the model's knowledge or capabilities. \citet{ji2024resistance} provided further
+evidence: aligned models exhibit ``elasticity,'' reverting toward pretraining
+distributions upon further fine-tuning. If alignment is superficial and reversible,
+then the base model's stylistic distributions should survive alignment intact---and
+distribution interpolation should be able to navigate continuously between base and
+aligned behaviors.
+
+{\bf Our approach.} We directly test these ideas by measuring stylistic
+impersonation across seven distinct literary and functional styles (Hemingway,
+Shakespeare, Poe, Austen, Tolkien, academic, noir) using paired base and aligned
+models (\qwenbase and \qweninst). We apply logit-space distribution arithmetic---
+linearly interpolating base and aligned logits at each decoding step---at five
+interpolation coefficients ($\interpcoeff \in \{0, 0.25, 0.5, 0.75, 1\}$). A
+\gptjudge judge evaluates style fidelity and text quality, supplemented by
+automated diversity metrics (Distinct-N, Self-BLEU).
+
+{\bf What we find.} The results overturn the naive alignment tax hypothesis.
+The aligned model \emph{significantly outperforms} the base model on
+style fidelity ($7.26$ vs.\ $3.74$, $p < 0.0001$) and is the only
+condition that reliably differentiates between target styles (ANOVA
+$F = 6.32$, $p = 0.002$; base: $F = 0.87$, $p = 0.54$). Distribution
+arithmetic produces smooth, monotonic interpolation, confirming that base
+distributions survive alignment. But mixing in base logits \emph{reduces}
+style quality rather than recovering it, because the base model lacks the
+instruction-following mechanism needed to address its own distributions.
+
+In summary, our main contributions are:
+\begin{itemize}[leftmargin=*,itemsep=0pt,topsep=0pt]
+    \item We conduct the first controlled comparison of stylistic impersonation
+    ability before and after alignment, finding that alignment \emph{improves}
+    rather than diminishes controllable access to diverse styles.
+    \item We apply logit-space distribution arithmetic to style generation,
+    demonstrating smooth interpolation between base and aligned behavior across
+    seven styles and three topics (231 total generations).
+    \item We reframe the alignment--diversity tradeoff: the relevant axis is not
+    preservation versus loss of distributions, but controllability versus
+    distributional freedom. Alignment adds an addressing mechanism that unlocks
+    latent stylistic diversity.
+\end{itemize}

@@ -1,0 +1,28 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We investigated whether alignment diminishes a language model's stylistic
+capabilities and whether logit-space distribution arithmetic can recover them.
+Our experiments on seven literary and functional styles, using paired base and
+aligned models (\qwenbase and \qweninst), yielded a clear answer:
+alignment \emph{improves} controllable access to stylistic distributions
+(style fidelity $7.26$ vs.\ $3.74$, $p < 0.0001$) rather than reducing it.
+The aligned model is the only condition that reliably differentiates between
+target styles (ANOVA $F = 6.32$, $p = 0.002$).
+
+Distribution arithmetic confirms that base model distributions survive alignment
+intact: logit-space interpolation produces smooth, monotonic transitions between
+base and aligned behavior. However, the base model's contribution to the mixture
+is not ``recovery'' of lost capability but rather dilution of the control signal.
+The relevant tradeoff is not preservation versus loss, but controllability versus
+distributional freedom.
+
+These findings suggest that future work on preserving diversity during alignment
+should focus less on preventing distributional loss (which does not appear to
+occur for stylistic capabilities) and more on maintaining or expanding the
+\emph{addressability} of latent distributions. Promising directions include
+testing safety-suppressed styles where alignment may genuinely restrict access,
+comparing weight-space and logit-space interpolation, measuring unsolicited
+diversity (generation without style instructions), and investigating whether
+lightweight steering vectors can provide the addressing mechanism without
+full alignment.

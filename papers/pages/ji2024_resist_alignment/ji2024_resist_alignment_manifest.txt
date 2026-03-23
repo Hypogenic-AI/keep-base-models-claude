@@ -1,0 +1,11 @@
+PDF: papers/ji2024_resist_alignment.pdf
+Total pages: 24
+Pages per chunk: 4
+
+Chunks:
+  ji2024_resist_alignment_chunk_001.pdf: pages 1-4
+  ji2024_resist_alignment_chunk_002.pdf: pages 5-8
+  ji2024_resist_alignment_chunk_003.pdf: pages 9-12
+  ji2024_resist_alignment_chunk_004.pdf: pages 13-16
+  ji2024_resist_alignment_chunk_005.pdf: pages 17-20
+  ji2024_resist_alignment_chunk_006.pdf: pages 21-24

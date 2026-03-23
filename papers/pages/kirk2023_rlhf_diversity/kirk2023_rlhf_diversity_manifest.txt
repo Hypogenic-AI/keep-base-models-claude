@@ -1,0 +1,14 @@
+PDF: papers/kirk2023_rlhf_diversity.pdf
+Total pages: 34
+Pages per chunk: 4
+
+Chunks:
+  kirk2023_rlhf_diversity_chunk_001.pdf: pages 1-4
+  kirk2023_rlhf_diversity_chunk_002.pdf: pages 5-8
+  kirk2023_rlhf_diversity_chunk_003.pdf: pages 9-12
+  kirk2023_rlhf_diversity_chunk_004.pdf: pages 13-16
+  kirk2023_rlhf_diversity_chunk_005.pdf: pages 17-20
+  kirk2023_rlhf_diversity_chunk_006.pdf: pages 21-24
+  kirk2023_rlhf_diversity_chunk_007.pdf: pages 25-28
+  kirk2023_rlhf_diversity_chunk_008.pdf: pages 29-32
+  kirk2023_rlhf_diversity_chunk_009.pdf: pages 33-34
