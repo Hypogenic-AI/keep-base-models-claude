@@ -1,0 +1,32 @@
+idea:
+  title: Keeping Base Model Distributions
+  domain: nlp
+  hypothesis: 'Including a KL term on certain distributions during model alignment
+    preserves the base model''s ability to generate diverse outputs, such as stylistic
+    impersonations, which are otherwise diminished by alignment; this enables interpolation
+    of these distributions post-alignment, unless they are fundamentally difficult
+    to recover.
+
+    '
+  background:
+    description: 'It''s well known that if you align a model that it loses many of
+      the capabilities of the base model, at least in so far as it has access to a
+      less diverse set of distributions on demand. But if during alignment you also
+      have a KL term on certain distributions does allow you to interpolate them later.
+      For instance, aligned models are much worse at stylistically impersonating,
+      you know, famous people, famous authors, the tone of certain stories even if
+      they''ve read them. This is something that base models can often be coaxed to
+      do even though it''s more difficult to instruct them to do anything. If we include
+      a KL term on these distributions, do they become available at the end of the
+      or are they fundamentally difficult to unlock post alignment.
+
+      '
+  metadata:
+    author: Ari Holtzman
+    source: IdeaHub
+    source_url: https://hypogenic.ai/ideahub/idea/uUTBl6Y349nMOvPSyBhi
+    idea_id: keeping_base_model_distributio_20260323_174916_e46743c9
+    created_at: '2026-03-23T17:49:16.226868'
+    status: submitted
+    github_repo_name: keep-base-models-claude
+    github_repo_url: https://github.com/Hypogenic-AI/keep-base-models-claude
